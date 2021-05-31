@@ -240,7 +240,7 @@ Transform:
   m_Children:
   - {fileID: 513394560}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &383421313
 MonoBehaviour:
@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterGun: {fileID: 513394560}
-  beamPrefab: {fileID: 7698192114631631385, guid: f34c1b9b4b3eb2544a4e675082103e5a,
+  beamPrefab: {fileID: 381857803167876534, guid: f34c1b9b4b3eb2544a4e675082103e5a,
     type: 3}
   beamForce: 20
 --- !u!1 &513394559
@@ -371,92 +371,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &682695231
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1148198209112969590, guid: f34c1b9b4b3eb2544a4e675082103e5a,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1148198209112969590, guid: f34c1b9b4b3eb2544a4e675082103e5a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.8181968
-      objectReference: {fileID: 0}
-    - target: {fileID: 1148198209112969590, guid: f34c1b9b4b3eb2544a4e675082103e5a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.2282801
-      objectReference: {fileID: 0}
-    - target: {fileID: 1148198209112969590, guid: f34c1b9b4b3eb2544a4e675082103e5a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1148198209112969590, guid: f34c1b9b4b3eb2544a4e675082103e5a,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1148198209112969590, guid: f34c1b9b4b3eb2544a4e675082103e5a,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1148198209112969590, guid: f34c1b9b4b3eb2544a4e675082103e5a,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1148198209112969590, guid: f34c1b9b4b3eb2544a4e675082103e5a,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1148198209112969590, guid: f34c1b9b4b3eb2544a4e675082103e5a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1148198209112969590, guid: f34c1b9b4b3eb2544a4e675082103e5a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1148198209112969590, guid: f34c1b9b4b3eb2544a4e675082103e5a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6524104750659100014, guid: f34c1b9b4b3eb2544a4e675082103e5a,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 7.5611877
-      objectReference: {fileID: 0}
-    - target: {fileID: 6524104750659100014, guid: f34c1b9b4b3eb2544a4e675082103e5a,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 1.238336
-      objectReference: {fileID: 0}
-    - target: {fileID: 6524104750659100014, guid: f34c1b9b4b3eb2544a4e675082103e5a,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: -0.00000047683716
-      objectReference: {fileID: 0}
-    - target: {fileID: 6524104750659100014, guid: f34c1b9b4b3eb2544a4e675082103e5a,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: 0.14679283
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698192114631631385, guid: f34c1b9b4b3eb2544a4e675082103e5a,
-        type: 3}
-      propertyPath: m_Name
-      value: Water Beam
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f34c1b9b4b3eb2544a4e675082103e5a, type: 3}
