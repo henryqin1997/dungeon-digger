@@ -34,6 +34,7 @@ ExportedObj/
 .consulo/
 *.csproj
 *.unityproj
+<<<<<<< HEAD
 
 # General
 .DS_Store
@@ -61,6 +62,8 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+=======
+>>>>>>> 3224766c (Add .gitignore)
 *.sln
 *.suo
 *.tmp
