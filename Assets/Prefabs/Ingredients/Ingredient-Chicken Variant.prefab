@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7433742015300588496
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5939669754812548274, guid: 303812be6cdf8fa4bafafc671bb7d9a9,
+        type: 3}
+      propertyPath: id
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939669754812548274, guid: 303812be6cdf8fa4bafafc671bb7d9a9,
+        type: 3}
+      propertyPath: name
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939669754812548274, guid: 303812be6cdf8fa4bafafc671bb7d9a9,
+        type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 7311576516682567680, guid: 04a74e5545bd0e14795640d27ca16445,
+        type: 3}
+    - target: {fileID: 5939669754812548275, guid: 303812be6cdf8fa4bafafc671bb7d9a9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939669754812548275, guid: 303812be6cdf8fa4bafafc671bb7d9a9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939669754812548275, guid: 303812be6cdf8fa4bafafc671bb7d9a9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939669754812548275, guid: 303812be6cdf8fa4bafafc671bb7d9a9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939669754812548275, guid: 303812be6cdf8fa4bafafc671bb7d9a9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939669754812548275, guid: 303812be6cdf8fa4bafafc671bb7d9a9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939669754812548275, guid: 303812be6cdf8fa4bafafc671bb7d9a9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939669754812548275, guid: 303812be6cdf8fa4bafafc671bb7d9a9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939669754812548275, guid: 303812be6cdf8fa4bafafc671bb7d9a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939669754812548275, guid: 303812be6cdf8fa4bafafc671bb7d9a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939669754812548275, guid: 303812be6cdf8fa4bafafc671bb7d9a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939669754812548277, guid: 303812be6cdf8fa4bafafc671bb7d9a9,
+        type: 3}
+      propertyPath: m_Name
+      value: Ingredient-Chicken Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 303812be6cdf8fa4bafafc671bb7d9a9, type: 3}
