@@ -1,5 +1,0 @@
-PlayerMovement.cs:
-Responsible for player control, including WASD movement and mouse rotation. More controls to be added in the future.
-
-Shooting.cs:
-Responsible for the shooting of water gun.
