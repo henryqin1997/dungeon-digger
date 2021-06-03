@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement instance;
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     public Camera cam;
@@ -15,6 +16,11 @@ public class PlayerMovement : MonoBehaviour
     {
         
     }
+
+    private void Awake() 
+  {
+    instance = this;
+  }
 
     // Update is called once per frame
     void Update()
