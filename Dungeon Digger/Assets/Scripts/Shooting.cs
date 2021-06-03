@@ -1,0 +1,32 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Shooting : MonoBehaviour
+{
+    public Transform waterGun;
+    public GameObject beamPrefab;
+
+    public float beamForce = 20f;
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetButton("Fire1"))
+        {
+            Shoot();
+        }
+    }
+
+    void Shoot()
+    {
+        GameObject beam = Instantiate(beamPrefab, waterGun.position, waterGun.rotation);
+        Rigidbody2D rb = beam.GetComponent<Rigidbody2D>();
+        rb.AddForce(waterGun.right * beamForce, ForceMode2D.Impulse);
+    }
+}
