@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 183892853}
   - component: {fileID: 183892852}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: Obstacle(for testing)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,8 +226,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183892851}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.33, y: 0.65, z: -1.4428028}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalPosition: {x: 2.87, y: 2.11, z: -1.4428028}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -371,6 +371,7 @@ MonoBehaviour:
   beamPrefab: {fileID: 381857803167876534, guid: f34c1b9b4b3eb2544a4e675082103e5a,
     type: 3}
   beamForce: 20
+  coolDown: 0.018
 --- !u!58 &383421314
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -637,6 +638,16 @@ PrefabInstance:
         type: 3}
       propertyPath: shouldShoot
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1223385377868309471, guid: 151273861b37b4c35b20aecb34a7a4ec,
+        type: 3}
+      propertyPath: m_Mass
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1223385377868309471, guid: 151273861b37b4c35b20aecb34a7a4ec,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1223385377868309475, guid: 151273861b37b4c35b20aecb34a7a4ec,
         type: 3}

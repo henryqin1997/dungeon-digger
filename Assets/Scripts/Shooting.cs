@@ -8,6 +8,8 @@ public class Shooting : MonoBehaviour
     public GameObject beamPrefab;
 
     public float beamForce = 20f;
+    public float coolDown = 0.018f;
+    bool canShoot = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +19,17 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire1") && canShoot)
         {
             Shoot();
+            canShoot = false;
+            Invoke("CooledDown", coolDown);
         }
+    }
+
+    void CooledDown()
+    {
+        canShoot = true;
     }
 
     void Shoot()
