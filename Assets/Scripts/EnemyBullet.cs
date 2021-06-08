@@ -22,9 +22,19 @@ public class EnemyBullet : MonoBehaviour
         transform.position += direction * speed * Time.deltaTime;
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        Destroy(gameObject);
+    // private void OnTriggerEnter2D(Collider2D other) {
+    //     if(other.tag == "Player") {
+    //         Destroy(gameObject);
+    //     }
 
+    // }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag != "Enemy Bullet") {
+            Destroy(gameObject);  
+        }
+            
     }
 
     private void OnBecameInvisible() {

@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 383421309}
   - component: {fileID: 383421313}
   - component: {fileID: 383421314}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Character
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -397,7 +397,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 513394560}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WaterGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2507,120 +2507,80 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1244760761}
     m_ColliderPaths:
-    - - X: -74644484
-        Y: 9938055
-      - X: -74644484
-        Y: 39752284
-      - X: -9330532
-        Y: 39752284
-      - X: -9330473
-        Y: 39752343
-      - X: -9330473
-        Y: 49690521
-      - X: -9330532
-        Y: 49690580
-      - X: -83975201
-        Y: 49690580
-      - X: -83975260
-        Y: 49690521
-      - X: -83975260
-        Y: 9938055
-      - X: -83975201
-        Y: 9937996
-      - X: -74644543
-        Y: 9937996
-    - - X: 83975260
-        Y: 9938055
-      - X: 83975260
-        Y: 49690521
-      - X: 83975201
-        Y: 49690580
-      - X: 9330532
-        Y: 49690580
-      - X: 9330473
-        Y: 49690521
-      - X: 9330473
-        Y: 39752343
-      - X: 9330532
-        Y: 39752284
-      - X: 74644484
-        Y: 39752284
-      - X: 74644484
-        Y: 9938055
-      - X: 74644543
-        Y: 9937996
-      - X: 83975201
-        Y: 9937996
-    - - X: 83975260
-        Y: -49690521
-      - X: 83975260
-        Y: -9938055
-      - X: 83975201
-        Y: -9937996
-      - X: 74644543
-        Y: -9937996
-      - X: 74644484
-        Y: -9938055
-      - X: 74644484
-        Y: -39752284
-      - X: 9330532
-        Y: -39752284
-      - X: 9330473
-        Y: -39752343
-      - X: 9330473
-        Y: -49690521
-      - X: 9330532
-        Y: -49690580
-      - X: 83975201
-        Y: -49690580
-    - - X: -9330473
-        Y: -49690521
-      - X: -9330473
-        Y: -39752343
-      - X: -9330532
-        Y: -39752284
-      - X: -74644484
-        Y: -39752284
-      - X: -74644484
-        Y: -9938055
-      - X: -74644543
-        Y: -9937996
-      - X: -83975201
-        Y: -9937996
-      - X: -83975260
-        Y: -9938055
-      - X: -83975260
-        Y: -49690521
-      - X: -83975201
-        Y: -49690580
-      - X: -9330532
-        Y: -49690580
+    - - X: 83975160
+        Y: 49690480
+      - X: 9330573
+        Y: 49690480
+      - X: 9330573
+        Y: 39752384
+      - X: 74644584
+        Y: 39752384
+      - X: 74644584
+        Y: 9938096
+      - X: 83975160
+        Y: 9938096
+    - - X: -74644584
+        Y: 39752384
+      - X: -9330573
+        Y: 39752384
+      - X: -9330573
+        Y: 49690480
+      - X: -83975160
+        Y: 49690480
+      - X: -83975160
+        Y: 9938096
+      - X: -74644584
+        Y: 9938096
+    - - X: 83975160
+        Y: -9938096
+      - X: 74644584
+        Y: -9938096
+      - X: 74644584
+        Y: -39752384
+      - X: 9330573
+        Y: -39752384
+      - X: 9330573
+        Y: -49690480
+      - X: 83975160
+        Y: -49690480
+    - - X: -9330573
+        Y: -39752384
+      - X: -74644584
+        Y: -39752384
+      - X: -74644584
+        Y: -9938096
+      - X: -83975160
+        Y: -9938096
+      - X: -83975160
+        Y: -49690480
+      - X: -9330573
+        Y: -49690480
   m_CompositePaths:
     m_Paths:
-    - - {x: -7.4644833, y: 0.9937996}
-      - {x: -7.4644194, y: 3.9752285}
-      - {x: -0.9330473, y: 3.9752636}
-      - {x: -0.9330825, y: 4.969058}
-      - {x: -8.397527, y: 4.9690228}
-      - {x: -8.397491, y: 0.9937996}
-    - - {x: 8.397491, y: 0.9937996}
-      - {x: 8.397491, y: 4.969058}
-      - {x: 0.9330473, y: 4.9690228}
-      - {x: 0.9330825, y: 3.9752285}
-      - {x: 7.464448, y: 3.9751992}
-      - {x: 7.4644833, y: 0.9937996}
-    - - {x: -0.9330825, y: -4.969058}
-      - {x: -0.9330825, y: -3.9752285}
-      - {x: -7.464448, y: -3.9751992}
-      - {x: -7.4644833, y: -0.9937996}
-      - {x: -8.397527, y: -0.9938348}
-      - {x: -8.397491, y: -4.969058}
-    - - {x: 8.397491, y: -4.969058}
-      - {x: 8.397491, y: -0.9937996}
-      - {x: 7.464448, y: -0.9938348}
-      - {x: 7.4644194, y: -3.9752285}
-      - {x: 0.9330473, y: -3.9752636}
-      - {x: 0.9330825, y: -4.969058}
+    - - {x: 8.397487, y: 0.99380964}
+      - {x: 8.397487, y: 4.969048}
+      - {x: 0.9330573, y: 4.969019}
+      - {x: 0.93308663, y: 3.9752386}
+      - {x: 7.4644585, y: 3.9752088}
+      - {x: 7.464488, y: 0.99380964}
+    - - {x: -7.464488, y: 0.99380964}
+      - {x: -7.464429, y: 3.9752386}
+      - {x: -0.9330573, y: 3.9752676}
+      - {x: -0.93308663, y: 4.969048}
+      - {x: -8.397516, y: 4.969019}
+      - {x: -8.397487, y: 0.99380964}
+    - - {x: 8.397487, y: -4.969048}
+      - {x: 8.397487, y: -0.99380964}
+      - {x: 7.4644585, y: -0.9938389}
+      - {x: 7.464429, y: -3.9752386}
+      - {x: 0.9330573, y: -3.9752676}
+      - {x: 0.93308663, y: -4.969048}
+    - - {x: -0.93308663, y: -4.969048}
+      - {x: -0.93308663, y: -3.9752386}
+      - {x: -7.4644585, y: -3.9752088}
+      - {x: -7.464488, y: -0.99380964}
+      - {x: -8.397516, y: -0.9938389}
+      - {x: -8.397487, y: -4.969048}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &1244760760
@@ -2731,7 +2691,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1759760114}
   - component: {fileID: 1759760113}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2772,11 +2732,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1223385376759191870, guid: 151273861b37b4c35b20aecb34a7a4ec,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1223385377868309469, guid: 151273861b37b4c35b20aecb34a7a4ec,
         type: 3}
       propertyPath: m_RootOrder
@@ -2832,50 +2787,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1223385377868309470, guid: 151273861b37b4c35b20aecb34a7a4ec,
-        type: 3}
-      propertyPath: fireRate
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1223385377868309470, guid: 151273861b37b4c35b20aecb34a7a4ec,
-        type: 3}
-      propertyPath: moveSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1223385377868309470, guid: 151273861b37b4c35b20aecb34a7a4ec,
-        type: 3}
-      propertyPath: shouldShoot
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1223385377868309471, guid: 151273861b37b4c35b20aecb34a7a4ec,
-        type: 3}
-      propertyPath: m_Mass
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 1223385377868309471, guid: 151273861b37b4c35b20aecb34a7a4ec,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 1223385377868309475, guid: 151273861b37b4c35b20aecb34a7a4ec,
         type: 3}
       propertyPath: m_Name
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 1223385377868309475, guid: 151273861b37b4c35b20aecb34a7a4ec,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3416218752046660866, guid: 151273861b37b4c35b20aecb34a7a4ec,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5152357350620049653, guid: 151273861b37b4c35b20aecb34a7a4ec,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 151273861b37b4c35b20aecb34a7a4ec, type: 3}

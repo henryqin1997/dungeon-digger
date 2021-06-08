@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyControler : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class EnemyControler : MonoBehaviour
     public float moveSpeed;
     public float rangeToChasePlayer;
     private Vector3 moveDirection; // the player direction relative to the enemy
+    public Slider cookProgressSlider;
 
     public bool shouldShoot;
 
@@ -16,13 +18,17 @@ public class EnemyControler : MonoBehaviour
 
     public Transform firePoint;
 
+    public Transform cookProgressPoint;
+    public int health = 1000;
     public float fireRate;
     private float fireCounter;
+    private int currentCookingPorgress = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        cookProgressSlider.maxValue = 1000;
+        cookProgressSlider.value = currentCookingPorgress;
     }
 
     // Update is called once per frame
@@ -48,5 +54,19 @@ public class EnemyControler : MonoBehaviour
               Instantiate(bullet, firePoint.position, firePoint.rotation);
           }
       }
+
+      cookProgressSlider.transform.position = cookProgressPoint.position;
+      currentCookingPorgress++;
+      cookProgressSlider.value = currentCookingPorgress;
+
+      
     }
+
+    public void DamageEnemy(int damage) 
+     {
+         health -= damage;
+         if(health <= 0) {
+             Destroy(gameObject);
+         }
+     }
 }

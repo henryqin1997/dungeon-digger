@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WaterBeam : MonoBehaviour
 {
+    public int damageToGive = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,9 @@ public class WaterBeam : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if(collision.gameObject.tag == "Enemy") {
+            collision.gameObject.GetComponent<EnemyControler>().DamageEnemy(damageToGive);
+        }
         if (collision.gameObject.tag != "Beam")
         {
             Destroy(gameObject);
