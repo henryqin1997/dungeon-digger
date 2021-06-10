@@ -1,25 +1,24 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class FridgeInventory : MonoBehaviour
 {
-    public Ingredient[] ingredients;
-
     // Start is called before the first frame update
-    void Start()
+    public void ShowContents(Ingredient[] contents)
     {
         int slot = 0;
 
         GameObject ingredientSlots = gameObject.transform.GetChild(0).gameObject;
 
         // show assigned ingredients
-        for (; slot < ingredients.Length; ++slot)
+        for (int maxSlotCount = Math.Min(contents.Length, ingredientSlots.transform.childCount);
+            slot < maxSlotCount; ++slot)
         {
-            var ingredientSlot = ingredientSlots.transform.GetChild(slot).gameObject;
-            var ingredientButton = ingredientSlot.transform.GetChild(0).gameObject;
-            var ingredientIcon = ingredientButton.transform.GetChild(0).gameObject;
-
-            ingredientIcon.GetComponent<Image>().sprite = ingredients[slot].sprite;
+            var ingredient       = contents[slot];
+            var ingredientButton = ingredientSlots.transform.GetChild(slot).gameObject;
+            ingredientButton.GetComponent<Ingredient>().Assign(ingredient);
+            ingredientButton.GetComponent<IngredientButton>().AssignIngredient(ingredient);
         }
 
         // hide unused ingredient slots

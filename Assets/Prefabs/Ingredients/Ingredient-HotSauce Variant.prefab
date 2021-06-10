@@ -9,6 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5939669754812548274, guid: 303812be6cdf8fa4bafafc671bb7d9a9,
         type: 3}
+      propertyPath: id
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939669754812548274, guid: 303812be6cdf8fa4bafafc671bb7d9a9,
+        type: 3}
       propertyPath: kind
       value: 1
       objectReference: {fileID: 0}
@@ -23,6 +28,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 370752389814724660, guid: f831ec3b819a06643b675989576e6e1d,
         type: 3}
+    - target: {fileID: 5939669754812548274, guid: 303812be6cdf8fa4bafafc671bb7d9a9,
+        type: 3}
+      propertyPath: category
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5939669754812548275, guid: 303812be6cdf8fa4bafafc671bb7d9a9,
         type: 3}
       propertyPath: m_RootOrder
@@ -81,7 +91,7 @@ PrefabInstance:
     - target: {fileID: 5939669754812548277, guid: 303812be6cdf8fa4bafafc671bb7d9a9,
         type: 3}
       propertyPath: m_Name
-      value: Ingredient-HotSauce
+      value: Ingredient-HotSauce Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 303812be6cdf8fa4bafafc671bb7d9a9, type: 3}
