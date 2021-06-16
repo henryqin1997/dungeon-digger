@@ -12,17 +12,38 @@ public class Recipe : MonoBehaviour
 
         // show assigned ingredients
         for (; slot < ingredients.Length; ++slot) {
-            var ingredientSlot   = gameObject.transform.GetChild(slot).gameObject;
-            var ingredientButton = ingredientSlot.transform.GetChild(0).gameObject;
-            var ingredientIcon   = ingredientButton.transform.GetChild(0).gameObject;
-
-            ingredientIcon.GetComponent<Image>().sprite = ingredients[slot].sprite;
+            Ingredient ingredient = ingredients[slot];
+            var ingredientSlot = GetIngredientSlot(slot);
+            var ingredientIcon = ingredientSlot.transform.GetChild(0).gameObject
+                                               .transform.GetChild(0).gameObject;
+            ingredientIcon.GetComponent<Image>().sprite = ingredient.sprite;
         }
 
         // hide unused ingredient slots
         for (; slot < gameObject.transform.childCount; ++slot) {
-            var ingredientSlot = gameObject.transform.GetChild(slot).gameObject;
+            var ingredientSlot = GetIngredientSlot(slot);
             Destroy(ingredientSlot);
+            var plusSign = GetChildTransform("PlusIcon", slot-1);
+            if (plusSign != null) {
+                Destroy(plusSign.gameObject);
+            }
         }
+    }
+
+    private GameObject GetIngredientSlot(int slot)
+    {
+        Transform ingredientSlotTransform = GetChildTransform("IngredientSlot", slot);
+        Debug.Assert(ingredientSlotTransform != null);
+        return ingredientSlotTransform.gameObject;
+    }
+
+    private Transform GetChildTransform(string baseName, int slot)
+    {
+        return GetChildTransform(baseName + slot.ToString());
+    }
+
+    private Transform GetChildTransform(string childName)
+    {
+        return gameObject.transform.Find(childName);
     }
 }
