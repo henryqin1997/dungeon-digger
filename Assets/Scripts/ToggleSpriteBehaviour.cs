@@ -1,22 +1,22 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CookBookButton : MonoBehaviour
+public class ToggleSpriteBehaviour : MonoBehaviour
 {
-    public Sprite closedSprite;
-    public Sprite openSprite;
+    public Sprite offSprite;
+    public Sprite onSprite;
 
     // Start is called before the first frame update
     void Start()
     {
-        SetSprite(closedSprite);
+        SetSprite(offSprite);
     }
 
     public void ToggleSprite()
     {
-        Sprite nextSprite = (GetImage().sprite == closedSprite)
-                          ? openSprite
-                          : closedSprite;
+        Sprite nextSprite = (GetImage().sprite == offSprite)
+                          ? onSprite
+                          : offSprite;
         SetSprite(nextSprite);
     }
 

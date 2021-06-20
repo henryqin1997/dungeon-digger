@@ -246,6 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredients: []
+  dish: {fileID: 0}
 --- !u!1 &8218999710604678857
 GameObject:
   m_ObjectHideFlags: 0

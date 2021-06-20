@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Dish : MonoBehaviour
+public class Dish : MonoBehaviour, IItem
 {
     public enum ID
     {
@@ -19,4 +19,38 @@ public class Dish : MonoBehaviour
 
     public ID     id;
     public Sprite sprite;
+    public Sprite frame;
+
+    public string GetName()
+    {
+        return id.ToString();
+    }
+
+    public Sprite GetIcon()
+    {
+        return sprite;
+    }
+
+    public Sprite GetFrame()
+    {
+        return frame;
+    }
+
+    public override int GetHashCode()
+    {
+        return (int)id;
+    }
+
+    public override bool Equals(object obj)
+    {
+        return Equals(obj as Dish);
+    }
+
+    public bool Equals(Dish dish)
+    {
+        return (dish != null)
+            && (dish.id == this.id)
+            && (dish.sprite == this.sprite)
+            && (dish.frame == this.frame);
+    }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Ingredient : MonoBehaviour
+public class Ingredient : MonoBehaviour, IItem
 {
     public enum ID {
         INVALID_ID,
@@ -36,12 +36,14 @@ public class Ingredient : MonoBehaviour
     public ID       id;
     public Category category;
     public Sprite   sprite;
+    public Sprite   frame;
 
     public void Assign(in Ingredient other)
     {
         id       = other.id;
         category = other.category;
-        sprite   = other.sprite;
+        sprite     = other.sprite;
+        frame    = other.frame;
     }
 
     public override int GetHashCode()
@@ -59,6 +61,22 @@ public class Ingredient : MonoBehaviour
         return (ingredient != null)
             && (ingredient.id       == this.id)
             && (ingredient.category == this.category)
-            && (ingredient.sprite   == this.sprite);
+            && (ingredient.sprite   == this.sprite)
+            && (ingredient.frame    == this.frame);
+    }
+
+    public string GetName()
+    {
+        return id.ToString();
+    }
+
+    public Sprite GetIcon()
+    {
+        return sprite;
+    }
+
+    public Sprite GetFrame()
+    {
+        return frame;
     }
 }

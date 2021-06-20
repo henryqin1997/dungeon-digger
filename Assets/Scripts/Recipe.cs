@@ -16,8 +16,7 @@ public class Recipe : MonoBehaviour
         for (; slot < ingredients.Length; ++slot) {
             Ingredient ingredient = ingredients[slot];
             var ingredientSlot = GetIngredientSlot(slot);
-            var ingredientIcon = ingredientSlot.transform.GetChild(0).gameObject
-                                               .transform.GetChild(0).gameObject;
+            var ingredientIcon = ingredientSlot.transform.GetChild(0).gameObject;
             ingredientIcon.GetComponent<Image>().sprite = ingredient.sprite;
         }
 

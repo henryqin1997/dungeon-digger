@@ -45,3 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   sprite: {fileID: 21300000, guid: ca34789b7434afb4f8218ad9cc329d01, type: 3}
+  frame: {fileID: -6034139491110726074, guid: b06c6478b6ba00346a4a6a2211fc0775, type: 3}
