@@ -5,9 +5,15 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement instance;
-    public float moveSpeed = 5f;
+    
     public Rigidbody2D rb;
     public Camera cam;
+
+    public int moveSpeed = 5;
+    public const int MAX_HEALTH = 100;
+    public const int MAX_SHIELD = 50;
+    public int health = MAX_HEALTH;
+    public int shield = MAX_SHIELD;
 
     Vector2 movement;
     Vector2 mousePos;
@@ -40,5 +46,53 @@ public class PlayerMovement : MonoBehaviour
         Vector2 lookDir = mousePos - rb.position;
         float rotAngle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         rb.rotation = rotAngle;
+    }
+
+    public void ChangeMoveSpeed(int speedChange)
+    {
+      moveSpeed += speedChange;
+      if (moveSpeed < 3)
+      {
+        moveSpeed = 3;
+      }
+    }
+
+    public void DecreaseHealth(int healthDecrease)
+    {
+      if (shield >= healthDecrease)
+      {
+        shield -= healthDecrease;
+      }
+      else
+      {
+        shield = 0;
+        health -= (healthDecrease - shield);
+      }
+      if (health <= 0)
+      {
+        Destroy(gameObject);
+      }
+    }
+
+    public void IncreaseHealth(int healthIncrease)
+    {
+      if ((health + healthIncrease) > MAX_HEALTH)
+      {
+        health = MAX_HEALTH;
+      }
+      else {
+        health += healthIncrease;
+      }
+    }
+
+    public void IncreseShield(int shieldIncrease)
+    {
+      if ((shield + shieldIncrease) > MAX_SHIELD)
+      {
+        shield = MAX_SHIELD;
+      }
+      else {
+        shield += shieldIncrease;
+      }
     }
 }
