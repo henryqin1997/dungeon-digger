@@ -12,19 +12,19 @@ public class Fridge : MonoBehaviour
 {
     public Ingredient[]              contents;
     public IngredientsAvailableEvent ingredientsAvailable;
-    public UnityEvent                fridgeOpenToggled;
+    public UnityEvent                fridgeOpened;
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.name == "Character")
         {
-            ToggleFridgeOpen();
-            ingredientsAvailable.Invoke(contents);
+            OpenFridge();
         }
     }
 
-    public void ToggleFridgeOpen()
+    public void OpenFridge()
     {
-        fridgeOpenToggled.Invoke();
+        ingredientsAvailable.Invoke(contents);
+        fridgeOpened.Invoke();
     }
 }

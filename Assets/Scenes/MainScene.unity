@@ -134,10 +134,11 @@ GameObject:
   - component: {fileID: 27659758}
   - component: {fileID: 27659760}
   - component: {fileID: 27659759}
-  - component: {fileID: 27659761}
   - component: {fileID: 27659762}
+  - component: {fileID: 27659763}
+  - component: {fileID: 27659761}
   m_Layer: 5
-  m_Name: FadeScreen
+  m_Name: FocusScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -209,7 +210,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 27659757}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 294d172d9a834934d8147345bc9573b1, type: 3}
+  m_Script: {fileID: 11500000, guid: 83c6db99843e7f946baf5735153df89b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &27659762
@@ -224,6 +225,156 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d1bd22046b6464c97b2f10cdd8a064, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &27659763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27659757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60592a5d31df2a243bb2285ea87b0b40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  focusAcquiredEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 170315282}
+        m_TargetAssemblyTypeName: ToggleActiveBehaviour, Assembly-CSharp
+        m_MethodName: FocusAcquired
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 535208138}
+        m_TargetAssemblyTypeName: ToggleActiveBehaviour, Assembly-CSharp
+        m_MethodName: FocusAcquired
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8952578808578880837}
+        m_TargetAssemblyTypeName: ToggleActiveBehaviour, Assembly-CSharp
+        m_MethodName: FocusAcquired
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 674100791}
+        m_TargetAssemblyTypeName: FocusButton, Assembly-CSharp
+        m_MethodName: FocusAcquired
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7835643693275757169}
+        m_TargetAssemblyTypeName: FocusButton, Assembly-CSharp
+        m_MethodName: FocusAcquired
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 27659761}
+        m_TargetAssemblyTypeName: FocusScreen, Assembly-CSharp
+        m_MethodName: FocusAcquired
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  focusReleasedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 170315282}
+        m_TargetAssemblyTypeName: ToggleActiveBehaviour, Assembly-CSharp
+        m_MethodName: FocusReleased
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 535208138}
+        m_TargetAssemblyTypeName: ToggleActiveBehaviour, Assembly-CSharp
+        m_MethodName: FocusReleased
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 674100791}
+        m_TargetAssemblyTypeName: FocusButton, Assembly-CSharp
+        m_MethodName: FocusReleased
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8952578808578880837}
+        m_TargetAssemblyTypeName: ToggleActiveBehaviour, Assembly-CSharp
+        m_MethodName: FocusReleased
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7835643693275757169}
+        m_TargetAssemblyTypeName: FocusButton, Assembly-CSharp
+        m_MethodName: FocusReleased
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &146106117
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,7 +754,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 27659761}
+      objectReference: {fileID: 0}
     - target: {fileID: 6397758272186260215, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -783,6 +934,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891132289073743523, guid: b9af163ad3504114796da86bbc882d14,
+        type: 3}
+      propertyPath: id
+      value: FridgeInventory
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891132289073743523, guid: b9af163ad3504114796da86bbc882d14,
+        type: 3}
+      propertyPath: focusId
+      value: FridgeInventory
       objectReference: {fileID: 0}
     - target: {fileID: 7379237923936624009, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
@@ -1366,202 +1527,12 @@ CircleCollider2D:
   m_Offset: {x: -0.37, y: -0.13}
   serializedVersion: 2
   m_Radius: 0.76
---- !u!1 &444800597
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 444800598}
-  - component: {fileID: 444800602}
-  - component: {fileID: 444800601}
-  - component: {fileID: 444800600}
-  - component: {fileID: 444800599}
-  m_Layer: 5
-  m_Name: InventoryButton
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &444800598
+--- !u!224 &444800598 stripped
 RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 7835643693451715622, guid: f2a8d523f766e50488c9077e1c12a411,
+    type: 3}
+  m_PrefabInstance: {fileID: 7835643693275757168}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 444800597}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1175824829}
-  m_Father: {fileID: 146106121}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50, y: -50}
-  m_SizeDelta: {x: 50, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &444800599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 444800597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08e0a46ae8cc2454399c7dd611aa8c90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offSprite: {fileID: 21300000, guid: 101cb219af6ebf44386f0114b24728a3, type: 3}
-  onSprite: {fileID: 21300000, guid: 9447b3fc0e816864c9f358ff66fdec4d, type: 3}
---- !u!114 &444800600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 444800597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 444800601}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 444800599}
-        m_TargetAssemblyTypeName: ToggleSpriteBehaviour, Assembly-CSharp
-        m_MethodName: ToggleSprite
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 27659761}
-        m_TargetAssemblyTypeName: ToggleActiveBehaviour, Assembly-CSharp
-        m_MethodName: ToggleActive
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 27659762}
-        m_TargetAssemblyTypeName: TogglePauseBehaviour, Assembly-CSharp
-        m_MethodName: TogglePause
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8952578808578880837}
-        m_TargetAssemblyTypeName: ToggleActiveBehaviour, Assembly-CSharp
-        m_MethodName: ToggleActive
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8952578808578880840}
-        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: ShowContents
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &444800601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 444800597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 101cb219af6ebf44386f0114b24728a3, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &444800602
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 444800597}
-  m_CullTransparentMesh: 1
 --- !u!1 &513394559
 GameObject:
   m_ObjectHideFlags: 0
@@ -1935,6 +1906,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -250
       objectReference: {fileID: 0}
+    - target: {fileID: 9021755989305327244, guid: e542c149a8156b74ba018ecdc7cb2a1a,
+        type: 3}
+      propertyPath: focusId
+      value: CookBook
+      objectReference: {fileID: 0}
     - target: {fileID: 9021755989305327245, guid: e542c149a8156b74ba018ecdc7cb2a1a,
         type: 3}
       propertyPath: m_CellSize.x
@@ -2201,7 +2177,7 @@ PrefabInstance:
     - target: {fileID: 21755984489046274, guid: 21abf163dad33014b89805247db81ae3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 21755984489046274, guid: 21abf163dad33014b89805247db81ae3,
         type: 3}
@@ -2227,22 +2203,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 27659761}
+      objectReference: {fileID: 0}
     - target: {fileID: 21755984489046274, guid: 21abf163dad33014b89805247db81ae3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 535208138}
+      objectReference: {fileID: 0}
     - target: {fileID: 21755984489046274, guid: 21abf163dad33014b89805247db81ae3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 27659762}
+      objectReference: {fileID: 0}
     - target: {fileID: 21755984489046274, guid: 21abf163dad33014b89805247db81ae3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 1109386349}
+      objectReference: {fileID: 0}
     - target: {fileID: 21755984489046274, guid: 21abf163dad33014b89805247db81ae3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -2266,17 +2242,17 @@ PrefabInstance:
     - target: {fileID: 21755984489046274, guid: 21abf163dad33014b89805247db81ae3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ToggleActive
+      value: ToggleSprite
       objectReference: {fileID: 0}
     - target: {fileID: 21755984489046274, guid: 21abf163dad33014b89805247db81ae3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ToggleActive
+      value: ToggleSprite
       objectReference: {fileID: 0}
     - target: {fileID: 21755984489046274, guid: 21abf163dad33014b89805247db81ae3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: TogglePause
+      value: ToggleSprite
       objectReference: {fileID: 0}
     - target: {fileID: 21755984489046274, guid: 21abf163dad33014b89805247db81ae3,
         type: 3}
@@ -2286,22 +2262,27 @@ PrefabInstance:
     - target: {fileID: 21755984489046274, guid: 21abf163dad33014b89805247db81ae3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ToggleActiveBehaviour, Assembly-CSharp
+      value: ToggleSpriteBehaviour, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 21755984489046274, guid: 21abf163dad33014b89805247db81ae3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: ToggleActiveBehaviour, Assembly-CSharp
+      value: ToggleSpriteBehaviour, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 21755984489046274, guid: 21abf163dad33014b89805247db81ae3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: TogglePauseBehaviour, Assembly-CSharp
+      value: ToggleSpriteBehaviour, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 21755984489046274, guid: 21abf163dad33014b89805247db81ae3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
       value: ToggleSpriteBehaviour, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 21755984489046274, guid: 21abf163dad33014b89805247db81ae3,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 21755984489046274, guid: 21abf163dad33014b89805247db81ae3,
         type: 3}
@@ -2428,30 +2409,95 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 21755984489046279, guid: 21abf163dad33014b89805247db81ae3,
+    - target: {fileID: 8885859834346133646, guid: 21abf163dad33014b89805247db81ae3,
         type: 3}
+      propertyPath: acquireFocusEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8885859834346133646, guid: 21abf163dad33014b89805247db81ae3,
+        type: 3}
+      propertyPath: releaseFocusEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8885859834346133646, guid: 21abf163dad33014b89805247db81ae3,
+        type: 3}
+      propertyPath: acquireFocusEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8885859834346133646, guid: 21abf163dad33014b89805247db81ae3,
+        type: 3}
+      propertyPath: releaseFocusEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8885859834346133646, guid: 21abf163dad33014b89805247db81ae3,
+        type: 3}
+      propertyPath: acquireFocusEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 27659763}
+    - target: {fileID: 8885859834346133646, guid: 21abf163dad33014b89805247db81ae3,
+        type: 3}
+      propertyPath: releaseFocusEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 27659763}
+    - target: {fileID: 8885859834346133646, guid: 21abf163dad33014b89805247db81ae3,
+        type: 3}
+      propertyPath: acquireFocusEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8885859834346133646, guid: 21abf163dad33014b89805247db81ae3,
+        type: 3}
+      propertyPath: releaseFocusEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8885859834346133646, guid: 21abf163dad33014b89805247db81ae3,
+        type: 3}
+      propertyPath: acquireFocusEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AcquireFocus
+      objectReference: {fileID: 0}
+    - target: {fileID: 8885859834346133646, guid: 21abf163dad33014b89805247db81ae3,
+        type: 3}
+      propertyPath: releaseFocusEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReleaseFocus
+      objectReference: {fileID: 0}
+    - target: {fileID: 8885859834346133646, guid: 21abf163dad33014b89805247db81ae3,
+        type: 3}
+      propertyPath: acquireFocusEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FocusManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8885859834346133646, guid: 21abf163dad33014b89805247db81ae3,
+        type: 3}
+      propertyPath: releaseFocusEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FocusManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8885859834346133646, guid: 21abf163dad33014b89805247db81ae3,
+        type: 3}
+      propertyPath: acquireFocusEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8885859834346133646, guid: 21abf163dad33014b89805247db81ae3,
+        type: 3}
+      propertyPath: releaseFocusEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: onSprite
       value: 
       objectReference: {fileID: 5911782392534553725, guid: 5440bd50f302fbe44a0aa474502f71be,
         type: 3}
-    - target: {fileID: 21755984489046279, guid: 21abf163dad33014b89805247db81ae3,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: offSprite
       value: 
       objectReference: {fileID: 1138135451006800881, guid: 5440bd50f302fbe44a0aa474502f71be,
         type: 3}
-    - target: {fileID: 21755984489046279, guid: 21abf163dad33014b89805247db81ae3,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: clicked.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 21755984489046279, guid: 21abf163dad33014b89805247db81ae3,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: clicked.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 21755984489046279, guid: 21abf163dad33014b89805247db81ae3,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: clicked.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -2482,97 +2528,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21abf163dad33014b89805247db81ae3, type: 3}
---- !u!114 &1109386349 stripped
+--- !u!114 &674100791 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 21755984489046279, guid: 21abf163dad33014b89805247db81ae3,
+  m_CorrespondingSourceObject: {fileID: 8885859834346133646, guid: 21abf163dad33014b89805247db81ae3,
     type: 3}
   m_PrefabInstance: {fileID: 674100790}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08e0a46ae8cc2454399c7dd611aa8c90, type: 3}
+  m_Script: {fileID: 11500000, guid: 9dbde37b1ac68e64ca8e1d4ab6487bb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1175824828
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1175824829}
-  - component: {fileID: 1175824831}
-  - component: {fileID: 1175824830}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1175824829
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1175824828}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 444800598}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1175824830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1175824828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Inventory
---- !u!222 &1175824831
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1175824828}
-  m_CullTransparentMesh: 1
 --- !u!1 &1244760755
 GameObject:
   m_ObjectHideFlags: 0
@@ -4868,7 +4835,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 27659761}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ToggleActiveBehaviour, Assembly-CSharp
         m_MethodName: ToggleActive
         m_Mode: 1
@@ -4925,6 +4892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 294d172d9a834934d8147345bc9573b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  focusId: Fridge
 --- !u!850595691 &1439942992
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -5604,6 +5572,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4015866071758157635, guid: 9de52b3fbb7863746bc4359efb9fc73a,
+        type: 3}
+      propertyPath: focusId
+      value: Inventory
+      objectReference: {fileID: 0}
     - target: {fileID: 4020287099147305287, guid: 9de52b3fbb7863746bc4359efb9fc73a,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -5936,6 +5909,207 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9de52b3fbb7863746bc4359efb9fc73a, type: 3}
+--- !u!1001 &7835643693275757168
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 146106121}
+    m_Modifications:
+    - target: {fileID: 6675741687848004462, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: acquireFocusEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6675741687848004462, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: releaseFocusEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6675741687848004462, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: acquireFocusEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6675741687848004462, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: releaseFocusEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6675741687848004462, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: acquireFocusEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 27659763}
+    - target: {fileID: 6675741687848004462, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: releaseFocusEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 27659763}
+    - target: {fileID: 6675741687848004462, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: acquireFocusEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6675741687848004462, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: releaseFocusEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6675741687848004462, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: acquireFocusEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AcquireFocus
+      objectReference: {fileID: 0}
+    - target: {fileID: 6675741687848004462, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: releaseFocusEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReleaseFocus
+      objectReference: {fileID: 0}
+    - target: {fileID: 6675741687848004462, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: acquireFocusEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FocusManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6675741687848004462, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: releaseFocusEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FocusManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6675741687848004462, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: acquireFocusEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6675741687848004462, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: releaseFocusEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715621, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_Name
+      value: InventoryButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715622, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715622, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715622, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715622, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715622, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715622, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715622, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715622, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715622, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715622, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715622, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715622, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715622, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715622, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715622, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715622, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715622, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715622, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715622, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715622, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715622, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f2a8d523f766e50488c9077e1c12a411, type: 3}
+--- !u!114 &7835643693275757169 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6675741687848004462, guid: f2a8d523f766e50488c9077e1c12a411,
+    type: 3}
+  m_PrefabInstance: {fileID: 7835643693275757168}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dbde37b1ac68e64ca8e1d4ab6487bb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8952578808578880837 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4015866071758157635, guid: 9de52b3fbb7863746bc4359efb9fc73a,
