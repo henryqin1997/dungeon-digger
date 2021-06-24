@@ -4,27 +4,20 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [System.Serializable]
-public class IngredientsAvailableEvent : UnityEvent<Ingredient[]>
+public class FridgeOpenedEvent : UnityEvent<Fridge>
 {
 }
 
 public class Fridge : MonoBehaviour
 {
-    public Ingredient[]              contents;
-    public IngredientsAvailableEvent ingredientsAvailable;
-    public UnityEvent                fridgeOpened;
+    public Ingredient[]      contents;
+    public FridgeOpenedEvent fridgeOpened;
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.name == "Character")
         {
-            OpenFridge();
+            fridgeOpened.Invoke(this);
         }
-    }
-
-    public void OpenFridge()
-    {
-        ingredientsAvailable.Invoke(contents);
-        fridgeOpened.Invoke();
     }
 }

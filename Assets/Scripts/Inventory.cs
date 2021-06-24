@@ -10,11 +10,11 @@ public class IngredientsUpdatedEvent : UnityEvent<Dictionary<Ingredient, int>>
 
 public class Inventory : MonoBehaviour
 {
-    public Dictionary<Ingredient, int>     ingredientCounts        = new Dictionary<Ingredient, int>();
-    public Dictionary<Dish, int>           dishCounts              = new Dictionary<Dish, int>();
-    public IngredientsUpdatedEvent         ingredientsUpdatedEvent = new IngredientsUpdatedEvent();
+    public Dictionary<Ingredient, int>  ingredientCounts        = new Dictionary<Ingredient, int>();
+    public Dictionary<Dish, int>        dishCounts              = new Dictionary<Dish, int>();
+    public IngredientsUpdatedEvent      ingredientsUpdatedEvent = new IngredientsUpdatedEvent();
 
-    public void ShowContents()
+    public void OnEnable()
     {
         int slot = 0;
 

@@ -240,85 +240,37 @@ MonoBehaviour:
   focusAcquiredEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 170315282}
-        m_TargetAssemblyTypeName: ToggleActiveBehaviour, Assembly-CSharp
-        m_MethodName: FocusAcquired
-        m_Mode: 5
+      - m_Target: {fileID: 27659757}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 535208138}
-        m_TargetAssemblyTypeName: ToggleActiveBehaviour, Assembly-CSharp
-        m_MethodName: FocusAcquired
-        m_Mode: 5
+      - m_Target: {fileID: 27659762}
+        m_TargetAssemblyTypeName: TogglePauseBehaviour, Assembly-CSharp
+        m_MethodName: Pause
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8952578808578880837}
-        m_TargetAssemblyTypeName: ToggleActiveBehaviour, Assembly-CSharp
-        m_MethodName: FocusAcquired
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 674100791}
-        m_TargetAssemblyTypeName: FocusButton, Assembly-CSharp
-        m_MethodName: FocusAcquired
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7835643693275757169}
-        m_TargetAssemblyTypeName: FocusButton, Assembly-CSharp
-        m_MethodName: FocusAcquired
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 27659761}
-        m_TargetAssemblyTypeName: FocusScreen, Assembly-CSharp
-        m_MethodName: FocusAcquired
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   focusReleasedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 170315282}
-        m_TargetAssemblyTypeName: ToggleActiveBehaviour, Assembly-CSharp
-        m_MethodName: FocusReleased
-        m_Mode: 5
+      - m_Target: {fileID: 27659757}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -327,10 +279,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 535208138}
-        m_TargetAssemblyTypeName: ToggleActiveBehaviour, Assembly-CSharp
-        m_MethodName: FocusReleased
-        m_Mode: 5
+      - m_Target: {fileID: 27659762}
+        m_TargetAssemblyTypeName: TogglePauseBehaviour, Assembly-CSharp
+        m_MethodName: Unpause
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -339,42 +291,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 674100791}
-        m_TargetAssemblyTypeName: FocusButton, Assembly-CSharp
-        m_MethodName: FocusReleased
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8952578808578880837}
-        m_TargetAssemblyTypeName: ToggleActiveBehaviour, Assembly-CSharp
-        m_MethodName: FocusReleased
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7835643693275757169}
-        m_TargetAssemblyTypeName: FocusButton, Assembly-CSharp
-        m_MethodName: FocusReleased
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  focusBehaviours:
+  - {fileID: 170315282}
+  - {fileID: 535208138}
+  - {fileID: 674100791}
+  - {fileID: 8952578808578880837}
+  - {fileID: 7835643693275757169}
+  - {fileID: 7835643693275757169}
 --- !u!1 &146106117
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,7 +476,7 @@ PrefabInstance:
     - target: {fileID: 4933745866291603373, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4933745866291603373, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
@@ -569,12 +492,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1415140877}
+      objectReference: {fileID: 27659763}
     - target: {fileID: 4933745866291603373, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1415140875}
+      objectReference: {fileID: 1314682103}
     - target: {fileID: 4933745866291603373, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -598,12 +521,12 @@ PrefabInstance:
     - target: {fileID: 4933745866291603373, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ToggleActive
+      value: ReleaseFocus
       objectReference: {fileID: 0}
     - target: {fileID: 4933745866291603373, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: ToggleFridgeOpen
+      value: EmptyFocusedFridge
       objectReference: {fileID: 0}
     - target: {fileID: 4933745866291603373, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
@@ -613,12 +536,12 @@ PrefabInstance:
     - target: {fileID: 4933745866291603373, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: ToggleActiveBehaviour, Assembly-CSharp
+      value: FocusManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4933745866291603373, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: Fridge, Assembly-CSharp
+      value: FridgeInventory, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4933745866291603373, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
@@ -628,6 +551,16 @@ PrefabInstance:
     - target: {fileID: 4933745866291603373, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4933745866291603373, guid: b9af163ad3504114796da86bbc882d14,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: FridgeInventory
+      objectReference: {fileID: 0}
+    - target: {fileID: 4933745866291603373, guid: b9af163ad3504114796da86bbc882d14,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4933745866291603373, guid: b9af163ad3504114796da86bbc882d14,
@@ -738,7 +671,12 @@ PrefabInstance:
     - target: {fileID: 6397758272186260215, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6397758272186260215, guid: b9af163ad3504114796da86bbc882d14,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6397758272186260215, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
@@ -754,12 +692,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 27659763}
     - target: {fileID: 6397758272186260215, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 27659762}
+      objectReference: {fileID: 170315282}
     - target: {fileID: 6397758272186260215, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
@@ -778,12 +716,12 @@ PrefabInstance:
     - target: {fileID: 6397758272186260215, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ToggleActive
+      value: ReleaseFocus
       objectReference: {fileID: 0}
     - target: {fileID: 6397758272186260215, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: TogglePause
+      value: ToggleActive
       objectReference: {fileID: 0}
     - target: {fileID: 6397758272186260215, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
@@ -793,17 +731,22 @@ PrefabInstance:
     - target: {fileID: 6397758272186260215, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ToggleActiveBehaviour, Assembly-CSharp
+      value: FocusManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6397758272186260215, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: TogglePauseBehaviour, Assembly-CSharp
+      value: ToggleActiveBehaviour, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6397758272186260215, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: ToggleActiveBehaviour, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6397758272186260215, guid: b9af163ad3504114796da86bbc882d14,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: FridgeInventory
       objectReference: {fileID: 0}
     - target: {fileID: 6397758272186260215, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
@@ -988,7 +931,7 @@ PrefabInstance:
     - target: {fileID: 7619991287688119498, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7619991287688119498, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
@@ -1004,12 +947,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1415140877}
+      objectReference: {fileID: 27659763}
     - target: {fileID: 7619991287688119498, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1415140875}
+      objectReference: {fileID: 1314682103}
     - target: {fileID: 7619991287688119498, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -1033,12 +976,12 @@ PrefabInstance:
     - target: {fileID: 7619991287688119498, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ToggleActive
+      value: ReleaseFocus
       objectReference: {fileID: 0}
     - target: {fileID: 7619991287688119498, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: ToggleFridgeOpen
+      value: EmptyFocusedFridge
       objectReference: {fileID: 0}
     - target: {fileID: 7619991287688119498, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
@@ -1048,12 +991,12 @@ PrefabInstance:
     - target: {fileID: 7619991287688119498, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: ToggleActiveBehaviour, Assembly-CSharp
+      value: FocusManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7619991287688119498, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: Fridge, Assembly-CSharp
+      value: FridgeInventory, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7619991287688119498, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
@@ -1063,6 +1006,16 @@ PrefabInstance:
     - target: {fileID: 7619991287688119498, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619991287688119498, guid: b9af163ad3504114796da86bbc882d14,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: FridgeInventory
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619991287688119498, guid: b9af163ad3504114796da86bbc882d14,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7619991287688119498, guid: b9af163ad3504114796da86bbc882d14,
@@ -1093,7 +1046,7 @@ PrefabInstance:
     - target: {fileID: 8132741777712599644, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8132741777712599644, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
@@ -1109,12 +1062,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1415140877}
+      objectReference: {fileID: 27659763}
     - target: {fileID: 8132741777712599644, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1415140875}
+      objectReference: {fileID: 1314682103}
     - target: {fileID: 8132741777712599644, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -1138,12 +1091,12 @@ PrefabInstance:
     - target: {fileID: 8132741777712599644, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ToggleActive
+      value: ReleaseFocus
       objectReference: {fileID: 0}
     - target: {fileID: 8132741777712599644, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: ToggleFridgeOpen
+      value: EmptyFocusedFridge
       objectReference: {fileID: 0}
     - target: {fileID: 8132741777712599644, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
@@ -1153,12 +1106,12 @@ PrefabInstance:
     - target: {fileID: 8132741777712599644, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: ToggleActiveBehaviour, Assembly-CSharp
+      value: FocusManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8132741777712599644, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: Fridge, Assembly-CSharp
+      value: FridgeInventory, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8132741777712599644, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
@@ -1168,6 +1121,16 @@ PrefabInstance:
     - target: {fileID: 8132741777712599644, guid: b9af163ad3504114796da86bbc882d14,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132741777712599644, guid: b9af163ad3504114796da86bbc882d14,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: FridgeInventory
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132741777712599644, guid: b9af163ad3504114796da86bbc882d14,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8132741777712599644, guid: b9af163ad3504114796da86bbc882d14,
@@ -1404,9 +1367,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0ee5907eefac0548be8b143a29dbd05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
   rb: {fileID: 383421310}
   cam: {fileID: 519420031}
+  moveSpeed: 5
+  health: 100
+  shield: 50
 --- !u!50 &383421310
 Rigidbody2D:
   serializedVersion: 4
@@ -1510,7 +1475,6 @@ MonoBehaviour:
   beamPrefab: {fileID: 381857803167876534, guid: f34c1b9b4b3eb2544a4e675082103e5a,
     type: 3}
   beamForce: 20
-  coolDown: 0.018
 --- !u!58 &383421314
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2177,7 +2141,7 @@ PrefabInstance:
     - target: {fileID: 21755984489046274, guid: 21abf163dad33014b89805247db81ae3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 21755984489046274, guid: 21abf163dad33014b89805247db81ae3,
         type: 3}
@@ -2203,7 +2167,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 674100791}
     - target: {fileID: 21755984489046274, guid: 21abf163dad33014b89805247db81ae3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -2242,7 +2206,7 @@ PrefabInstance:
     - target: {fileID: 21755984489046274, guid: 21abf163dad33014b89805247db81ae3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ToggleSprite
+      value: OnClick
       objectReference: {fileID: 0}
     - target: {fileID: 21755984489046274, guid: 21abf163dad33014b89805247db81ae3,
         type: 3}
@@ -2262,7 +2226,7 @@ PrefabInstance:
     - target: {fileID: 21755984489046274, guid: 21abf163dad33014b89805247db81ae3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ToggleSpriteBehaviour, Assembly-CSharp
+      value: FocusButton, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 21755984489046274, guid: 21abf163dad33014b89805247db81ae3,
         type: 3}
@@ -2409,6 +2373,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 21755984489046284, guid: 21abf163dad33014b89805247db81ae3,
+        type: 3}
+      propertyPath: m_Name
+      value: CookBookButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 21755984883276828, guid: 21abf163dad33014b89805247db81ae3,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21755984883276828, guid: 21abf163dad33014b89805247db81ae3,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21755984883276828, guid: 21abf163dad33014b89805247db81ae3,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21755984883276828, guid: 21abf163dad33014b89805247db81ae3,
+        type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8885859834346133646, guid: 21abf163dad33014b89805247db81ae3,
         type: 3}
       propertyPath: acquireFocusEvent.m_PersistentCalls.m_Calls.Array.size
@@ -2478,53 +2467,6 @@ PrefabInstance:
         type: 3}
       propertyPath: releaseFocusEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: onSprite
-      value: 
-      objectReference: {fileID: 5911782392534553725, guid: 5440bd50f302fbe44a0aa474502f71be,
-        type: 3}
-    - target: {fileID: 0}
-      propertyPath: offSprite
-      value: 
-      objectReference: {fileID: 1138135451006800881, guid: 5440bd50f302fbe44a0aa474502f71be,
-        type: 3}
-    - target: {fileID: 0}
-      propertyPath: clicked.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: clicked.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: clicked.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 21755984489046284, guid: 21abf163dad33014b89805247db81ae3,
-        type: 3}
-      propertyPath: m_Name
-      value: CookBookButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 21755984883276828, guid: 21abf163dad33014b89805247db81ae3,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 21755984883276828, guid: 21abf163dad33014b89805247db81ae3,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 21755984883276828, guid: 21abf163dad33014b89805247db81ae3,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 21755984883276828, guid: 21abf163dad33014b89805247db81ae3,
-        type: 3}
-      propertyPath: m_FontData.m_HorizontalOverflow
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21abf163dad33014b89805247db81ae3, type: 3}
@@ -4690,7 +4632,6 @@ GameObject:
   - component: {fileID: 1415140872}
   - component: {fileID: 1415140875}
   - component: {fileID: 1415140876}
-  - component: {fileID: 1415140877}
   m_Layer: 0
   m_Name: Fridge
   m_TagString: Untagged
@@ -4805,55 +4746,28 @@ MonoBehaviour:
   - {fileID: 2746068235632857039, guid: 4ef2f819c225b4a41980ebbd7e85b414, type: 3}
   - {fileID: 1154612962540176226, guid: 623aa8491ab12f74abbc361df967e087, type: 3}
   - {fileID: 2435584821659025607, guid: 30d5353a689a76840931508cebc87388, type: 3}
-  ingredientsAvailable:
+  fridgeOpened:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 27659763}
+        m_TargetAssemblyTypeName: FocusManager, Assembly-CSharp
+        m_MethodName: AcquireFocus
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: FridgeInventory
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1314682103}
         m_TargetAssemblyTypeName: FridgeInventory, Assembly-CSharp
         m_MethodName: ShowContents
-        m_Mode: 0
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  fridgeOpenToggled:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 27659762}
-        m_TargetAssemblyTypeName: TogglePauseBehaviour, Assembly-CSharp
-        m_MethodName: TogglePause
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ToggleActiveBehaviour, Assembly-CSharp
-        m_MethodName: ToggleActive
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 170315282}
-        m_TargetAssemblyTypeName: ToggleActiveBehaviour, Assembly-CSharp
-        m_MethodName: ToggleActive
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1415140875}
+          m_ObjectArgumentAssemblyTypeName: Fridge, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4880,19 +4794,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1415140877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1415140871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 294d172d9a834934d8147345bc9573b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  focusId: Fridge
 --- !u!850595691 &1439942992
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -6095,6 +5996,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715624, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715624, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715624, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7835643693275757169}
+    - target: {fileID: 7835643693451715624, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715624, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715624, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FocusButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835643693451715624, guid: f2a8d523f766e50488c9077e1c12a411,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2a8d523f766e50488c9077e1c12a411, type: 3}
