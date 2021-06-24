@@ -37,7 +37,7 @@ public class BossController : MonoBehaviour
            // handle movement
            moveDirection = Vector2.zero;
            if(actions[currentAction].shouldMove) {
-               if(actions[currentAction].shouldChasePlayer) {
+               if(actions[currentAction].shouldChasePlayer && GameObject.FindWithTag("Player") != null) {
                    moveDirection = PlayerMovement.instance.transform.position - transform.position;
                    moveDirection.Normalize();
                }

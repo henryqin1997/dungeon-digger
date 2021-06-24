@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2277978821105232342}
   m_Layer: 9
   m_Name: Enemy Bullet
-  m_TagString: Enemy Bullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 472204485
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 7041929571267127305, guid: 9984b5d794b5c4bb4bce796e9da31a6c,
     type: 3}
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
+  damage: 5
 --- !u!58 &-4237652248038276513
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -109,7 +110,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

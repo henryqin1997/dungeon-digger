@@ -9,6 +9,8 @@ public class BossKnife : MonoBehaviour
     public float speed;
     private Vector3 direction;
 
+    public int damage = 10;
+
     void Start()
     {
         // why in start? want the bullet to travel in the straight line 
@@ -24,17 +26,12 @@ public class BossKnife : MonoBehaviour
         }
     }
 
-    // private void OnTriggerEnter2D(Collider2D other) {
-    //     if(other.tag == "Player") {
-    //         Destroy(gameObject);
-    //     }
-
-    // }
-
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag != "Enemy Bullet") {
-            Destroy(gameObject);  
+
+        if(collision.gameObject.tag == "Player") {
+            PlayerMovement.instance.DecreaseHealth(damage);
+            Destroy(gameObject);
         }
             
     }
