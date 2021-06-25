@@ -34,7 +34,7 @@ public class EnemyControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Vector3.Distance(transform.position, PlayerMovement.instance.transform.position) < rangeToChasePlayer) {
+        if(GameObject.FindWithTag("Player") != null && Vector3.Distance(transform.position, PlayerMovement.instance.transform.position) < rangeToChasePlayer) {
             moveDirection = PlayerMovement.instance.transform.position - transform.position;
             shouldShoot = true;
 
