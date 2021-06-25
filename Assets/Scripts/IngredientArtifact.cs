@@ -7,11 +7,11 @@ public class IngredientArtifact : Artifact
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.GetComponent<SpriteRenderer>().sprite = ingredient.sprite;
+        gameObject.GetComponent<SpriteRenderer>().sprite = ingredient.icon;
     }
 
     override protected void OnPickUp()
     {
-        Debug.Log("PickedUp: category=" + ingredient.category.ToString() + ", sprite=" + ingredient.sprite.name);
+        Debug.Log("PickedUp: id=" + ingredient.id.ToString() + ", category=" + ingredient.category.ToString() + ", icon=" + ingredient.icon.name);
     }
 }

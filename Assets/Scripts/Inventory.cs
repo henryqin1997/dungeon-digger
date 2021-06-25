@@ -20,6 +20,7 @@ public class Inventory : MonoBehaviour
 
         foreach (KeyValuePair<Ingredient, int> entry in ingredientCounts)
         {
+            Debug.Log("Have " + entry.Value.ToString() + " of " + entry.Key.id.ToString());
             FillSlot(slot++, entry.Key, entry.Value);
         }
 
@@ -36,7 +37,7 @@ public class Inventory : MonoBehaviour
 
     public void AddIngredient(Ingredient ingredient)
     {
-        AddItem(ingredient, ingredientCounts);
+        AddItem(new Ingredient(ingredient), ingredientCounts);
 
         ingredientsUpdatedEvent.Invoke(ingredientCounts);
     }
@@ -52,7 +53,7 @@ public class Inventory : MonoBehaviour
 
     public void AddDish(Dish dish)
     {
-        AddItem(dish, dishCounts);
+        AddItem(new Dish(dish), dishCounts);
     }
 
     public void RemoveDish(Dish dish)

@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class Ingredient : MonoBehaviour, IItem
+[System.Serializable]
+public class Ingredient : IItem
 {
     public enum ID {
         INVALID_ID,
@@ -35,14 +36,19 @@ public class Ingredient : MonoBehaviour, IItem
 
     public ID       id;
     public Category category;
-    public Sprite   sprite;
+    public Sprite   icon;
     public Sprite   frame;
+
+    public Ingredient(Ingredient other)
+    {
+        Assign(other);
+    }
 
     public void Assign(in Ingredient other)
     {
         id       = other.id;
         category = other.category;
-        sprite     = other.sprite;
+        icon    = other.icon;
         frame    = other.frame;
     }
 
@@ -61,7 +67,7 @@ public class Ingredient : MonoBehaviour, IItem
         return (ingredient != null)
             && (ingredient.id       == this.id)
             && (ingredient.category == this.category)
-            && (ingredient.sprite   == this.sprite)
+            && (ingredient.icon     == this.icon)
             && (ingredient.frame    == this.frame);
     }
 
@@ -72,7 +78,7 @@ public class Ingredient : MonoBehaviour, IItem
 
     public Sprite GetIcon()
     {
-        return sprite;
+        return icon;
     }
 
     public Sprite GetFrame()
