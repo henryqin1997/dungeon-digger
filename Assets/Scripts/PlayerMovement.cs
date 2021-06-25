@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     
     public Rigidbody2D rb;
     public Camera cam;
+    public GameObject gameover;
 
     public int moveSpeed = 5;
     public const int MAX_HEALTH = 100;
@@ -35,6 +36,12 @@ public class PlayerMovement : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        if (health <= 0)
+        {
+          Destroy(gameObject);
+          gameover.SetActive(true);
+        }
     }
 
     void FixedUpdate()
@@ -67,10 +74,6 @@ public class PlayerMovement : MonoBehaviour
       {
         shield = 0;
         health -= (healthDecrease - shield);
-      }
-      if (health <= 0)
-      {
-        Destroy(gameObject);
       }
     }
 
