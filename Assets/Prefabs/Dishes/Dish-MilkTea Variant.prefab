@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1717591468516225047, guid: 90c20805db212e945b82992deccdd145,
         type: 3}
       propertyPath: m_Name
-      value: Dish-MilkTea
+      value: Dish-MilkTea Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4893183958144091363, guid: 90c20805db212e945b82992deccdd145,
         type: 3}
@@ -75,6 +75,17 @@ PrefabInstance:
     - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
         type: 3}
       propertyPath: sprite
+      value: 
+      objectReference: {fileID: 4296747569617802584, guid: a074503b4d810ba4ba80d36ccfe4e3b9,
+        type: 3}
+    - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
+        type: 3}
+      propertyPath: dish.id
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
+        type: 3}
+      propertyPath: dish.icon
       value: 
       objectReference: {fileID: 4296747569617802584, guid: a074503b4d810ba4ba80d36ccfe4e3b9,
         type: 3}

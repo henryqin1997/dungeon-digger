@@ -20,11 +20,9 @@ public class FridgeInventory : MonoBehaviour
                                          ingredientChoices.transform.childCount);
             choice < maxSlotCount; ++choice)
         {
-            var ingredient       = focusedFridge.contents[choice];
+            var ingredient       = focusedFridge.contents[choice].ingredient;
             var ingredientButton = ingredientChoices.transform.GetChild(choice).gameObject;
-            ingredientButton.GetComponent<Ingredient>().Assign(ingredient);
             ingredientButton.GetComponent<IngredientButton>().AssignIngredient(ingredient);
-            var button = ingredientButton.GetComponent<Button>();
         }
 
         // hide unused ingredients

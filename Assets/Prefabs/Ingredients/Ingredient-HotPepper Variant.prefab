@@ -7,6 +7,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5435302511689751788, guid: 303812be6cdf8fa4bafafc671bb7d9a9,
+        type: 3}
+      propertyPath: ingredient.id
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435302511689751788, guid: 303812be6cdf8fa4bafafc671bb7d9a9,
+        type: 3}
+      propertyPath: ingredient.icon
+      value: 
+      objectReference: {fileID: 3857924070619593780, guid: 04a74e5545bd0e14795640d27ca16445,
+        type: 3}
+    - target: {fileID: 5435302511689751788, guid: 303812be6cdf8fa4bafafc671bb7d9a9,
+        type: 3}
+      propertyPath: ingredient.category
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5939669754812548274, guid: 303812be6cdf8fa4bafafc671bb7d9a9,
         type: 3}
       propertyPath: id

@@ -10,8 +10,8 @@ public class FridgeOpenedEvent : UnityEvent<Fridge>
 
 public class Fridge : MonoBehaviour
 {
-    public Ingredient[]      contents;
-    public FridgeOpenedEvent fridgeOpened;
+    public IngredientBehaviour[] contents;
+    public FridgeOpenedEvent     fridgeOpened;
 
     public void OnTriggerEnter2D(Collider2D collider)
     {

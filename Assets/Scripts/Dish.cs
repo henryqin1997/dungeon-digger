@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class Dish : MonoBehaviour, IItem
+[System.Serializable]
+public class Dish : IItem
 {
     public enum ID
     {
@@ -18,8 +19,15 @@ public class Dish : MonoBehaviour, IItem
     }
 
     public ID     id;
-    public Sprite sprite;
+    public Sprite icon;
     public Sprite frame;
+
+    public Dish(Dish other)
+    {
+        id    = other.id;
+        icon  = other.icon;
+        frame = other.frame;
+    }
 
     public string GetName()
     {
@@ -28,7 +36,7 @@ public class Dish : MonoBehaviour, IItem
 
     public Sprite GetIcon()
     {
-        return sprite;
+        return icon;
     }
 
     public Sprite GetFrame()
@@ -49,8 +57,8 @@ public class Dish : MonoBehaviour, IItem
     public bool Equals(Dish dish)
     {
         return (dish != null)
-            && (dish.id == this.id)
-            && (dish.sprite == this.sprite)
+            && (dish.id    == this.id)
+            && (dish.icon  == this.icon)
             && (dish.frame == this.frame);
     }
 }

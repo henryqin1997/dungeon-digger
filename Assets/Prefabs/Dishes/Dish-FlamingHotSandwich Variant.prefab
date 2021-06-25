@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1717591468516225047, guid: 90c20805db212e945b82992deccdd145,
         type: 3}
       propertyPath: m_Name
-      value: Dish-BeefAndBroccoli Variant 1
+      value: Dish-FlamingHotSandwich Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4893183958144091363, guid: 90c20805db212e945b82992deccdd145,
         type: 3}
@@ -78,5 +78,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 16061199994661181, guid: 95a39150a7221684aaba11a2c35d0239,
         type: 3}
+    - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
+        type: 3}
+      propertyPath: dish.id
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90c20805db212e945b82992deccdd145, type: 3}
