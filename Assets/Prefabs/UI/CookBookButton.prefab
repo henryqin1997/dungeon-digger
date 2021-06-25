@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 21755984489046272}
   - component: {fileID: 21755984489046273}
   - component: {fileID: 21755984489046274}
-  - component: {fileID: 21755984489046279}
+  - component: {fileID: 8885859834346133646}
   m_Layer: 5
   m_Name: CookBookButton
   m_TagString: Untagged
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 21755984489046279}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CookBookButton, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 1
@@ -135,7 +135,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &21755984489046279
+--- !u!114 &8885859834346133646
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,15 +144,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 21755984489046284}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08e0a46ae8cc2454399c7dd611aa8c90, type: 3}
+  m_Script: {fileID: 11500000, guid: 9dbde37b1ac68e64ca8e1d4ab6487bb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clicked:
+  focusId: CookBook
+  acquireFocusEvent:
     m_PersistentCalls:
       m_Calls: []
-  closedSprite: {fileID: 1138135451006800881, guid: 5440bd50f302fbe44a0aa474502f71be,
+  releaseFocusEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  focusOffSprite: {fileID: 1138135451006800881, guid: 5440bd50f302fbe44a0aa474502f71be,
     type: 3}
-  openSprite: {fileID: 5911782392534553725, guid: 5440bd50f302fbe44a0aa474502f71be,
+  focusOnSprite: {fileID: 5911782392534553725, guid: 5440bd50f302fbe44a0aa474502f71be,
     type: 3}
 --- !u!1 &21755984883276830
 GameObject:

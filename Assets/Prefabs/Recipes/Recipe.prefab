@@ -246,6 +246,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredients: []
+<<<<<<< HEAD
+=======
+  dish: {fileID: 0}
+>>>>>>> 6dd50dd6bf357cc1988f25a3f1d5510a62268d33
 --- !u!1 &8218999710604678857
 GameObject:
   m_ObjectHideFlags: 0
