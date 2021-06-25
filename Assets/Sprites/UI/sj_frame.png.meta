@@ -4,10 +4,10 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -6034139491110726074
-    second: slot-synergy
+    second: dish_frame
   - first:
       213: 5821742781547584542
-    second: synergy_slot
+    second: ingredient_frame
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -109,10 +109,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: synergy_slot
+      name: ingredient_frame
       rect:
         serializedVersion: 2
-        x: 0
+        x: 32
         y: 0
         width: 32
         height: 32
@@ -129,10 +129,31 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: dish_frame
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 5, z: 5, w: 5}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64650336a1e624ca0800000000000000
+      internalID: -6034139491110726074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 20cb0deeb6127e548907822c5b6ef687
     internalID: 0
     vertices: []
     indices: 

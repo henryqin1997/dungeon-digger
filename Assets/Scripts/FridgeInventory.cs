@@ -1,33 +1,44 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class FridgeInventory : MonoBehaviour
 {
-    public Ingredient[] ingredients;
+    private Fridge focusedFridge = null;
 
     // Start is called before the first frame update
-    void Start()
+    public void ShowContents(Fridge fridge)
     {
-        int slot = 0;
+        focusedFridge = fridge;
 
-        GameObject ingredientSlots = gameObject.transform.GetChild(0).gameObject;
+        int choice = 0;
+
+        GameObject ingredientChoices = gameObject.transform.GetChild(0).gameObject;
 
         // show assigned ingredients
-        for (; slot < ingredients.Length; ++slot)
+        for (int maxSlotCount = Math.Min(focusedFridge.contents.Length,
+                                         ingredientChoices.transform.childCount);
+            choice < maxSlotCount; ++choice)
         {
-            var ingredientSlot = ingredientSlots.transform.GetChild(slot).gameObject;
-            var ingredientButton = ingredientSlot.transform.GetChild(0).gameObject;
-            var ingredientIcon = ingredientButton.transform.GetChild(0).gameObject;
-
-            ingredientIcon.GetComponent<Image>().sprite = ingredients[slot].sprite;
+            var ingredient       = focusedFridge.contents[choice];
+            var ingredientButton = ingredientChoices.transform.GetChild(choice).gameObject;
+            ingredientButton.GetComponent<Ingredient>().Assign(ingredient);
+            ingredientButton.GetComponent<IngredientButton>().AssignIngredient(ingredient);
+            var button = ingredientButton.GetComponent<Button>();
         }
 
-        // hide unused ingredient slots
-        for (; slot < ingredientSlots.transform.childCount; ++slot)
+        // hide unused ingredients
+        for (; choice < ingredientChoices.transform.childCount; ++choice)
         {
-            var ingredientSlot = ingredientSlots.transform.GetChild(slot).gameObject;
+            var ingredientSlot = ingredientChoices.transform.GetChild(choice).gameObject;
             Destroy(ingredientSlot);
         }
+    }
+
+    public void EmptyFocusedFridge()
+    {
+        Debug.Assert(focusedFridge != null);
+        Destroy(focusedFridge.gameObject);
     }
 }
 
