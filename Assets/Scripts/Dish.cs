@@ -1,10 +1,6 @@
 using UnityEngine;
 
-<<<<<<< HEAD
-public class Dish : MonoBehaviour
-=======
 public class Dish : MonoBehaviour, IItem
->>>>>>> 6dd50dd6bf357cc1988f25a3f1d5510a62268d33
 {
     public enum ID
     {
@@ -23,8 +19,6 @@ public class Dish : MonoBehaviour, IItem
 
     public ID     id;
     public Sprite sprite;
-<<<<<<< HEAD
-=======
     public Sprite frame;
 
     public string GetName()
@@ -59,5 +53,4 @@ public class Dish : MonoBehaviour, IItem
             && (dish.sprite == this.sprite)
             && (dish.frame == this.frame);
     }
->>>>>>> 6dd50dd6bf357cc1988f25a3f1d5510a62268d33
 }

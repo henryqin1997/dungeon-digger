@@ -36,21 +36,14 @@ public class Ingredient : MonoBehaviour, IItem
     public ID       id;
     public Category category;
     public Sprite   sprite;
-<<<<<<< HEAD
-=======
     public Sprite   frame;
->>>>>>> 6dd50dd6bf357cc1988f25a3f1d5510a62268d33
 
     public void Assign(in Ingredient other)
     {
         id       = other.id;
         category = other.category;
-<<<<<<< HEAD
-        sprite   = other.sprite;
-=======
         sprite     = other.sprite;
         frame    = other.frame;
->>>>>>> 6dd50dd6bf357cc1988f25a3f1d5510a62268d33
     }
 
     public override int GetHashCode()
@@ -68,9 +61,6 @@ public class Ingredient : MonoBehaviour, IItem
         return (ingredient != null)
             && (ingredient.id       == this.id)
             && (ingredient.category == this.category)
-<<<<<<< HEAD
-            && (ingredient.sprite   == this.sprite);
-=======
             && (ingredient.sprite   == this.sprite)
             && (ingredient.frame    == this.frame);
     }
@@ -88,6 +78,5 @@ public class Ingredient : MonoBehaviour, IItem
     public Sprite GetFrame()
     {
         return frame;
->>>>>>> 6dd50dd6bf357cc1988f25a3f1d5510a62268d33
     }
 }
