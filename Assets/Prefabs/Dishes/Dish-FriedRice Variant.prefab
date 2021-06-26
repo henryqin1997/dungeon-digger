@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5369828409554705945
+--- !u!1001 &5112802177998329649
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1717591468516225047, guid: 90c20805db212e945b82992deccdd145,
         type: 3}
       propertyPath: m_Name
-      value: Dish-MilkTea Variant
+      value: Dish-FriedRice Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4893183958144091363, guid: 90c20805db212e945b82992deccdd145,
         type: 3}
@@ -70,13 +70,13 @@ PrefabInstance:
     - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
         type: 3}
       propertyPath: id
-      value: 2
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
         type: 3}
       propertyPath: sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7f0083f83b5a8384b8062cb9d03516da,
+      objectReference: {fileID: 21300000, guid: 0cebe282381098c43b91292f32684f49,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90c20805db212e945b82992deccdd145, type: 3}
