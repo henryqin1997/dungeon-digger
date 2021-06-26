@@ -13,6 +13,7 @@ public class Recipe : MonoBehaviour
     public void IngredientsAvailable(Dictionary<Ingredient, int> availableIngredientCounts)
     {
         ingredientsAvailable = availableIngredientCounts;
+        UpdateSelectable();
     }
 
     private bool CanCreate(in Dictionary<Ingredient, int> availableIngredientCounts)
@@ -66,6 +67,11 @@ public class Recipe : MonoBehaviour
     }
 
     void OnEnable()
+    {
+        UpdateSelectable();
+    }
+
+    void UpdateSelectable()
     {
         Debug.Log(dish.dish.id.ToString() + " - require(" + DisplayIngredientCounts(ingredientsRequired) + ") | have(" + DisplayIngredientCounts(ingredientsAvailable) + ")");
         MakeSelectable(CanCreate(ingredientsAvailable));
