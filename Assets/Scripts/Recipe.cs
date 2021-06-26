@@ -7,27 +7,17 @@ public class Recipe : MonoBehaviour
     private const int MAX_INGREDIENTS = 3;
     public IngredientBehaviour[] ingredients;
     public DishBehaviour         dish;
-    private Dictionary<Ingredient, int> ingredientCounts = new Dictionary<Ingredient, int>();
+    private Dictionary<Ingredient, int> ingredientsRequired  = new Dictionary<Ingredient, int>();
+    private Dictionary<Ingredient, int> ingredientsAvailable = new Dictionary<Ingredient, int>();
 
-    public void UpdateSelectable(Dictionary<Ingredient, int> availableIngredientCounts)
+    public void IngredientsAvailable(Dictionary<Ingredient, int> availableIngredientCounts)
     {
-        Debug.Log(dish.dish.id.ToString() + " - require(" + DisplayIngredientCounts(ingredientCounts) + ") | have(" + DisplayIngredientCounts(availableIngredientCounts) + ")");
-        MakeSelectable(CanCreate(availableIngredientCounts));
-    }
-
-    private static string DisplayIngredientCounts(Dictionary<Ingredient, int> ingredientCounts)
-    {
-        string output = "{";
-        foreach (KeyValuePair<Ingredient, int> keyValues in ingredientCounts)
-        {
-            output += keyValues.Key.id.ToString() + " : " + keyValues.Value + ", ";
-        }
-        return output.TrimEnd(',', ' ') + "}";
+        ingredientsAvailable = availableIngredientCounts;
     }
 
     private bool CanCreate(in Dictionary<Ingredient, int> availableIngredientCounts)
     {
-        foreach (KeyValuePair<Ingredient, int> entry in ingredientCounts) {
+        foreach (KeyValuePair<Ingredient, int> entry in ingredientsRequired) {
             Ingredient ingredient = entry.Key;
             int countRequired     = entry.Value;
             availableIngredientCounts.TryGetValue(ingredient, out var countAvailable);
@@ -44,21 +34,9 @@ public class Recipe : MonoBehaviour
         SetButtonInteractive(selectable);
     }
 
+    // Start is called before the first frame update
     void Awake()
     {
-        Debug.Log("Awake");
-        foreach (IngredientBehaviour ingredientBehaviour in ingredients)
-        {
-            Ingredient ingredient = ingredientBehaviour.ingredient;
-            ingredientCounts.TryGetValue(ingredient, out var currentCount);
-            ingredientCounts[ingredient] = currentCount + 1;
-        }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        Debug.Log("Start");
         int slot = 0;
 
         // show assigned ingredients
@@ -77,9 +55,30 @@ public class Recipe : MonoBehaviour
             }
         }
 
-        GetDescendant("DishSlot/DishIcon").GetComponent<Image>().sprite = dish.dish.icon;
+        foreach (IngredientBehaviour ingredientBehaviour in ingredients)
+        {
+            Ingredient ingredient = ingredientBehaviour.ingredient;
+            ingredientsRequired.TryGetValue(ingredient, out var currentCount);
+            ingredientsRequired[ingredient] = currentCount + 1;
+        }
 
-        MakeSelectable(false);
+        GetDescendant("DishSlot/DishIcon").GetComponent<Image>().sprite = dish.dish.icon;
+    }
+
+    void OnEnable()
+    {
+        Debug.Log(dish.dish.id.ToString() + " - require(" + DisplayIngredientCounts(ingredientsRequired) + ") | have(" + DisplayIngredientCounts(ingredientsAvailable) + ")");
+        MakeSelectable(CanCreate(ingredientsAvailable));
+    }
+
+    private static string DisplayIngredientCounts(Dictionary<Ingredient, int> ingredientCounts)
+    {
+        string output = "{";
+        foreach (KeyValuePair<Ingredient, int> keyValues in ingredientCounts)
+        {
+            output += keyValues.Key.id.ToString() + " : " + keyValues.Value + ", ";
+        }
+        return output.TrimEnd(',', ' ') + "}";
     }
 
     private void SetButtonInteractive(bool interactable)

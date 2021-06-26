@@ -6831,7 +6831,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1389401676}
         m_TargetAssemblyTypeName: Recipe, Assembly-CSharp
-        m_MethodName: UpdateSelectable
+        m_MethodName: IngredientsAvailable
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6843,7 +6843,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 114518245}
         m_TargetAssemblyTypeName: Recipe, Assembly-CSharp
-        m_MethodName: UpdateSelectable
+        m_MethodName: IngredientsAvailable
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6855,7 +6855,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1893954250}
         m_TargetAssemblyTypeName: Recipe, Assembly-CSharp
-        m_MethodName: UpdateSelectable
+        m_MethodName: IngredientsAvailable
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6867,7 +6867,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 790261086}
         m_TargetAssemblyTypeName: Recipe, Assembly-CSharp
-        m_MethodName: UpdateSelectable
+        m_MethodName: IngredientsAvailable
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6879,7 +6879,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2086517877}
         m_TargetAssemblyTypeName: Recipe, Assembly-CSharp
-        m_MethodName: UpdateSelectable
+        m_MethodName: IngredientsAvailable
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6891,7 +6891,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1008852003}
         m_TargetAssemblyTypeName: Recipe, Assembly-CSharp
-        m_MethodName: UpdateSelectable
+        m_MethodName: IngredientsAvailable
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6903,7 +6903,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 22302746}
         m_TargetAssemblyTypeName: Recipe, Assembly-CSharp
-        m_MethodName: UpdateSelectable
+        m_MethodName: IngredientsAvailable
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6915,7 +6915,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1506506334}
         m_TargetAssemblyTypeName: Recipe, Assembly-CSharp
-        m_MethodName: UpdateSelectable
+        m_MethodName: IngredientsAvailable
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
