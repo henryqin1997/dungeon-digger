@@ -87,7 +87,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dish.icon
       value: 
-      objectReference: {fileID: 4296747569617802584, guid: a074503b4d810ba4ba80d36ccfe4e3b9,
+      objectReference: {fileID: 21300000, guid: 4f66ae750fd6e2447a7f939a74c36f9c,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90c20805db212e945b82992deccdd145, type: 3}

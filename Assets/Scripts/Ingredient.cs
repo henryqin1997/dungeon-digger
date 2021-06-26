@@ -7,22 +7,20 @@ public class Ingredient : IItem
         INVALID_ID,
 
         BEEF,
+        FISH,
         CHICKEN,
         EGG,
-        ELECTRIC_EEL,
 
-        BREAD,
-        BROCCOLI,
-        RICE,
-        TOMATO,
-
-        HOT_SAUCE,
         HOT_PEPPER,
-        MUSHROOM,
+        TEA_BAG,
+        OIL,
+
+        VEGETABLES,
+        RICE,
+        BREAD,
 
         MILK,
         WATER,
-        TEA_BAG
     }
 
     public enum Category {

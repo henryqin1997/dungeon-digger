@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1717591468516225047, guid: 90c20805db212e945b82992deccdd145,
         type: 3}
       propertyPath: m_Name
-      value: Dish-FlamingHotSandwich Variant
+      value: Dish-BreakfastSandwich Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4893183958144091363, guid: 90c20805db212e945b82992deccdd145,
         type: 3}
@@ -70,24 +70,24 @@ PrefabInstance:
     - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
         type: 3}
       propertyPath: id
-      value: 5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
         type: 3}
       propertyPath: sprite
       value: 
-      objectReference: {fileID: 16061199994661181, guid: 95a39150a7221684aaba11a2c35d0239,
+      objectReference: {fileID: 21300000, guid: 2a792ef06ec41254aa42889ffce1da35,
         type: 3}
     - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
         type: 3}
       propertyPath: dish.id
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
         type: 3}
       propertyPath: dish.icon
       value: 
-      objectReference: {fileID: 6987429310763592101, guid: 2a7a5619eeaa5ee4c95a3df7f5abc117,
+      objectReference: {fileID: 5071346009189113193, guid: f831ec3b819a06643b675989576e6e1d,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90c20805db212e945b82992deccdd145, type: 3}

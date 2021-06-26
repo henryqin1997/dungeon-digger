@@ -78,5 +78,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 1dd302eb16f835c4ea5ebe1801cb1890,
         type: 3}
+    - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
+        type: 3}
+      propertyPath: dish.id
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
+        type: 3}
+      propertyPath: dish.icon
+      value: 
+      objectReference: {fileID: -3123638010097980822, guid: d802a94986bb175498b33b85cb5e5216,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90c20805db212e945b82992deccdd145, type: 3}

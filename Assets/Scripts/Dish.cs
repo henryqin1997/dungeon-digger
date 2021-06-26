@@ -10,12 +10,17 @@ public class Dish : IItem
         HOT_TEA,
         MILK_TEA,
         BEEF_AND_BROCCOLI,
-        SHOCKING_UNAGIDON,
+        NIGIRI,
         FLAMING_HOT_SANDWICH,
-        FRENCH_TOAST,
-        SOYSAUCE_EGG,
         FRIED_CHICKEN,
-        BREAKFAST_SANDWICH
+        BREAKFAST_SANDIWCH,
+        FRIED_RICE,
+        DONUT,
+        CHICKEN_SOUP,
+        CASSEROLE,
+        FISH_PORRIDGE,
+        RICE_PUDDING,
+        SEARED_STEAK
     }
 
     public ID     id;

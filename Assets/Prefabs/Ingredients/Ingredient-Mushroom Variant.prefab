@@ -16,12 +16,12 @@ PrefabInstance:
         type: 3}
       propertyPath: ingredient.icon
       value: 
-      objectReference: {fileID: 648038513236502132, guid: f831ec3b819a06643b675989576e6e1d,
+      objectReference: {fileID: 7634809879669098404, guid: f831ec3b819a06643b675989576e6e1d,
         type: 3}
     - target: {fileID: 5435302511689751788, guid: 303812be6cdf8fa4bafafc671bb7d9a9,
         type: 3}
       propertyPath: ingredient.category
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5939669754812548274, guid: 303812be6cdf8fa4bafafc671bb7d9a9,
         type: 3}
