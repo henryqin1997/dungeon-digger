@@ -1698,6 +1698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 383421310}
   cam: {fileID: 519420031}
+  gameover: {fileID: 0}
   moveSpeed: 5
   health: 100
   shield: 50
@@ -2086,19 +2087,19 @@ PrefabInstance:
         type: 3}
       propertyPath: ingredients.Array.data[0]
       value: 
-      objectReference: {fileID: 7762178202121480637, guid: df05032f56528834da5b3a8c462978d3,
+      objectReference: {fileID: 4546417326913017745, guid: 4ef2f819c225b4a41980ebbd7e85b414,
         type: 3}
     - target: {fileID: 3551075290754605152, guid: e542c149a8156b74ba018ecdc7cb2a1a,
         type: 3}
       propertyPath: ingredients.Array.data[1]
       value: 
-      objectReference: {fileID: 267904885152008606, guid: 10e2ee670b01a054ebb82aba44aa8c06,
+      objectReference: {fileID: 6011171814582862796, guid: c32f7a16002ed184e952a4db214a5ec7,
         type: 3}
     - target: {fileID: 3551075290754605152, guid: e542c149a8156b74ba018ecdc7cb2a1a,
         type: 3}
       propertyPath: ingredients.Array.data[2]
       value: 
-      objectReference: {fileID: 650174921266256700, guid: 623aa8491ab12f74abbc361df967e087,
+      objectReference: {fileID: 267904885152008606, guid: 10e2ee670b01a054ebb82aba44aa8c06,
         type: 3}
     - target: {fileID: 4706119564907796919, guid: e542c149a8156b74ba018ecdc7cb2a1a,
         type: 3}
