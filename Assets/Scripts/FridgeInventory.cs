@@ -9,6 +9,7 @@ public class FridgeInventory : MonoBehaviour
     // Start is called before the first frame update
     public void ShowContents(Fridge fridge)
     {
+        Debug.Assert(fridge != null);
         focusedFridge = fridge;
 
         int choice = 0;
@@ -21,6 +22,7 @@ public class FridgeInventory : MonoBehaviour
             choice < maxSlotCount; ++choice)
         {
             var ingredient       = focusedFridge.contents[choice].ingredient;
+            Debug.Assert(ingredient != null);
             var ingredientButton = ingredientChoices.transform.GetChild(choice).gameObject;
             ingredientButton.GetComponent<IngredientButton>().AssignIngredient(ingredient);
         }

@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [System.Serializable]
+public class IngredientAvailableEvent : UnityEvent<Ingredient>
+{
+}
+
+[System.Serializable]
 public class IngredientsUpdatedEvent : UnityEvent<Dictionary<Ingredient, int>>
 {
 }

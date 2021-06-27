@@ -2,9 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-[System.Serializable]
-public class IngredientAvailableEvent :  UnityEvent<Ingredient>
-{}
 
 public class IngredientButton : MonoBehaviour
 {
@@ -13,6 +10,7 @@ public class IngredientButton : MonoBehaviour
 
     public void AssignIngredient(Ingredient assignedIngredient)
     {
+        Debug.Assert(assignedIngredient != null);
         var ingredientIcon = gameObject.transform.GetChild(0).gameObject;
         ingredientIcon.GetComponent<Image>().sprite = assignedIngredient.icon;
         ingredient = new Ingredient(assignedIngredient);
