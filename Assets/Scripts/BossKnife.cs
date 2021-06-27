@@ -2,33 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBullet : MonoBehaviour
+public class BossKnife : MonoBehaviour
 {
-    // Start is called before the first frame update
+   // Start is called before the first frame update
 
     public float speed;
     private Vector3 direction;
 
-    public int damage = 5;
+    public int damage = 10;
+
     void Start()
     {
         // why in start? want the bullet to travel in the straight line 
-        direction = PlayerMovement.instance.transform.position - transform.position;
-        direction.Normalize();
+        direction = transform.right;
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.position += direction * speed * Time.deltaTime;
+        if(!BossController.instance.gameObject.activeInHierarchy) {
+            Destroy(gameObject);
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if(other.tag == "Player") {
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if(collision.gameObject.tag == "Player") {
             PlayerMovement.instance.DecreaseHealth(damage);
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
-        
+            
     }
 
     private void OnBecameInvisible() {

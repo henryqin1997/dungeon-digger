@@ -42,11 +42,12 @@ public class Inventory : MonoBehaviour
         ingredientsUpdatedEvent.Invoke(ingredientCounts);
     }
 
-    public void RemoveIngredients(Ingredient[] ingredients)
+    public void MakeRecipe(Recipe recipe)
     {
-        foreach (var ingredient in ingredients) {
-            RemoveItem(ingredient, ingredientCounts);
+        foreach (var ingredientBehavior in recipe.ingredients) {
+            RemoveItem(ingredientBehavior.ingredient, ingredientCounts);
         }
+        AddDish(recipe.dish.dish);
 
         ingredientsUpdatedEvent.Invoke(ingredientCounts);
     }
