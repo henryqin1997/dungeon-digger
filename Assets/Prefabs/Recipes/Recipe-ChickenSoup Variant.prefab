@@ -16,7 +16,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dish
       value: 
-      objectReference: {fileID: 2032893472575891932, guid: 1e915096a7a104949a56612475c4f729,
+      objectReference: {fileID: 2032893472575891932, guid: d5d066ecf90d23840bbfe5b7b67ea16f,
         type: 3}
     - target: {fileID: 1382250339655274660, guid: c73ab44d21692d944acbeb2ae76e63ff,
         type: 3}
@@ -27,18 +27,18 @@ PrefabInstance:
         type: 3}
       propertyPath: ingredients.Array.data[0]
       value: 
-      objectReference: {fileID: 4546417326913017745, guid: 226da62a5847fa1408c0e448b0f25da5,
+      objectReference: {fileID: 3190771939512487740, guid: 8e114e8e56e397441af126eeaae0e3a3,
         type: 3}
     - target: {fileID: 1382250339655274660, guid: c73ab44d21692d944acbeb2ae76e63ff,
         type: 3}
       propertyPath: ingredients.Array.data[1]
       value: 
-      objectReference: {fileID: 6011171814582862796, guid: c32f7a16002ed184e952a4db214a5ec7,
+      objectReference: {fileID: 3995343183786849362, guid: e24e48088ccfa7f40a15ef7ec667c2b0,
         type: 3}
     - target: {fileID: 4081254409208559598, guid: c73ab44d21692d944acbeb2ae76e63ff,
         type: 3}
       propertyPath: m_Name
-      value: Recipe-BeefAndBroccoli Variant
+      value: Recipe-ChickenSoup Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4081254409208559599, guid: c73ab44d21692d944acbeb2ae76e63ff,
         type: 3}

@@ -16,7 +16,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dish
       value: 
-      objectReference: {fileID: 2032893472575891932, guid: 1e915096a7a104949a56612475c4f729,
+      objectReference: {fileID: 2032893472575891932, guid: c5ebde8dc2f36a84ea4fcbbd7aba2019,
         type: 3}
     - target: {fileID: 1382250339655274660, guid: c73ab44d21692d944acbeb2ae76e63ff,
         type: 3}
@@ -27,18 +27,18 @@ PrefabInstance:
         type: 3}
       propertyPath: ingredients.Array.data[0]
       value: 
-      objectReference: {fileID: 4546417326913017745, guid: 226da62a5847fa1408c0e448b0f25da5,
+      objectReference: {fileID: 3190771939512487740, guid: 8e114e8e56e397441af126eeaae0e3a3,
         type: 3}
     - target: {fileID: 1382250339655274660, guid: c73ab44d21692d944acbeb2ae76e63ff,
         type: 3}
       propertyPath: ingredients.Array.data[1]
       value: 
-      objectReference: {fileID: 6011171814582862796, guid: c32f7a16002ed184e952a4db214a5ec7,
+      objectReference: {fileID: 4093507662722128025, guid: b0eb0ac0e1292fb4695f1e3a1184dad4,
         type: 3}
     - target: {fileID: 4081254409208559598, guid: c73ab44d21692d944acbeb2ae76e63ff,
         type: 3}
       propertyPath: m_Name
-      value: Recipe-BeefAndBroccoli Variant
+      value: Recipe-FriedChicken Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4081254409208559599, guid: c73ab44d21692d944acbeb2ae76e63ff,
         type: 3}

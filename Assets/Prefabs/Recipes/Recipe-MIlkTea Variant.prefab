@@ -16,7 +16,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dish
       value: 
-      objectReference: {fileID: 2032893472575891932, guid: 1e915096a7a104949a56612475c4f729,
+      objectReference: {fileID: 1173026996548575476, guid: 27bd3e4e526352c45b8e0a0a2095b605,
         type: 3}
     - target: {fileID: 1382250339655274660, guid: c73ab44d21692d944acbeb2ae76e63ff,
         type: 3}
@@ -27,18 +27,23 @@ PrefabInstance:
         type: 3}
       propertyPath: ingredients.Array.data[0]
       value: 
-      objectReference: {fileID: 4546417326913017745, guid: 226da62a5847fa1408c0e448b0f25da5,
+      objectReference: {fileID: 2663874548311075044, guid: d9f012aed2ef8474c9050210a037b87b,
         type: 3}
     - target: {fileID: 1382250339655274660, guid: c73ab44d21692d944acbeb2ae76e63ff,
         type: 3}
       propertyPath: ingredients.Array.data[1]
       value: 
-      objectReference: {fileID: 6011171814582862796, guid: c32f7a16002ed184e952a4db214a5ec7,
+      objectReference: {fileID: 308856078995021056, guid: 4416e612f39f2e3469ef2164115cee99,
         type: 3}
     - target: {fileID: 4081254409208559598, guid: c73ab44d21692d944acbeb2ae76e63ff,
         type: 3}
       propertyPath: m_Name
-      value: Recipe-BeefAndBroccoli Variant
+      value: Recipe-MIlkTea Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4081254409208559598, guid: c73ab44d21692d944acbeb2ae76e63ff,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4081254409208559599, guid: c73ab44d21692d944acbeb2ae76e63ff,
         type: 3}
