@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1515437375451629522
+--- !u!1001 &7165639795870382165
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -27,18 +27,23 @@ PrefabInstance:
         type: 3}
       propertyPath: ingredients.Array.data[0]
       value: 
-      objectReference: {fileID: 308856078995021056, guid: 4416e612f39f2e3469ef2164115cee99,
+      objectReference: {fileID: 2663874548311075044, guid: d9f012aed2ef8474c9050210a037b87b,
         type: 3}
     - target: {fileID: 1382250339655274660, guid: c73ab44d21692d944acbeb2ae76e63ff,
         type: 3}
       propertyPath: ingredients.Array.data[1]
       value: 
-      objectReference: {fileID: 2663874548311075044, guid: d9f012aed2ef8474c9050210a037b87b,
+      objectReference: {fileID: 308856078995021056, guid: 4416e612f39f2e3469ef2164115cee99,
         type: 3}
     - target: {fileID: 4081254409208559598, guid: c73ab44d21692d944acbeb2ae76e63ff,
         type: 3}
       propertyPath: m_Name
-      value: Recipe-MilkTea
+      value: Recipe-MIlkTea Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4081254409208559598, guid: c73ab44d21692d944acbeb2ae76e63ff,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4081254409208559599, guid: c73ab44d21692d944acbeb2ae76e63ff,
         type: 3}
