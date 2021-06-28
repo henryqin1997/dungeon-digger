@@ -14,7 +14,7 @@ public class Dish : IItem
         FLAMING_HOT_SANDWICH,
         FRIED_CHICKEN,
         BREAKFAST_SANDIWCH,
-        FRIED_RICE,
+        SPICY_FRIED_RICE,
         DONUT,
         CHICKEN_SOUP,
         CASSEROLE,
