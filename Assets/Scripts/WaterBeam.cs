@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class WaterBeam : MonoBehaviour
 {
-    public int damageToGive = 1;
-    public float destructTime = 1.0f;
+    public static int damageToGive = 10;
+    public static float destructTime = 1.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +43,7 @@ public class WaterBeam : MonoBehaviour
         }
     }
 
-    public void ChangeDamage(int damageChange)
+    public static void ChangeDamage(int damageChange)
     {
         damageToGive += damageChange;
         if (damageToGive < 1)
@@ -52,12 +52,8 @@ public class WaterBeam : MonoBehaviour
         }
     }
 
-    public void ChangeRange(int rangeChange)
+    public static void ChangeRange(int rangeChange)
     {
         destructTime += (rangeChange / 10.0f);
-        if (destructTime < 0.2f)
-        {
-            destructTime = 0.2f;
-        }
     }
 }

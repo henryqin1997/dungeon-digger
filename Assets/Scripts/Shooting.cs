@@ -7,8 +7,8 @@ public class Shooting : MonoBehaviour
     public Transform waterGun;
     public GameObject beamPrefab;
 
-    public int beamForce = 5;
-    private float coolDown = 0.1f;
+    public static int beamForce = 5;
+    public static float coolDown = 0.2f;
     bool canShoot = true;
     // Start is called before the first frame update
     void Start()
@@ -39,12 +39,8 @@ public class Shooting : MonoBehaviour
         rb.AddForce(waterGun.right * beamForce, ForceMode2D.Impulse);
     }
 
-    public void ChangeBulletSpeed(int speedChange)
+    public static void ChangeBulletSpeed(int speedChange)
     {
-        beamForce += speedChange;
-        if (beamForce < 5)
-        {
-            beamForce = 5;
-        }
+        coolDown -= speedChange * 0.02f;
     }
 }

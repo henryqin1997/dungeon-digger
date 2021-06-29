@@ -10,11 +10,9 @@ public class PlayerMovement : MonoBehaviour
     public Camera cam;
     public GameObject gameover;
 
-    public int moveSpeed = 5;
-    public const int MAX_HEALTH = 100;
-    public const int MAX_SHIELD = 50;
-    public int health = MAX_HEALTH;
-    public int shield = MAX_SHIELD;
+    public static int moveSpeed = 10;
+    public static int health = 3;
+    public static int shield = 0;
 
     Vector2 movement;
     Vector2 mousePos;
@@ -55,16 +53,16 @@ public class PlayerMovement : MonoBehaviour
         rb.rotation = rotAngle;
     }
 
-    public void ChangeMoveSpeed(int speedChange)
+    public static void ChangeMoveSpeed(int speedChange)
     {
       moveSpeed += speedChange;
-      if (moveSpeed < 3)
+      if (moveSpeed < 10)
       {
-        moveSpeed = 3;
+        moveSpeed = 10;
       }
     }
 
-    public void DecreaseHealth(int healthDecrease)
+    public static void DecreaseHealth(int healthDecrease)
     {
       if (shield >= healthDecrease)
       {
@@ -77,25 +75,13 @@ public class PlayerMovement : MonoBehaviour
       }
     }
 
-    public void IncreaseHealth(int healthIncrease)
+    public static void IncreaseHealth(int healthIncrease)
     {
-      if ((health + healthIncrease) > MAX_HEALTH)
-      {
-        health = MAX_HEALTH;
-      }
-      else {
-        health += healthIncrease;
-      }
+      health += healthIncrease;
     }
 
-    public void IncreseShield(int shieldIncrease)
+    public static void IncreseShield(int shieldIncrease)
     {
-      if ((shield + shieldIncrease) > MAX_SHIELD)
-      {
-        shield = MAX_SHIELD;
-      }
-      else {
-        shield += shieldIncrease;
-      }
+      shield += shieldIncrease;
     }
 }
