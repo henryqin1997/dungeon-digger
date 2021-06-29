@@ -15,7 +15,7 @@ public class InventorySlot : MonoBehaviour
 
     public void SetSelectable(bool selectable)
     {
-        GetIcon().GetComponent<Button>().interactable = interactable;
+        gameObject.GetComponent<Button>().interactable = selectable;
     }
 
     private void SetFrame(Sprite frame)
@@ -25,12 +25,7 @@ public class InventorySlot : MonoBehaviour
 
     private void SetIcon(Sprite icon)
     {
-        GetIcon().sprite = icon;
-    }
-
-    private GameObject GetIcon()
-    {
-        return GetDescendantComponent<Image>("Icon");
+        GetDescendantComponent<Image>("Icon").sprite = icon;
     }
 
     private void SetCount(int count)
@@ -41,8 +36,13 @@ public class InventorySlot : MonoBehaviour
 
     private T GetDescendantComponent<T>(string path)
     {
+        return GetDescendant(path).GetComponent<T>();
+    }
+
+    private GameObject GetDescendant(string path)
+    {
         Transform transform = gameObject.transform.Find(path);
         Debug.Assert(transform != null);
-        return transform.gameObject.GetComponent<T>();
+        return transform.gameObject;
     }
 }
