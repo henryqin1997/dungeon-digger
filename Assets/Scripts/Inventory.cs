@@ -22,6 +22,11 @@ public class Inventory : MonoBehaviour
 
     public void OnEnable()
     {
+        UpdateSlots();
+    }
+
+    private void UpdateSlots()
+    {
         int slot = 0;
 
         foreach (KeyValuePair<Ingredient, int> entry in ingredientCounts)
@@ -31,7 +36,8 @@ public class Inventory : MonoBehaviour
 
         foreach (KeyValuePair<Dish, int> entry in dishCounts)
         {
-            FillSlot(slot++, entry.Key, entry.Value, true);
+            InventorySlot inventorySlot = FillSlot(slot++, entry.Key, entry.Value, true);
+            inventorySlot.SetSelectCallback(delegate { ConsumeDish(entry.Key); });
         }
 
         for (; slot < gameObject.transform.childCount; ++slot)
@@ -60,6 +66,12 @@ public class Inventory : MonoBehaviour
         ingredientsUpdatedEvent.Invoke(ingredientCounts);
     }
 
+    private void ConsumeDish(Dish dish)
+    {
+        RemoveDish(dish);
+        UpdateSlots();
+    }
+
     public void AddDish(Dish dish)
     {
         AddItem(new Dish(dish), dishCounts);
@@ -83,13 +95,14 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void FillSlot(int slot, IItem item, int count, bool selectable)
+    private InventorySlot FillSlot(int slot, IItem item, int count, bool selectable)
     {
         GameObject child = GetChild(slot);
         InventorySlot inventorySlot = child.GetComponent<InventorySlot>();
         inventorySlot.SetItems(item, count);
         inventorySlot.SetSelectable(selectable);
         child.SetActive(true);
+        return inventorySlot;
     }
 
     private void ClearSlot(int slot)

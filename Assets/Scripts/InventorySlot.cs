@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
     void Start()
     {
-        gameObject.GetComponent<Button>().onClick.AddListener(delegate { Debug.Log("CLICKED");  });
     }
 
     // Update is called once per frame
@@ -20,7 +20,19 @@ public class InventorySlot : MonoBehaviour
 
     public void SetSelectable(bool selectable)
     {
-        gameObject.GetComponent<Button>().interactable = selectable;
+        GetButton().interactable = selectable;
+    }
+
+    public void SetSelectCallback(UnityAction call)
+    {
+        UnityEvent onClick = GetButton().onClick;
+        onClick.RemoveAllListeners();
+        onClick.AddListener(call);
+    }
+
+    private Button GetButton()
+    {
+        return gameObject.GetComponent<Button>();
     }
 
     private void SetFrame(Sprite frame)
