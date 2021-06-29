@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
+    void Start()
+    {
+        gameObject.GetComponent<Button>().onClick.AddListener(delegate { Debug.Log("CLICKED");  });
+    }
+
     // Update is called once per frame
     public void SetItems(IItem item, int count)
     {
