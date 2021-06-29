@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4398172156564268053
+--- !u!1001 &7165639795870382165
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -27,23 +27,18 @@ PrefabInstance:
         type: 3}
       propertyPath: ingredients.Array.data[0]
       value: 
-      objectReference: {fileID: 3995343183786849362, guid: e24e48088ccfa7f40a15ef7ec667c2b0,
+      objectReference: {fileID: 3190771939512487740, guid: 8e114e8e56e397441af126eeaae0e3a3,
         type: 3}
     - target: {fileID: 1382250339655274660, guid: c73ab44d21692d944acbeb2ae76e63ff,
         type: 3}
       propertyPath: ingredients.Array.data[1]
       value: 
-      objectReference: {fileID: 3190771939512487740, guid: 8e114e8e56e397441af126eeaae0e3a3,
+      objectReference: {fileID: 3995343183786849362, guid: e24e48088ccfa7f40a15ef7ec667c2b0,
         type: 3}
-    - target: {fileID: 1382250339655274660, guid: c73ab44d21692d944acbeb2ae76e63ff,
-        type: 3}
-      propertyPath: ingredients.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4081254409208559598, guid: c73ab44d21692d944acbeb2ae76e63ff,
         type: 3}
       propertyPath: m_Name
-      value: Recipe-ChickenSoup
+      value: Recipe-ChickenSoup Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4081254409208559599, guid: c73ab44d21692d944acbeb2ae76e63ff,
         type: 3}
