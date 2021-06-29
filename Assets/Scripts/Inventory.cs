@@ -42,8 +42,11 @@ public class Inventory : MonoBehaviour
 
     public void AddIngredient(Ingredient ingredient)
     {
+        Debug.Assert(ingredient != null);
+
         AddItem(new Ingredient(ingredient), ingredientCounts);
 
+        Debug.Assert(ingredientCounts != null);
         ingredientsUpdatedEvent.Invoke(ingredientCounts);
     }
 
