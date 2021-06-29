@@ -13,6 +13,11 @@ public class InventorySlot : MonoBehaviour
         SetCount(count);
     }
 
+    public void SetSelectable(bool selectable)
+    {
+        GetIcon().GetComponent<Button>().interactable = interactable;
+    }
+
     private void SetFrame(Sprite frame)
     {
         GetDescendantComponent<Image>("Frame").sprite = frame;
@@ -20,7 +25,12 @@ public class InventorySlot : MonoBehaviour
 
     private void SetIcon(Sprite icon)
     {
-        GetDescendantComponent<Image>("Icon").sprite = icon;
+        GetIcon().sprite = icon;
+    }
+
+    private GameObject GetIcon()
+    {
+        return GetDescendantComponent<Image>("Icon");
     }
 
     private void SetCount(int count)

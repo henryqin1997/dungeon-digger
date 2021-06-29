@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 
 [System.Serializable]
@@ -25,13 +26,12 @@ public class Inventory : MonoBehaviour
 
         foreach (KeyValuePair<Ingredient, int> entry in ingredientCounts)
         {
-            Debug.Log("Have " + entry.Value.ToString() + " of " + entry.Key.id.ToString());
-            FillSlot(slot++, entry.Key, entry.Value);
+            FillSlot(slot++, entry.Key, entry.Value, false);
         }
 
         foreach (KeyValuePair<Dish, int> entry in dishCounts)
         {
-            FillSlot(slot++, entry.Key, entry.Value);
+            FillSlot(slot++, entry.Key, entry.Value, true);
         }
 
         for (; slot < gameObject.transform.childCount; ++slot)
@@ -83,10 +83,12 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void FillSlot(int slot, IItem item, int count)
+    private void FillSlot(int slot, IItem item, int count, bool selectable)
     {
         GameObject child = GetChild(slot);
-        child.GetComponent<InventorySlot>().SetItems(item, count);
+        InventorySlot inventorySlot = child.GetComponent<InventorySlot>();
+        inventorySlot.SetItems(item, count);
+        inventorySlot.SetSelectable(selectable);
         child.SetActive(true);
     }
 
