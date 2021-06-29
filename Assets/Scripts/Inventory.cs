@@ -14,11 +14,17 @@ public class IngredientsUpdatedEvent : UnityEvent<Dictionary<Ingredient, int>>
 {
 }
 
+[System.Serializable]
+public class DishConsumedEvent : UnityEvent<Dish>
+{
+}
+
 public class Inventory : MonoBehaviour
 {
     public Dictionary<Ingredient, int>  ingredientCounts        = new Dictionary<Ingredient, int>();
     public Dictionary<Dish, int>        dishCounts              = new Dictionary<Dish, int>();
     public IngredientsUpdatedEvent      ingredientsUpdatedEvent = new IngredientsUpdatedEvent();
+    public DishConsumedEvent            dishConsumedEvent       = new DishConsumedEvent();
 
     public void OnEnable()
     {
@@ -70,6 +76,7 @@ public class Inventory : MonoBehaviour
     {
         RemoveDish(dish);
         UpdateSlots();
+        dishConsumedEvent.Invoke(dish);
     }
 
     public void AddDish(Dish dish)
