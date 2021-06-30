@@ -61,14 +61,14 @@ public class EnemyBody : MonoBehaviour
             transform.localScale = Vector3.one;
 
         }
-        if (moveDirection != Vector3.zero)
-        {
-            anim.SetBool("isMoving", true);
-        }
-        else
-        {
-            anim.SetBool("isMoving", false);
-        }
+        // if (moveDirection != Vector3.zero)
+        // {
+        //     anim.SetBool("isMoving", true);
+        // }
+        // else
+        // {
+        //     anim.SetBool("isMoving", false);
+        // }
     }
 
 
