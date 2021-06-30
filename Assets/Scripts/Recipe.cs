@@ -12,13 +12,14 @@ public class Recipe : MonoBehaviour
 
     public void UpdateAvailableIngredients(Dictionary<Ingredient, int> availableIngredientCounts)
     {
+        Debug.Log(DisplayIngredientCounts(availableIngredientCounts));
         availableIngredients = availableIngredientCounts;
         UpdateSelectable();
     }
 
     public void UpdateSelectable()
     {
-        Debug.Log(dish.dish.id.ToString() + " - require(" + DisplayIngredientCounts(requiredIngredients) + ") | have(" + DisplayIngredientCounts(availableIngredients) + ")");
+        //Debug.Log(dish.dish.id.ToString() + " - require(" + DisplayIngredientCounts(requiredIngredients) + ") | have(" + DisplayIngredientCounts(availableIngredients) + ")");
         MakeSelectable(CanCreate(availableIngredients));
     }
 

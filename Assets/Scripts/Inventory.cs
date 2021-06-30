@@ -25,18 +25,6 @@ public class Inventory : MonoBehaviour
     public Dictionary<Dish, int>        dishCounts              = new Dictionary<Dish, int>();
     public IngredientsUpdatedEvent      ingredientsUpdatedEvent = new IngredientsUpdatedEvent();
     public DishConsumedEvent            dishConsumedEvent       = new DishConsumedEvent();
-    public Recipe[]                     recipes;
-
-    void Start()
-    {
-        Debug.Assert(recipes != null);
-
-        ingredientsUpdatedEvent.RemoveAllListeners();
-        foreach (Recipe recipe in recipes)
-        {
-            ingredientsUpdatedEvent.AddListener(recipe.UpdateAvailableIngredients);
-        }
-    }
 
     public void OnEnable()
     {
