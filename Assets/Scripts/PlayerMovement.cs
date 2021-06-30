@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
       //UIController.instance.healthText.text = health.ToString() + " / " + maxHealth.ToString();
     }
 
-    public static void IncreseShield(int shieldIncrease)
+    public static void IncreaseShield(int shieldIncrease)
     {
       shield += shieldIncrease;
     }

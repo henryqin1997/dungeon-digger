@@ -39,7 +39,7 @@ public class Shooting : MonoBehaviour
         rb.AddForce(waterGun.right * beamForce, ForceMode2D.Impulse);
     }
 
-    public static void ChangeBulletSpeed(int speedChange)
+    public static void ChangeBulletCooldown(int speedChange)
     {
         coolDown -= speedChange * 0.02f;
     }
