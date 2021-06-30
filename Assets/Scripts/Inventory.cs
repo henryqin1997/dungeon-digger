@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 
 [System.Serializable]
@@ -13,25 +14,36 @@ public class IngredientsUpdatedEvent : UnityEvent<Dictionary<Ingredient, int>>
 {
 }
 
+[System.Serializable]
+public class DishConsumedEvent : UnityEvent<Dish>
+{
+}
+
 public class Inventory : MonoBehaviour
 {
     public Dictionary<Ingredient, int>  ingredientCounts        = new Dictionary<Ingredient, int>();
     public Dictionary<Dish, int>        dishCounts              = new Dictionary<Dish, int>();
     public IngredientsUpdatedEvent      ingredientsUpdatedEvent = new IngredientsUpdatedEvent();
+    public DishConsumedEvent            dishConsumedEvent       = new DishConsumedEvent();
 
     public void OnEnable()
+    {
+        UpdateSlots();
+    }
+
+    private void UpdateSlots()
     {
         int slot = 0;
 
         foreach (KeyValuePair<Ingredient, int> entry in ingredientCounts)
         {
-            Debug.Log("Have " + entry.Value.ToString() + " of " + entry.Key.id.ToString());
-            FillSlot(slot++, entry.Key, entry.Value);
+            FillSlot(slot++, entry.Key, entry.Value, false);
         }
 
         foreach (KeyValuePair<Dish, int> entry in dishCounts)
         {
-            FillSlot(slot++, entry.Key, entry.Value);
+            InventorySlot inventorySlot = FillSlot(slot++, entry.Key, entry.Value, true);
+            inventorySlot.SetSelectCallback(delegate { ConsumeDish(entry.Key); });
         }
 
         for (; slot < gameObject.transform.childCount; ++slot)
@@ -42,8 +54,11 @@ public class Inventory : MonoBehaviour
 
     public void AddIngredient(Ingredient ingredient)
     {
+        Debug.Assert(ingredient != null);
+
         AddItem(new Ingredient(ingredient), ingredientCounts);
 
+        Debug.Assert(ingredientCounts != null);
         ingredientsUpdatedEvent.Invoke(ingredientCounts);
     }
 
@@ -55,6 +70,13 @@ public class Inventory : MonoBehaviour
         AddDish(recipe.dish.dish);
 
         ingredientsUpdatedEvent.Invoke(ingredientCounts);
+    }
+
+    private void ConsumeDish(Dish dish)
+    {
+        RemoveDish(dish);
+        UpdateSlots();
+        dishConsumedEvent.Invoke(dish);
     }
 
     public void AddDish(Dish dish)
@@ -80,11 +102,14 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void FillSlot(int slot, IItem item, int count)
+    private InventorySlot FillSlot(int slot, IItem item, int count, bool selectable)
     {
         GameObject child = GetChild(slot);
-        child.GetComponent<InventorySlot>().SetItems(item, count);
+        InventorySlot inventorySlot = child.GetComponent<InventorySlot>();
+        inventorySlot.SetItems(item, count);
+        inventorySlot.SetSelectable(selectable);
         child.SetActive(true);
+        return inventorySlot;
     }
 
     private void ClearSlot(int slot)

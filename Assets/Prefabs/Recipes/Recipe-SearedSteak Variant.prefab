@@ -16,7 +16,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dish
       value: 
-      objectReference: {fileID: 2032893472575891932, guid: 1e915096a7a104949a56612475c4f729,
+      objectReference: {fileID: 2032893472575891932, guid: 0ca5c9d2ea50ab647bbc529b48e089e3,
         type: 3}
     - target: {fileID: 1382250339655274660, guid: c73ab44d21692d944acbeb2ae76e63ff,
         type: 3}
@@ -33,12 +33,12 @@ PrefabInstance:
         type: 3}
       propertyPath: ingredients.Array.data[1]
       value: 
-      objectReference: {fileID: 6011171814582862796, guid: c32f7a16002ed184e952a4db214a5ec7,
+      objectReference: {fileID: 4093507662722128025, guid: b0eb0ac0e1292fb4695f1e3a1184dad4,
         type: 3}
     - target: {fileID: 4081254409208559598, guid: c73ab44d21692d944acbeb2ae76e63ff,
         type: 3}
       propertyPath: m_Name
-      value: Recipe-BeefAndBroccoli Variant
+      value: Recipe-SearedSteak Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4081254409208559599, guid: c73ab44d21692d944acbeb2ae76e63ff,
         type: 3}
@@ -162,12 +162,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8298115074883571588, guid: c73ab44d21692d944acbeb2ae76e63ff,
         type: 3}
-    - target: {fileID: 3325854561902933169, guid: 82b5936a41f18074fbb17c37da0b6ed8,
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8968875421918962615, guid: c73ab44d21692d944acbeb2ae76e63ff,
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8968875421918962615, guid: c73ab44d21692d944acbeb2ae76e63ff,
         type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c73ab44d21692d944acbeb2ae76e63ff, type: 3}
