@@ -6,6 +6,7 @@ using UnityEngine.Analytics;
 public class RoomsEnteredTracker : MonoBehaviour
 {
     public static int rooms_entered = 0;
+    public static int unique_rooms_entered = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,10 @@ public class RoomsEnteredTracker : MonoBehaviour
 
     public static void SendRoomsEntered()
     {
-        Analytics.CustomEvent("Rooms Entered Before Dead");
+        Analytics.CustomEvent("roomsEntered", new Dictionary<string, object>
+        {
+            { "totalRoomsEntered", rooms_entered },
+            { "uniqueRoomsEntered", unique_rooms_entered }
+        });
     }
 }
