@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1141503931623603883}
   - component: {fileID: 1141503931623603882}
   - component: {fileID: 1141503931623603885}
-  - component: {fileID: 1141503931623603881}
+  - component: {fileID: 3514641746490121623}
   m_Layer: 7
   m_Name: Bodyguard
   m_TagString: Enemy
@@ -97,18 +97,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theRB: {fileID: 1141503931623603883}
   moveSpeed: 5
-  rangeToChasePlayer: 5
+  rangeToChasePlayer: 7
   moveDirection: {x: 0, y: 0, z: 0}
   shouldAttack: 1
   health: 10
   shield: 0
   attackArm: {fileID: 1141503931909637575}
-  anim: {fileID: 1141503931623603881}
+  anim: {fileID: 0}
   bulletToFire: {fileID: 2539136066988112349, guid: d2f43f9f06a89418eb2155c1533236d6,
     type: 3}
   firePoint: {fileID: 1141503931916477882}
   fireRate: 0.5
---- !u!95 &1141503931623603881
+--- !u!95 &3514641746490121623
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -118,7 +118,7 @@ Animator:
   m_GameObject: {fileID: 1141503931623603884}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f022ac47c8d334d78a113dbad23735e1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1d2f373f608024e6da2d91742a9ccf90, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

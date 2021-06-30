@@ -10,7 +10,7 @@ public class EnemyBody : MonoBehaviour
     public float rangeToChasePlayer;
     public Vector3 moveDirection; // the player direction relative to the enemy
     public bool shouldAttack = true;
-    public int health = 10;
+    public int health = 1;
     public int shield = 0;
     public Transform attackArm;
     protected Camera theCam;
@@ -30,8 +30,12 @@ public class EnemyBody : MonoBehaviour
         {
             return;
         }
+        
+
+        bool isPlayerInRange = Vector3.Distance(transform.position, PlayerMovement.instance.transform.position) < rangeToChasePlayer;
+        shouldAttack = isPlayerInRange;
         // control if the enemy should chase the player
-        if (Vector3.Distance(transform.position, PlayerMovement.instance.transform.position) < rangeToChasePlayer)
+        if (isPlayerInRange)
         {
             moveDirection = PlayerMovement.instance.transform.position - transform.position;
 

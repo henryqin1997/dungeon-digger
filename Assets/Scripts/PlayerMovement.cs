@@ -11,8 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject gameover;
 
     public static int moveSpeed = 10;
-    public static int health = 3;
-    public static int maxHealth = 3;
+    public static int health = 10;
+    public static int maxHealth = 10;
     public static int shield = 0;
 
     Vector2 movement;
@@ -77,6 +77,9 @@ public class PlayerMovement : MonoBehaviour
       {
         shield = 0;
         health -= (healthDecrease - shield);
+        if(health < 0) {
+          health = 0;
+        }
       }
       UIController.instance.healthSlider.value = health;
       UIController.instance.healthText.text = health.ToString() + " / " + maxHealth.ToString();

@@ -108,7 +108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2442736786248981603}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7374379804276713159}
@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 7374379804276713156}
   - component: {fileID: 7374379804276713157}
   - component: {fileID: 7374379804276713154}
-  - component: {fileID: 7374379804276713158}
+  - component: {fileID: 5480493694248696080}
   m_Layer: 7
   m_Name: Room Service
   m_TagString: Enemy
@@ -292,18 +292,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theRB: {fileID: 7374379804276713157}
   moveSpeed: 5
-  rangeToChasePlayer: 10
+  rangeToChasePlayer: 6
   moveDirection: {x: 0, y: 0, z: 0}
   shouldAttack: 1
   health: 5
-  shield: 10
+  shield: 2
   attackArm: {fileID: 2442736785999516940}
-  anim: {fileID: 7374379804276713158}
+  anim: {fileID: 0}
   bulletToFire: {fileID: 6407543390552748783, guid: 275c2e263a6524bfd9c14557649d88a4,
     type: 3}
   firePoint: {fileID: 2442736787231288048}
   fireRate: 1
---- !u!95 &7374379804276713158
+--- !u!95 &5480493694248696080
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0

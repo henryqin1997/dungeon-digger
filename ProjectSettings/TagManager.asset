@@ -54,3 +54,9 @@ TagManager:
   - name: Bullets
     uniqueID: 4104609237
     locked: 0
+  - name: map
+    uniqueID: 2269648499
+    locked: 0
+  - name: door
+    uniqueID: 58959089
+    locked: 0
