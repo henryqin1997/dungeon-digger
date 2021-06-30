@@ -54,6 +54,7 @@ public class Room : MonoBehaviour
         if (other.tag == "Player")
         {
             CameraController.instance.ChangeTarget(transform);
+            RoomsEnteredTracker.rooms_entered++;
             if (closeWhenEntered)
             {
                 foreach (GameObject door in doors)

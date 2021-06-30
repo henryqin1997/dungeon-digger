@@ -51,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
               { "survive time", Time.time }
           });
           gameover.SetActive(true);
+          RoomsEnteredTracker.SendRoomsEntered();
         }
     }
 
