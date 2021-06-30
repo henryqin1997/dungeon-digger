@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class ToastMessage : MonoBehaviour
 {
-    public Text txt;
-
     public void DisplayDishConsumed(Dish dish)
     {
         ShowToast("Dish \"" + dish.id.ToString() + "\" was consumed.", 2);
@@ -17,9 +15,11 @@ public class ToastMessage : MonoBehaviour
         StartCoroutine(ShowToastCOR(text, duration));
     }
 
-    private IEnumerator ShowToastCOR(string text,
-        int duration)
+    private IEnumerator ShowToastCOR(string text, int duration)
     {
+        Text txt = gameObject.GetComponent<Text>();
+        Debug.Assert(txt != null);
+
         Color orginalColor = txt.color;
 
         txt.text = text;
@@ -58,7 +58,7 @@ public class ToastMessage : MonoBehaviour
             b = 0f;
         }
 
-        Color currentColor = Color.clear;
+        Color currentColor = Color.white;
         float counter = 0f;
 
         while (counter < duration)
