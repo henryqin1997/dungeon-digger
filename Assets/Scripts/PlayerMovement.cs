@@ -41,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
         {
           Destroy(gameObject);
           gameover.SetActive(true);
+          RoomsEnteredTracker.SendRoomsEntered();
         }
     }
 
