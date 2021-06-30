@@ -26,18 +26,17 @@ public class WaterBeam : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy") {
+        if (collision.gameObject.tag == "Enemy")
+        {
             collision.gameObject.GetComponent<EnemyBody>().DamageEnemy(damageToGive);
             Destroy(gameObject);
         }
-
-        if(collision.gameObject.tag == "Boss") {
+        else if (collision.gameObject.tag == "Boss")
+        {
             BossController.instance.TakeDamage(damageToGive);
             Destroy(gameObject);
         }
-
-
-        if (collision.gameObject.tag != "Beam")
+        else if (collision.gameObject.tag != "Beam")
         {
             Destroy(gameObject);
         }

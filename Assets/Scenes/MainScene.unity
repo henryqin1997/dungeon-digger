@@ -2395,10 +2395,12 @@ PrefabInstance:
       objectReference: {fileID: 8952578808578880840}
     - target: {fileID: 563300573945534797, guid: e542c149a8156b74ba018ecdc7cb2a1a,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 563300573945534797, guid: e542c149a8156b74ba018ecdc7cb2a1a,
+    - target: {fileID: 8420424355161534294, guid: e542c149a8156b74ba018ecdc7cb2a1a,
+        type: 3}
+      propertyPath: ingredients.Array.data[0]
+      value: 
+      objectReference: {fileID: 4546417326913017745, guid: 226da62a5847fa1408c0e448b0f25da5,
+>>>>>>> ed9001bd (Add ToastMessage)
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MakeRecipe
