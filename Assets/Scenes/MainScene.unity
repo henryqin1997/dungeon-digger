@@ -6514,6 +6514,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[2].Array.data[7].x
       value: -14.399971
+      propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[1].Array.data[0].Y
+      value: -64000000
       objectReference: {fileID: 0}
     - target: {fileID: 3668250744029959734, guid: b496ff2ee4ace42a2935865556b2d991,
         type: 3}
@@ -6969,6 +6971,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[22].Y
       value: -16000000
+      value: 64000000
       objectReference: {fileID: 0}
     - target: {fileID: 3668250744029959734, guid: b496ff2ee4ace42a2935865556b2d991,
         type: 3}

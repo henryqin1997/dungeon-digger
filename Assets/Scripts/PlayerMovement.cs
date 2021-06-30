@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if ENABLE_CLOUD_SERVICES_ANALYTICS
+using UnityEngine.Analytics;
+#endif
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -43,6 +46,10 @@ public class PlayerMovement : MonoBehaviour
         if (health <= 0)
         {
           Destroy(gameObject);
+          Analytics.CustomEvent("gameOver", new Dictionary<string, object>
+          {
+              { "survive time", Time.time }
+          });
           gameover.SetActive(true);
         }
     }
