@@ -21,9 +21,9 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
 
-      //UIController.instance.healthSlider.maxValue = maxHealth;
-      //UIController.instance.healthSlider.value = health;
-      //UIController.instance.healthText.text = health.ToString() + " / " + maxHealth.ToString();
+      UIController.instance.healthSlider.maxValue = maxHealth;
+      UIController.instance.healthSlider.value = health;
+      UIController.instance.healthText.text = health.ToString() + " / " + maxHealth.ToString();
         
     }
 
@@ -78,15 +78,15 @@ public class PlayerMovement : MonoBehaviour
         shield = 0;
         health -= (healthDecrease - shield);
       }
-      //UIController.instance.healthSlider.value = health;
-      //UIController.instance.healthText.text = health.ToString() + " / " + maxHealth.ToString();
+      UIController.instance.healthSlider.value = health;
+      UIController.instance.healthText.text = health.ToString() + " / " + maxHealth.ToString();
     }
 
     public static void IncreaseHealth(int healthIncrease)
     {
       health += healthIncrease;
-      //UIController.instance.healthSlider.value = health;
-      //UIController.instance.healthText.text = health.ToString() + " / " + maxHealth.ToString();
+      UIController.instance.healthSlider.value = health;
+      UIController.instance.healthText.text = health.ToString() + " / " + maxHealth.ToString();
     }
 
     public static void IncreseShield(int shieldIncrease)
