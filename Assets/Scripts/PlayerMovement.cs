@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     public static int moveSpeed = 10;
     public static int health = 3;
+    public static int maxHealth = 3;
     public static int shield = 0;
 
     Vector2 movement;
@@ -19,6 +20,10 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+      UIController.instance.healthSlider.maxValue = maxHealth;
+      UIController.instance.healthSlider.value = health;
+      UIController.instance.healthText.text = health.ToString() + " / " + maxHealth.ToString();
         
     }
 
@@ -73,11 +78,15 @@ public class PlayerMovement : MonoBehaviour
         shield = 0;
         health -= (healthDecrease - shield);
       }
+      UIController.instance.healthSlider.value = health;
+      UIController.instance.healthText.text = health.ToString() + " / " + maxHealth.ToString();
     }
 
     public static void IncreaseHealth(int healthIncrease)
     {
       health += healthIncrease;
+      UIController.instance.healthSlider.value = health;
+      UIController.instance.healthText.text = health.ToString() + " / " + maxHealth.ToString();
     }
 
     public static void IncreseShield(int shieldIncrease)
