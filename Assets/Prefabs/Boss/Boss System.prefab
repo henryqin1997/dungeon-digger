@@ -251,7 +251,7 @@ MonoBehaviour:
     - {fileID: 8226493050643474378}
     - {fileID: 8226493049193934735}
   theRB: {fileID: 8226493048971720903}
-  currentHealth: 200
+  currentHealth: 30
   deathEffect: {fileID: 0}
   levelExit: {fileID: 0}
   sequences:
@@ -281,7 +281,7 @@ MonoBehaviour:
       - {fileID: 8226493050237108145}
       - {fileID: 8226493050643474378}
       - {fileID: 8226493049193934735}
-    endSequenceHealth: 100
+    endSequenceHealth: 15
   - actions:
     - actionLength: 2
       shouldMove: 1

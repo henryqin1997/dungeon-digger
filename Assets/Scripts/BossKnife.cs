@@ -10,11 +10,13 @@ public class BossKnife : MonoBehaviour
     private Vector3 direction;
 
     public int damage = 10;
+    public static float destructTime = 1.0f;
 
     void Start()
     {
         // why in start? want the bullet to travel in the straight line 
         direction = transform.right;
+        Destroy (gameObject, destructTime);
     }
 
     // Update is called once per frame
@@ -30,7 +32,7 @@ public class BossKnife : MonoBehaviour
     {
 
         if(collision.gameObject.tag == "Player") {
-            PlayerMovement.instance.DecreaseHealth(damage);
+            PlayerMovement.DecreaseHealth(damage);
             Destroy(gameObject);
         }
             

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WaterBeam : MonoBehaviour
 {
-    public static int damageToGive = 10;
+    public static int damageToGive = 1;
     public static float destructTime = 1.0f;
     // Start is called before the first frame update
     void Start()
@@ -27,7 +27,7 @@ public class WaterBeam : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy") {
-            collision.gameObject.GetComponent<EnemyControler>().DamageEnemy(damageToGive);
+            collision.gameObject.GetComponent<EnemyBody>().DamageEnemy(damageToGive);
             Destroy(gameObject);
         }
 
