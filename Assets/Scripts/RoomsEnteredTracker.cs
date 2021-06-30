@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
-public class Room : MonoBehaviour
+public class RoomsEnteredTracker : MonoBehaviour
 {
+    public static int rooms_entered = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,13 +15,11 @@ public class Room : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    private void OnTriggerEnter2D(Collider2D other){
-    	if (other.tag == "Player"){
-    		CameraController.instance.ChangeTarget(transform);
-            RoomsEnteredTracker.rooms_entered++;
-    	}
+    public static void SendRoomsEntered()
+    {
+        Analytics.CustomEvent("Rooms Entered Before Dead");
     }
 }
