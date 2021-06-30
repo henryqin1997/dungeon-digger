@@ -16,7 +16,8 @@ public class RoomsEnteredTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log("rooms" + rooms_entered);
+        Debug.Log("unique" + unique_rooms_entered);
     }
 
     public static void SendRoomsEntered()
