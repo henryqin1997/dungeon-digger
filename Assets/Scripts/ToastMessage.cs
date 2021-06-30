@@ -7,7 +7,12 @@ public class ToastMessage : MonoBehaviour
 {
     public void DisplayDishConsumed(Dish dish)
     {
-        ShowToast("Dish \"" + dish.id.ToString() + "\" was consumed.", 2);
+        DisplayText("Dish \"" + dish.id.ToString() + "\" was consumed.");
+    }
+
+    public void DisplayText(string text)
+    {
+        ShowToast(text, 2);
     }
 
     public void ShowToast(string text, int duration)
