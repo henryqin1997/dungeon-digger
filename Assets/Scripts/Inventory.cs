@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.Analytics;
 
 [System.Serializable]
 public class IngredientAvailableEvent : UnityEvent<Ingredient>
@@ -26,9 +27,22 @@ public class Inventory : MonoBehaviour
     public IngredientsUpdatedEvent      ingredientsUpdatedEvent = new IngredientsUpdatedEvent();
     public DishConsumedEvent            dishConsumedEvent       = new DishConsumedEvent();
 
+    private Dictionary<string, int> ingredientsUsed = new Dictionary<string, int>();
+    private const string REPORT_INGREDIENTS_USED_EVENT = "IngredientsUsed";
+
     public void OnEnable()
     {
         UpdateSlots();
+    }
+
+    public void OnGameOver()
+    {
+        Dictionary<string, object> payload = new Dictionary<string, object>();
+        foreach (KeyValuePair<string, int> entry in ingredientsUsed)
+        {
+            payload[entry.Key] = (object) entry.Value;
+        }
+
     }
 
     private void UpdateSlots()

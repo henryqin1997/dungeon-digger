@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     
     public Rigidbody2D rb;
     public Camera cam;
-    public GameObject gameover;
+    public GameOverBehaviour gameover;
 
     public static int moveSpeed = 10;
     public static int health = 10;
@@ -46,12 +46,7 @@ public class PlayerMovement : MonoBehaviour
         if (health <= 0)
         {
           Destroy(gameObject);
-          Analytics.CustomEvent("gameOver", new Dictionary<string, object>
-          {
-              { "survive time", Time.time }
-          });
-          gameover.SetActive(true);
-          RoomsEnteredTracker.SendRoomsEntered();
+          gameover.GameOver();
         }
     }
 
