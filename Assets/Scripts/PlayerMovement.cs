@@ -45,8 +45,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (health <= 0)
         {
-          Destroy(gameObject);
-          gameover.GameOver();
+            health = 0;
+            Destroy(gameObject);
+            gameover.GameOver();
         }
     }
 
@@ -59,6 +60,18 @@ public class PlayerMovement : MonoBehaviour
         Vector2 lookDir = mousePos - rb.position;
         float rotAngle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         rb.rotation = rotAngle;
+    }
+
+    public void OnGameOver()
+    {
+#if ENABLE_CLOUD_SERVICES_ANALYTICS
+        Analytics.CustomEvent(
+            "RemainingHealth",
+            new Dictionary<string, object> {
+                { "HP",  (object) health }
+            }
+        );
+#endif
     }
 
     public static void ChangeMoveSpeed(int speedChange)

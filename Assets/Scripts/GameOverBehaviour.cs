@@ -13,7 +13,8 @@ public class GameOverBehaviour : MonoBehaviour
     {
         Analytics.CustomEvent("gameOver", new Dictionary<string, object>
           {
-              { "survive time", Time.time }
+              { "survive time", Time.time },
+              { "Current room", Room.instance.currentroom }
           });
 
         gameObject.SetActive(true);
