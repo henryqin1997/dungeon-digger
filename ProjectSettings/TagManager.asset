@@ -48,6 +48,12 @@ TagManager:
   - name: MenuLayer
     uniqueID: 318622433
     locked: 0
+  - name: Instruction
+    uniqueID: 3866902717
+    locked: 0
+  - name: player
+    uniqueID: 4057234095
+    locked: 0
   - name: enemy
     uniqueID: 472204485
     locked: 0
