@@ -27,8 +27,14 @@ public class Inventory : MonoBehaviour
     public IngredientsUpdatedEvent      ingredientsUpdatedEvent = new IngredientsUpdatedEvent();
     public DishConsumedEvent            dishConsumedEvent       = new DishConsumedEvent();
 
-    private Dictionary<string, int> ingredientsUsed = new Dictionary<string, int>();
-    private const string REPORT_INGREDIENTS_USED_EVENT = "IngredientsUsed";
+    private Dictionary<string, int> ingredientsGathered                    = new Dictionary<string, int>();
+    private const string            REPORT_INGREDIENTS_GATHERED_EVENT_NAME = "gameOver-ingredients-gathered";
+    private Dictionary<string, int> ingredientsUsed                        = new Dictionary<string, int>();
+    private const string            REPORT_INGREDIENTS_USED_EVENT_NAME     = "gameOver-ingredients-used";
+    private Dictionary<string, int> dishesMade                             = new Dictionary<string, int>();
+    private const string            REPORT_DISHES_MADE_EVENT_NAME          = "gameOver-dishes-made";
+    private Dictionary<string, int> dishesConsumed                         = new Dictionary<string, int>();
+    private const string            REPORT_DISHES_CONSUMED_EVENT_NAME      = "gameOver-dishes-consumed";
 
     public void OnEnable()
     {
@@ -37,12 +43,20 @@ public class Inventory : MonoBehaviour
 
     public void OnGameOver()
     {
+        ReportCounts(REPORT_INGREDIENTS_GATHERED_EVENT_NAME, ingredientsGathered);
+        ReportCounts(REPORT_INGREDIENTS_USED_EVENT_NAME,     ingredientsUsed);
+        ReportCounts(REPORT_DISHES_MADE_EVENT_NAME,          dishesMade);
+        ReportCounts(REPORT_DISHES_CONSUMED_EVENT_NAME,      dishesConsumed);
+    }
+
+    private static void ReportCounts(string eventName, Dictionary<string, int> counts)
+    {
         Dictionary<string, object> payload = new Dictionary<string, object>();
-        foreach (KeyValuePair<string, int> entry in ingredientsUsed)
+        foreach (KeyValuePair<string, int> entry in counts)
         {
             payload[entry.Key] = (object) entry.Value;
         }
-
+        Analytics.CustomEvent(eventName, payload);
     }
 
     private void UpdateSlots()
@@ -71,6 +85,7 @@ public class Inventory : MonoBehaviour
         Debug.Assert(ingredient != null);
 
         AddItem(new Ingredient(ingredient), ingredientCounts);
+        AddItem(ingredient.id.ToString(),   ingredientsGathered);
 
         Debug.Assert(ingredientCounts != null);
         ingredientsUpdatedEvent.Invoke(ingredientCounts);
@@ -78,10 +93,16 @@ public class Inventory : MonoBehaviour
 
     public void MakeRecipe(Recipe recipe)
     {
+        Debug.Assert(recipe != null);
+
         foreach (var ingredientBehavior in recipe.ingredients) {
-            RemoveItem(ingredientBehavior.ingredient, ingredientCounts);
+            Ingredient ingredient = ingredientBehavior.ingredient;
+            RemoveItem(ingredient, ingredientCounts);
+            AddItem(  ingredient.id.ToString(), ingredientsUsed);
         }
-        AddDish(recipe.dish.dish);
+        Dish dish = recipe.dish.dish;
+        AddDish(dish);
+        AddItem(dish.id.ToString(), dishesMade);
 
         ingredientsUpdatedEvent.Invoke(ingredientCounts);
     }
@@ -89,6 +110,7 @@ public class Inventory : MonoBehaviour
     private void ConsumeDish(Dish dish)
     {
         RemoveDish(dish);
+        AddItem(dish.id.ToString(), dishesConsumed);
         UpdateSlots();
         dishConsumedEvent.Invoke(dish);
     }
