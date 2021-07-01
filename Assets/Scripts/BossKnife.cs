@@ -9,8 +9,8 @@ public class BossKnife : MonoBehaviour
     public float speed;
     private Vector3 direction;
 
-    public int damage = 10;
-    public static float destructTime = 1.0f;
+    public int damage = 3;
+    public static float destructTime = 1.75f;
 
     void Start()
     {

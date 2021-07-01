@@ -219,8 +219,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theRB: {fileID: 6502612665638488123}
-  moveSpeed: 6
-  rangeToChasePlayer: 10
+  moveSpeed: 5
+  rangeToChasePlayer: 28
   moveDirection: {x: 0, y: 0, z: 0}
   shouldAttack: 1
   health: 5
