@@ -3731,6 +3731,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room0
       objectReference: {fileID: 0}
+    - target: {fileID: 7985408047179220436, guid: ea1bd30f938084c7bb7b257a8de4d3e5,
+        type: 3}
+      propertyPath: roomEnteredEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985408047179220436, guid: ea1bd30f938084c7bb7b257a8de4d3e5,
+        type: 3}
+      propertyPath: roomEnteredEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985408047179220436, guid: ea1bd30f938084c7bb7b257a8de4d3e5,
+        type: 3}
+      propertyPath: roomEnteredEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 383421316}
+    - target: {fileID: 7985408047179220436, guid: ea1bd30f938084c7bb7b257a8de4d3e5,
+        type: 3}
+      propertyPath: roomEnteredEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985408047179220436, guid: ea1bd30f938084c7bb7b257a8de4d3e5,
+        type: 3}
+      propertyPath: roomEnteredEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnRoomEnter
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985408047179220436, guid: ea1bd30f938084c7bb7b257a8de4d3e5,
+        type: 3}
+      propertyPath: roomEnteredEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RoomsEnteredTracker, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985408047179220436, guid: ea1bd30f938084c7bb7b257a8de4d3e5,
+        type: 3}
+      propertyPath: roomEnteredEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea1bd30f938084c7bb7b257a8de4d3e5, type: 3}
 --- !u!1001 &375581524
