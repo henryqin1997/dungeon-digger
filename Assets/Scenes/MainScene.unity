@@ -4201,7 +4201,7 @@ PrefabInstance:
     - target: {fileID: 3814974127100039304, guid: 6851b752d52c6db479f24d59ef8c6311,
         type: 3}
       propertyPath: gameOverEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3814974127100039304, guid: 6851b752d52c6db479f24d59ef8c6311,
         type: 3}
@@ -4210,8 +4210,58 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3814974127100039304, guid: 6851b752d52c6db479f24d59ef8c6311,
         type: 3}
+      propertyPath: gameOverEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814974127100039304, guid: 6851b752d52c6db479f24d59ef8c6311,
+        type: 3}
+      propertyPath: gameOverEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8952578808578880840}
+    - target: {fileID: 3814974127100039304, guid: 6851b752d52c6db479f24d59ef8c6311,
+        type: 3}
+      propertyPath: gameOverEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 27659762}
+    - target: {fileID: 3814974127100039304, guid: 6851b752d52c6db479f24d59ef8c6311,
+        type: 3}
       propertyPath: gameOverEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814974127100039304, guid: 6851b752d52c6db479f24d59ef8c6311,
+        type: 3}
+      propertyPath: gameOverEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814974127100039304, guid: 6851b752d52c6db479f24d59ef8c6311,
+        type: 3}
+      propertyPath: gameOverEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnGameOver
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814974127100039304, guid: 6851b752d52c6db479f24d59ef8c6311,
+        type: 3}
+      propertyPath: gameOverEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnGameOver
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814974127100039304, guid: 6851b752d52c6db479f24d59ef8c6311,
+        type: 3}
+      propertyPath: gameOverEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Inventory, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814974127100039304, guid: 6851b752d52c6db479f24d59ef8c6311,
+        type: 3}
+      propertyPath: gameOverEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TogglePauseBehaviour, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814974127100039304, guid: 6851b752d52c6db479f24d59ef8c6311,
+        type: 3}
+      propertyPath: gameOverEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814974127100039304, guid: 6851b752d52c6db479f24d59ef8c6311,
+        type: 3}
+      propertyPath: gameOverEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3814974127100039305, guid: 6851b752d52c6db479f24d59ef8c6311,
         type: 3}
