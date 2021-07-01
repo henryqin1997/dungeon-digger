@@ -42,7 +42,7 @@ public class Inventory : MonoBehaviour
         {
             payload[entry.Key] = (object) entry.Value;
         }
-
+        Analytics.CustomEvent("gameOver-ingredients", payload);
     }
 
     private void UpdateSlots()

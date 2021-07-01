@@ -10,6 +10,8 @@ public class Room : MonoBehaviour
 
     public List<GameObject> enemies = new List<GameObject>();
 
+    public string currentroom;
+
     private bool roomActive;
 
     private static bool room_entered = false;
@@ -17,6 +19,8 @@ public class Room : MonoBehaviour
     private static bool room2_entered = false;
     private static bool room3_entered = false;
     private static bool room4_entered = false;
+
+    public static Room instance;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +30,11 @@ public class Room : MonoBehaviour
             enemy.SetActive(false);
         }
 
+    }
+
+    private void Awake() 
+    {
+        instance = this;
     }
 
     // Update is called once per frame
@@ -58,6 +67,7 @@ public class Room : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            currentroom = gameObject.name;
             CameraController.instance.ChangeTarget(transform);
             RoomsEnteredTracker.rooms_entered++;
             if (gameObject.name == "Room") {
