@@ -9866,6 +9866,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8226493048971720904, guid: 4cd9136f4a5774b25afe43f71249605d,
         type: 3}
+      propertyPath: gameOver
+      value: 
+      objectReference: {fileID: 617639359}
+    - target: {fileID: 8226493048971720904, guid: 4cd9136f4a5774b25afe43f71249605d,
+        type: 3}
       propertyPath: currentHealth
       value: 50
       objectReference: {fileID: 0}
