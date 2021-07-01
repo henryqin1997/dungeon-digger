@@ -5,8 +5,8 @@ using UnityEngine.Analytics;
 
 public class RoomsEnteredTracker : MonoBehaviour
 {
-    public static int rooms_entered = 0;
-    public static int unique_rooms_entered = 0;
+    public int rooms_entered = 0;
+    private HashSet<string> names_of_rooms_entered = new HashSet<string>();
     // Start is called before the first frame update
     void Start()
     {
@@ -16,16 +16,28 @@ public class RoomsEnteredTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("rooms" + rooms_entered);
-        Debug.Log("unique" + unique_rooms_entered);
+        //Debug.Log("rooms" + rooms_entered);
+        //Debug.Log("unique" + UniqueRoomsEntered());
     }
 
-    public static void SendRoomsEntered()
+    public void OnRoomEnter(string roomName)
+    {
+        Debug.Log("Room Entered: \"" + roomName + "\"");
+        names_of_rooms_entered.Add(roomName);
+        ++rooms_entered;
+    }
+
+    public void OnGameOver()
     {
         Analytics.CustomEvent("roomsEntered", new Dictionary<string, object>
         {
             { "totalRoomsEntered", rooms_entered },
-            { "uniqueRoomsEntered", unique_rooms_entered }
+            { "uniqueRoomsEntered", UniqueRoomsEntered() }
         });
+    }
+
+    private int UniqueRoomsEntered()
+    {
+        return names_of_rooms_entered.Count;
     }
 }

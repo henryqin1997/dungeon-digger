@@ -19,8 +19,6 @@ public class GameOverBehaviour : MonoBehaviour
 
         gameObject.SetActive(true);
 
-        RoomsEnteredTracker.SendRoomsEntered();
-
         gameOverEvent.Invoke();
     }
 
