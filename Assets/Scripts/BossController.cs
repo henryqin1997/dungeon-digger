@@ -15,6 +15,7 @@ public class BossController : MonoBehaviour
     public int currentHealth;
     public GameObject deathEffect;
     public GameObject levelExit;
+    public GameOverBehaviour gameOver;
 
     public BossSequence[] sequences;
     public int currentSequence;
@@ -79,6 +80,7 @@ public class BossController : MonoBehaviour
             gameObject.SetActive(false);
             //Instantiate(deathEffect, transform.position, transform.rotation);
             //levelExit.SetActive(true);
+            gameOver.GameOver();
         } else {
             if(currentHealth <= sequences[currentSequence].endSequenceHealth && currentSequence < sequences.Length - 1) {
                 currentSequence ++;
