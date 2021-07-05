@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 #if ENABLE_CLOUD_SERVICES_ANALYTICS
 using UnityEngine.Analytics;
 #endif
@@ -8,7 +9,7 @@ using UnityEngine.Analytics;
 public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement instance;
-    
+
     public Rigidbody2D rb;
     public Camera cam;
     public GameOverBehaviour gameover;
@@ -18,22 +19,28 @@ public class PlayerMovement : MonoBehaviour
     public static int maxHealth = 10;
     public static int shield = 0;
 
+    public static int maxShield = 10;
+
     Vector2 movement;
     Vector2 mousePos;
     // Start is called before the first frame update
     void Start()
     {
 
-      UIController.instance.healthSlider.maxValue = maxHealth;
-      UIController.instance.healthSlider.value = health;
-      UIController.instance.healthText.text = health.ToString() + " / " + maxHealth.ToString();
-        
+        UIController.instance.healthSlider.maxValue = maxHealth;
+        UIController.instance.healthSlider.value = health;
+        UIController.instance.healthText.text = health.ToString() + " / " + maxHealth.ToString();
+
+        UIController.instance.shieldSlider.maxValue = maxShield;
+        UIController.instance.shieldSlider.value = shield;
+        UIController.instance.shieldText.text = shield.ToString() + " / " + maxShield.ToString();
+
     }
 
-    private void Awake() 
-  {
-    instance = this;
-  }
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Update is called once per frame
     void Update()
@@ -76,40 +83,68 @@ public class PlayerMovement : MonoBehaviour
 
     public static void ChangeMoveSpeed(int speedChange)
     {
-      moveSpeed += speedChange;
-      if (moveSpeed < 10)
-      {
-        moveSpeed = 10;
-      }
+        moveSpeed += speedChange;
+        if (moveSpeed < 10)
+        {
+            moveSpeed = 10;
+        }
+    }
+
+    public static void takeDamage(int damage)
+    {
+        int remainingDamage = damage;
+        if (shield > 0)
+        {
+            int damageOnShield = Math.Min(shield, damage);
+            DecreaseShield(damageOnShield);
+            remainingDamage -= damageOnShield;
+        }
+
+        if (remainingDamage > 0)
+        {
+            health -= remainingDamage;
+            health = Math.Max(0, health);
+        }
     }
 
     public static void DecreaseHealth(int healthDecrease)
     {
-      if (shield >= healthDecrease)
-      {
-        shield -= healthDecrease;
-      }
-      else
-      {
-        shield = 0;
-        health -= (healthDecrease - shield);
-        if(health < 0) {
-          health = 0;
+        int remainingDamage = healthDecrease;
+        if (shield > 0)
+        {
+            int damageOnShield = Math.Min(shield, healthDecrease);
+            DecreaseShield(damageOnShield);
+            remainingDamage -= damageOnShield;
         }
-      }
-      UIController.instance.healthSlider.value = health;
-      UIController.instance.healthText.text = health.ToString() + " / " + maxHealth.ToString();
+
+        if (remainingDamage > 0)
+        {
+            health -= remainingDamage;
+            health = Math.Max(0, health);
+            UIController.instance.healthSlider.value = health;
+            UIController.instance.healthText.text = health.ToString() + " / " + maxHealth.ToString();
+
+        }
     }
 
     public static void IncreaseHealth(int healthIncrease)
     {
-      health += healthIncrease;
-      UIController.instance.healthSlider.value = health;
-      UIController.instance.healthText.text = health.ToString() + " / " + maxHealth.ToString();
+        health += healthIncrease;
+        UIController.instance.healthSlider.value = health;
+        UIController.instance.healthText.text = health.ToString() + " / " + maxHealth.ToString();
     }
 
     public static void IncreaseShield(int shieldIncrease)
     {
-      shield += shieldIncrease;
+        shield += shieldIncrease;
+        UIController.instance.shieldSlider.value = shield;
+        UIController.instance.shieldText.text = shield.ToString() + " / " + maxShield.ToString();
+    }
+
+    public static void DecreaseShield(int shieldDecrease)
+    {
+        shield -= shieldDecrease;
+        UIController.instance.shieldSlider.value = shield;
+        UIController.instance.shieldText.text = shield.ToString() + " / " + maxShield.ToString();
     }
 }
