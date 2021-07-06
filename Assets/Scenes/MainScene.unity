@@ -15722,16 +15722,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: chef (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 6502612665638488121, guid: 7e9b2f3598d444c2cbea2fec646d2d29,
-        type: 3}
-      propertyPath: moveSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6502612665638488121, guid: 7e9b2f3598d444c2cbea2fec646d2d29,
-        type: 3}
-      propertyPath: rangeToChasePlayer
-      value: 28
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e9b2f3598d444c2cbea2fec646d2d29, type: 3}
 --- !u!1001 &2551220236403594783

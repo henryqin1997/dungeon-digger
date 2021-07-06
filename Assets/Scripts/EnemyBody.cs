@@ -14,6 +14,8 @@ public class EnemyBody : MonoBehaviour
     public int shield = 0;
     public Transform attackArm;
     protected Camera theCam;
+    public Transform dropPoint;
+    public GameObject dropedIngredients;
 
     public Animator anim;
     // Start is called before the first frame update
@@ -88,8 +90,11 @@ public class EnemyBody : MonoBehaviour
         }
 
         if (health <= 0)
-        {
+        { 
+            Instantiate(dropedIngredients, dropPoint.position, dropPoint.rotation);
+            // Debug.Log("Spawned: \"" + dropedIngredients+ "\"");
             Destroy(gameObject);
+
         }
     }
 
