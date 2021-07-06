@@ -5,7 +5,7 @@ using UnityEngine;
 public class WaterBeam : MonoBehaviour
 {
     public static int damageToGive = 1;
-    public static float destructTime = 1.0f;
+    public static float destructTime = 1.5f;
     // Start is called before the first frame update
     void Start()
     {
