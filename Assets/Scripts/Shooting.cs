@@ -10,11 +10,15 @@ public class Shooting : MonoBehaviour
     public int rangeBonus = 0;
     public float coolDown = 0.2f;
     public int beamForce = 5;
+    public AudioSource audioSource; // TODO: add component
+
+    public static int beamForce = 5;
+    public static float coolDown = 0.2f;
     bool canShoot = true;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -47,6 +51,7 @@ public class Shooting : MonoBehaviour
         WaterBeam wb = beam.GetComponent<WaterBeam>();
         wb.ChangeDamage(damageBonus);
         wb.ChangeRange( rangeBonus);
+        audioSource.Play();
     }
 
     private void ChangeBulletCooldown(int speedChange)

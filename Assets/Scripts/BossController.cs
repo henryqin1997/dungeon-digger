@@ -29,6 +29,7 @@ public class BossController : MonoBehaviour
 
     public BossSequence[] sequences;
     public int currentSequence;
+    public AudioSource audioSource;
 
     public Transform playerTransform; // 
 
@@ -37,6 +38,9 @@ public class BossController : MonoBehaviour
         playerTransform = FindPlayerTransform();
         bossMaxHealthUpdatedEvent.Invoke(maxHealth);
         bossHealthUpdatedEvent.Invoke(   currentHealth);
+        actions = sequences[currentSequence].actions;
+        actionCounter = actions[currentAction].actionLength;
+        audioSource = GetComponent<AudioSource>();   // TODO: add to boss
     }
 
     void OnEnable()
@@ -108,11 +112,14 @@ public class BossController : MonoBehaviour
         currentHealth = Math.Max(currentHealth - damageAmount, 0);
         bossHealthUpdatedEvent.Invoke(currentHealth);
         if(currentHealth <= 0) {
+
             gameObject.SetActive(false);
             //Instantiate(deathEffect, transform.position, transform.rotation);
             //levelExit.SetActive(true);
 	    bossDefeatedEvent.Invoke();
+            audioSource.Play();
             gameOver.GameOver();
+
         } else {
             if(currentHealth <= sequences[currentSequence].endSequenceHealth && currentSequence < sequences.Length - 1) {
                 currentSequence ++;

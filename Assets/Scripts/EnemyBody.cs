@@ -16,11 +16,15 @@ public class EnemyBody : MonoBehaviour
     protected Camera theCam;
 
     public Animator anim;
+
+    public AudioSource audioSource;
+
+    
     // Start is called before the first frame update
     public virtual void Start()
     {
         theCam = Camera.main;
-
+        audioSource = GetComponent<AudioSource>();   
     }
 
     // Update is called once per frame
