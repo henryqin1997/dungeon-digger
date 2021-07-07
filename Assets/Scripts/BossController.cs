@@ -1,11 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[System.Serializable]
+public class BossHealthUpdatedEvent : UnityEvent<int>
+{}
+
 public class BossController : MonoBehaviour
 {
-    public static BossController instance;
     public BossAction[] actions;
     private int currentAction;
     private float actionCounter;
@@ -19,20 +23,41 @@ public class BossController : MonoBehaviour
     public GameObject levelExit;
     public GameOverBehaviour gameOver;
     public UnityEvent bossDefeatedEvent;
+    public BossHealthUpdatedEvent bossHealthUpdatedEvent;
+    public BossHealthUpdatedEvent bossMaxHealthUpdatedEvent;
+    public UnityEvent bossActivatedEvent;
 
     public BossSequence[] sequences;
     public int currentSequence;
 
-    private void Awake() {
-        instance = this;
-    }
-    // Start is called before the first frame update
-    void Start()
+    public Transform playerTransform; // 
+
+    public void Start()
     {
-        UIController.instance.bossHealthSlider.maxValue = maxHealth;
-        UIController.instance.bossHealthSlider.value = currentHealth;
-        actions = sequences[currentSequence].actions;
-        actionCounter = actions[currentAction].actionLength;
+        playerTransform = FindPlayerTransform();
+        bossMaxHealthUpdatedEvent.Invoke(maxHealth);
+        bossHealthUpdatedEvent.Invoke(   currentHealth);
+    }
+
+    void OnEnable()
+    {
+        bossActivatedEvent.Invoke();
+    }
+
+    private static Transform FindPlayerTransform()
+    {
+         GameObject character = FindPlayer();
+         Debug.Assert(character != null);
+
+         PlayerMovement playerMovement = character.GetComponent<PlayerMovement>();
+         Debug.Assert(playerMovement != null);
+
+         return playerMovement.transform;
+    }
+
+    private static GameObject FindPlayer()
+    {
+        return GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
@@ -43,8 +68,8 @@ public class BossController : MonoBehaviour
            // handle movement
            moveDirection = Vector2.zero;
            if(actions[currentAction].shouldMove) {
-               if(actions[currentAction].shouldChasePlayer && GameObject.FindWithTag("Player") != null) {
-                   moveDirection = PlayerMovement.instance.transform.position - transform.position;
+               if(actions[currentAction].shouldChasePlayer && FindPlayer() != null) {
+                   moveDirection = playerTransform.position - transform.position;
                    moveDirection.Normalize();
                }
 
@@ -80,12 +105,13 @@ public class BossController : MonoBehaviour
     }
 
     public void TakeDamage(int damageAmount) {
-        currentHealth -= damageAmount;
-        UIController.instance.bossHealthSlider.value = currentHealth;
+        currentHealth = Math.Max(currentHealth - damageAmount, 0);
+        bossHealthUpdatedEvent.Invoke(currentHealth);
         if(currentHealth <= 0) {
             gameObject.SetActive(false);
             //Instantiate(deathEffect, transform.position, transform.rotation);
             //levelExit.SetActive(true);
+	    bossDefeatedEvent.Invoke();
             gameOver.GameOver();
         } else {
             if(currentHealth <= sequences[currentSequence].endSequenceHealth && currentSequence < sequences.Length - 1) {

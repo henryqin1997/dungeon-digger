@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class WaterBeam : MonoBehaviour
 {
-    public static int damageToGive = 1;
-    public static float destructTime = 1.5f;
+    public int damageToGive = 1;
+    public float destructTime = 1.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,23 +26,21 @@ public class WaterBeam : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag != "Beam")
         {
-            collision.gameObject.GetComponent<EnemyBody>().DamageEnemy(damageToGive);
-            Destroy(gameObject);
-        }
-        else if (collision.gameObject.tag == "Boss")
-        {
-            BossController.instance.TakeDamage(damageToGive);
-            Destroy(gameObject);
-        }
-        else if (collision.gameObject.tag != "Beam")
-        {
+            if (collision.gameObject.tag == "Enemy")
+            {
+                collision.gameObject.GetComponent<EnemyBody>().DamageEnemy(damageToGive);
+            }
+            else if (collision.gameObject.tag == "Boss")
+            {
+                collision.gameObject.GetComponent<BossController>().TakeDamage(damageToGive);
+            }
             Destroy(gameObject);
         }
     }
 
-    public static void ChangeDamage(int damageChange)
+    public void ChangeDamage(int damageChange)
     {
         damageToGive += damageChange;
         if (damageToGive < 1)
@@ -51,7 +49,7 @@ public class WaterBeam : MonoBehaviour
         }
     }
 
-    public static void ChangeRange(int rangeChange)
+    public void ChangeRange(int rangeChange)
     {
         destructTime += (rangeChange / 10.0f);
     }

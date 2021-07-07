@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class ToastMessage : MonoBehaviour
 {
-    public void DisplayDishConsumed(Dish dish)
+    public void DisplayConsumableConsumed(IConsumable consumable)
     {
-        DisplayText("Dish \"" + dish.id.ToString() + "\" was consumed.");
+        DisplayText(consumable.GetDisplayName() + " consumed. " + consumable.GetEffectSensation());
     }
 
     public void DisplayText(string text)

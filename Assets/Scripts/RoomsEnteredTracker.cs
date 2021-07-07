@@ -20,10 +20,11 @@ public class RoomsEnteredTracker : MonoBehaviour
         //Debug.Log("unique" + UniqueRoomsEntered());
     }
 
-    public void OnRoomEnter(string roomName)
+    public void OnRoomEnter(GameObject room)
     {
-        Debug.Log("Room Entered: \"" + roomName + "\"");
-        names_of_rooms_entered.Add(roomName);
+        Debug.Assert(room != null);
+        Debug.Log("Room Entered: \"" + room.name + "\"");
+        names_of_rooms_entered.Add(room.name);
         ++rooms_entered;
     }
 

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class Ingredient : IItem
+public class Ingredient : IItem, IConsumable
 {
     public enum ID {
         INVALID_ID,
@@ -36,6 +36,7 @@ public class Ingredient : IItem
     public Category category;
     public Sprite   icon;
     public Sprite   frame;
+    public string   displayName;
 
     public Ingredient(Ingredient other)
     {
@@ -44,10 +45,11 @@ public class Ingredient : IItem
 
     public void Assign(in Ingredient other)
     {
-        id       = other.id;
-        category = other.category;
-        icon    = other.icon;
-        frame    = other.frame;
+        id          = other.id;
+        category    = other.category;
+        icon        = other.icon;
+        frame       = other.frame;
+        displayName = other.displayName;
     }
 
     public override int GetHashCode()
@@ -63,17 +65,18 @@ public class Ingredient : IItem
     public bool Equals(Ingredient ingredient)
     {
         return (ingredient != null)
-            && (ingredient.id       == this.id)
-            && (ingredient.category == this.category)
-            && (ingredient.icon     == this.icon)
-            && (ingredient.frame    == this.frame);
+            && (ingredient.id                == this.id)
+            && (ingredient.category          == this.category)
+            && (ingredient.icon              == this.icon)
+            && (ingredient.frame             == this.frame)
+            && (ingredient.displayName       == this.displayName);
     }
 
-    public string GetName()
+    public string GetDisplayName()
     {
-        return id.ToString();
+        return displayName;
     }
-
+    
     public Sprite GetIcon()
     {
         return icon;
@@ -82,5 +85,50 @@ public class Ingredient : IItem
     public Sprite GetFrame()
     {
         return frame;
+    }
+
+    public string GetEffectDescription()
+    {
+        return "replenishes some health";
+    }
+
+    public string GetEffectSensation()
+    {
+        return "You feel slightly better.";
+    }
+
+    public int GetMoveSpeedChange()
+    {
+        return 0;
+    }
+
+    public int GetAttackDamageChange()
+    {
+        return 0;
+    }
+
+    public int GetAttackCooldownChange()
+    {
+        return 0;
+    }
+
+    public int GetAttackRangeChange()
+    {
+        return 0;
+    }
+
+    public int GetHealthChange()
+    {
+        return +1;
+    }
+
+    public int GetMaxHealthChange()
+    {
+        return 0;
+    }
+
+    public int GetShieldChange()
+    {
+        return 0;
     }
 }

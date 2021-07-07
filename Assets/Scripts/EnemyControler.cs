@@ -17,6 +17,7 @@ public class EnemyControler : MonoBehaviour
     public GameObject bullet;
 
     public Transform firePoint;
+    public GameObject player;
 
     public Transform cookProgressPoint;
     public int health = 1000;
@@ -29,13 +30,23 @@ public class EnemyControler : MonoBehaviour
     {
         cookProgressSlider.maxValue = 1000;
         cookProgressSlider.value = currentCookingPorgress;
+        if (player == null) {
+            player = FindPlayer();
+            Debug.Assert(player != null);
+        }
+    }
+
+    private static GameObject FindPlayer()
+    {
+        return GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(GameObject.FindWithTag("Player") != null && Vector3.Distance(transform.position, PlayerMovement.instance.transform.position) < rangeToChasePlayer) {
-            moveDirection = PlayerMovement.instance.transform.position - transform.position;
+        Vector3 playerPosition = player.transform.position;
+        if(Vector3.Distance(transform.position, playerPosition) < rangeToChasePlayer) {
+            moveDirection = playerPosition - transform.position;
             shouldShoot = true;
 
         } else {

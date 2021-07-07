@@ -89,5 +89,45 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 5b8505379c6098c46a9031b98e33b73b,
         type: 3}
+    - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
+        type: 3}
+      propertyPath: dish.displayName
+      value: '"Seared Steak"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
+        type: 3}
+      propertyPath: dish.damageChange
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
+        type: 3}
+      propertyPath: dish.healthChange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
+        type: 3}
+      propertyPath: dish.effectSensation
+      value: '"You feel sturdier."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
+        type: 3}
+      propertyPath: dish.moveSpeedChange
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
+        type: 3}
+      propertyPath: dish.efffectSensation
+      value: '"You feel sturdier."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
+        type: 3}
+      propertyPath: dish.effectDescription
+      value: '"boosts health and damage, slightly move speed reduction"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
+        type: 3}
+      propertyPath: dish.attackDamageChange
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90c20805db212e945b82992deccdd145, type: 3}

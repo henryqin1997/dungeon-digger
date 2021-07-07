@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class Dish : IItem
+public class Dish : IItem, IConsumable
 {
     public enum ID
     {
@@ -23,20 +23,51 @@ public class Dish : IItem
         SEARED_STEAK
     }
 
+    public enum STATUS
+    {
+        powerful,
+        dextrous,
+        durable,
+        agile
+
+    }
+
     public ID     id;
     public Sprite icon;
     public Sprite frame;
+    public string displayName;
+    public string effectDescription;
+    public string effectSensation;
+    public int moveSpeedChange;
+    public int attackDamageChange;
+    public int attackCooldownChange;
+    public int attackRangeChange;
+    public int healthChange;
+    public int maxHealthChange;
+    public int shieldChange;
+    public STATUS status;
 
     public Dish(Dish other)
     {
         id    = other.id;
         icon  = other.icon;
         frame = other.frame;
+        displayName  = other.displayName;
+        effectDescription = other.effectDescription;
+        effectSensation = other.effectSensation;
+        moveSpeedChange = other.moveSpeedChange;
+        attackDamageChange = other.attackDamageChange;
+        attackCooldownChange = other.attackCooldownChange;
+        attackRangeChange = other.attackRangeChange;
+        healthChange = other.healthChange;
+        maxHealthChange = other.maxHealthChange;
+        shieldChange = other.shieldChange;
+        status = other.status;
     }
 
-    public string GetName()
+    public string GetDisplayName()
     {
-        return id.ToString();
+        return displayName;
     }
 
     public Sprite GetIcon()
@@ -47,6 +78,51 @@ public class Dish : IItem
     public Sprite GetFrame()
     {
         return frame;
+    }
+
+    public string GetEffectDescription()
+    {
+        return effectDescription;
+    }
+
+    public string GetEffectSensation()
+    {
+        return effectSensation;
+    }
+
+    public int GetMoveSpeedChange()
+    {
+        return moveSpeedChange;
+    }
+
+    public int GetAttackDamageChange()
+    {
+        return attackDamageChange;
+    }
+
+    public int GetAttackCooldownChange()
+    {
+        return attackCooldownChange;
+    }
+
+    public int GetAttackRangeChange()
+    {
+        return attackRangeChange;
+    }
+
+    public int GetHealthChange()
+    {
+        return healthChange;
+    }
+
+    public int GetMaxHealthChange()
+    {
+        return maxHealthChange;
+    }
+
+    public int GetShieldChange()
+    {
+        return shieldChange;
     }
 
     public override int GetHashCode()
@@ -64,6 +140,17 @@ public class Dish : IItem
         return (dish != null)
             && (dish.id    == this.id)
             && (dish.icon  == this.icon)
-            && (dish.frame == this.frame);
+            && (dish.frame == this.frame)
+            && (dish.displayName == this.displayName)
+            && (dish.effectDescription == this.effectDescription)
+            && (dish.effectSensation == this.effectSensation)
+            && (dish.moveSpeedChange == this.moveSpeedChange)
+            && (dish.attackDamageChange == this.attackDamageChange)
+            && (dish.attackCooldownChange == this.attackCooldownChange)
+            && (dish.attackRangeChange == this.attackRangeChange)
+            && (dish.healthChange == this.healthChange)
+            && (dish.maxHealthChange == this.maxHealthChange)
+            && (dish.shieldChange == this.shieldChange)
+            && (dish.status == this.status);
     }
 }
