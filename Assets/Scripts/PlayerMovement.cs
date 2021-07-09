@@ -31,10 +31,6 @@ public class PlayerMovement : MonoBehaviour
         UIController.instance.healthSlider.value = health;
         UIController.instance.healthText.text = health.ToString() + " / " + maxHealth.ToString();
 
-        UIController.instance.shieldSlider.maxValue = maxShield;
-        UIController.instance.shieldSlider.value = shield;
-        UIController.instance.shieldText.text = shield.ToString() + " / " + maxShield.ToString();
-
     }
 
     private void Awake()
@@ -130,6 +126,8 @@ public class PlayerMovement : MonoBehaviour
     public static void IncreaseHealth(int healthIncrease)
     {
         health += healthIncrease;
+        maxHealth = Math.Max(health, maxHealth);
+        UIController.instance.healthSlider.maxValue = maxHealth;
         UIController.instance.healthSlider.value = health;
         UIController.instance.healthText.text = health.ToString() + " / " + maxHealth.ToString();
     }
@@ -137,14 +135,17 @@ public class PlayerMovement : MonoBehaviour
     public static void IncreaseShield(int shieldIncrease)
     {
         shield += shieldIncrease;
-        UIController.instance.shieldSlider.value = shield;
-        UIController.instance.shieldText.text = shield.ToString() + " / " + maxShield.ToString();
+        for(int i = 0; i < shieldIncrease; i++) {
+            UIController.instance.IncreaseShield();
+        }
+        
     }
 
     public static void DecreaseShield(int shieldDecrease)
     {
         shield -= shieldDecrease;
-        UIController.instance.shieldSlider.value = shield;
-        UIController.instance.shieldText.text = shield.ToString() + " / " + maxShield.ToString();
+        for(int i = 0; i < shieldDecrease; i++) {
+            UIController.instance.DecreaseShield();
+        }
     }
 }
