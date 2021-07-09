@@ -65,13 +65,27 @@ public class PlayerMovement : MonoBehaviour
         rb.rotation = rotAngle;
     }
 
+    public void OnBossDefeated()
+    {
+#if ENABLE_CLOUD_SERVICES_ANALYTICS
+        Analytics.CustomEvent(
+            "bossDefeated",
+            new Dictionary<string, object> {
+                { "player_remainingHealth",  (object) health },
+                { "player_remainingShield",  (object) shield }
+            }
+        );
+#endif
+    }
+
     public void OnGameOver()
     {
 #if ENABLE_CLOUD_SERVICES_ANALYTICS
         Analytics.CustomEvent(
-            "RemainingHealth",
+            "gameOver",
             new Dictionary<string, object> {
-                { "HP",  (object) health }
+                { "player_maxHealth",  (object) maxHealth },
+                { "player_maxShield",  (object) maxShield }
             }
         );
 #endif
