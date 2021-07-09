@@ -12,7 +12,8 @@ public class BossController : MonoBehaviour
     private Vector2 moveDirection;
     public Rigidbody2D theRB;
 
-    public int currentHealth;
+    public int currentHealth = 50;
+    public int maxHealth = 50;
     public GameObject deathEffect;
     public GameObject levelExit;
     public GameOverBehaviour gameOver;
@@ -26,6 +27,8 @@ public class BossController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        UIController.instance.bossHealthSlider.maxValue = maxHealth;
+        UIController.instance.bossHealthSlider.value = currentHealth;
         actions = sequences[currentSequence].actions;
         actionCounter = actions[currentAction].actionLength;
     }
@@ -76,6 +79,7 @@ public class BossController : MonoBehaviour
 
     public void TakeDamage(int damageAmount) {
         currentHealth -= damageAmount;
+        UIController.instance.bossHealthSlider.value = currentHealth;
         if(currentHealth <= 0) {
             gameObject.SetActive(false);
             //Instantiate(deathEffect, transform.position, transform.rotation);
