@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BossController : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class BossController : MonoBehaviour
     public GameObject deathEffect;
     public GameObject levelExit;
     public GameOverBehaviour gameOver;
+    public UnityEvent bossDefeatedEvent;
 
     public BossSequence[] sequences;
     public int currentSequence;
