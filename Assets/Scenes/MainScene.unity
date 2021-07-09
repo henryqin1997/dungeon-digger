@@ -2030,7 +2030,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0.000045776, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &276340887
@@ -3399,8 +3399,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 55, y: -41.579987}
-  m_SizeDelta: {x: 62.861023, y: 63.900024}
+  m_AnchoredPosition: {x: 31, y: -29}
+  m_SizeDelta: {x: 44.5393, y: 42.59}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &330254900
 MonoBehaviour:
@@ -4294,8 +4294,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.0009, y: -49.445}
-  m_SizeDelta: {x: 426.68, y: 69.109}
+  m_AnchoredPosition: {x: 8.0017, y: -28}
+  m_SizeDelta: {x: 173.88, y: 20.278}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &508197343
 MonoBehaviour:
@@ -4334,7 +4334,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 3779fc37974c94b21b1fffd09bb688c0, type: 3}
-    m_FontSize: 40
+    m_FontSize: 1
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
@@ -7986,8 +7986,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3, y: -58.544018}
-  m_SizeDelta: {x: 426.6741, y: 47.088}
+  m_AnchoredPosition: {x: 8, y: -28}
+  m_SizeDelta: {x: 173.8748, y: 20.2787}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &689190975
 MonoBehaviour:
@@ -9881,8 +9881,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 284.62, y: -41.80005}
-  m_SizeDelta: {x: 569.2494, y: 84.13379}
+  m_AnchoredPosition: {x: 210.5005, y: -25.9768}
+  m_SizeDelta: {x: 421.0104, y: 52.4872}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1017670452
 MonoBehaviour:
@@ -10184,8 +10184,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 289.75, y: -41.579987}
-  m_SizeDelta: {x: 334.35, y: 83.707}
+  m_AnchoredPosition: {x: 205, y: -28}
+  m_SizeDelta: {x: 272.5455, y: 50.568}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1276882549
 PrefabInstance:
@@ -11929,8 +11929,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 300.40997, y: -42.01001}
-  m_SizeDelta: {x: 313.0266, y: 83.70569}
+  m_AnchoredPosition: {x: 202.97089, y: -23.083374}
+  m_SizeDelta: {x: 292.9683, y: 40.7358}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1612713533 stripped
 GameObject:
@@ -13544,7 +13544,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 1.4526367, y: -1.4837952}
+  m_AnchoredPosition: {x: 1.453125, y: -1.4840088}
   m_SizeDelta: {x: 22.2741, y: 20.3996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1793923596
@@ -14448,7 +14448,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.39056396, y: -0.5953083}
+  m_AnchoredPosition: {x: 0.39056396, y: -0.5953064}
   m_SizeDelta: {x: -10.1532, y: 6.6385}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1930757357
@@ -14525,11 +14525,11 @@ RectTransform:
   m_Father: {fileID: 2061973755}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 884, y: -950}
-  m_SizeDelta: {x: 1185.944, y: 59.5638}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -78, y: 68.5}
+  m_SizeDelta: {x: 354.7547, y: 32.130707}
+  m_Pivot: {x: 0.3, y: 0.5}
 --- !u!114 &1956679849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15556,7 +15556,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 1024, y: 768}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

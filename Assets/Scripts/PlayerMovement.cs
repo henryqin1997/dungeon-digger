@@ -135,12 +135,17 @@ public class PlayerMovement : MonoBehaviour
     public static void IncreaseShield(int shieldIncrease)
     {
         shield += shieldIncrease;
-        UIController.instance.increaseShield();
+        for(int i = 0; i < shieldIncrease; i++) {
+            UIController.instance.IncreaseShield();
+        }
+        
     }
 
     public static void DecreaseShield(int shieldDecrease)
     {
         shield -= shieldDecrease;
-        UIController.instance.decreaseShield();
+        for(int i = 0; i < shieldDecrease; i++) {
+            UIController.instance.DecreaseShield();
+        }
     }
 }
