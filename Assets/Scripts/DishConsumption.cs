@@ -98,77 +98,77 @@ public class DishConsumption : MonoBehaviour
 
     public void ConsumeHotTea()
     {
-        PlayerMovement.ChangeMoveSpeed(1);
-        //Shooting.ChangeBulletCooldown(1);
+        PlayerMovement.ChangeMoveSpeed(4);
+        Shooting.ChangeBulletCooldown(4);
     }
     public void ConsumeMilkTea()
     {
-        WaterBeam.ChangeDamage(2);
+        WaterBeam.ChangeDamage(6);
     }
     public void ConsumeBeefAndBrocolli()
     {
-        PlayerMovement.IncreaseHealth(1);
-        WaterBeam.ChangeDamage(1);
+        PlayerMovement.IncreaseHealth(4);
+        WaterBeam.ChangeDamage(4);
     }
     public void ConsumeNigiri()
     {
-        WaterBeam.ChangeDamage(2);
-        Shooting.ChangeBulletCooldown(3);
+        WaterBeam.ChangeDamage(7);
+        Shooting.ChangeBulletCooldown(7);
     }
     public void ConsumeFlamingHotSandwich()
     {
         PlayerMovement.ChangeMoveSpeed(2);
-        WaterBeam.ChangeDamage(1);
-        PlayerMovement.IncreaseHealth(1);
-        Shooting.ChangeBulletCooldown(1);
+        WaterBeam.ChangeDamage(4);
+        PlayerMovement.IncreaseHealth(4);
+        Shooting.ChangeBulletCooldown(4);
     }
     public void ConsumeFriedChicken()
     {
-        PlayerMovement.IncreaseHealth(2);
+        PlayerMovement.IncreaseHealth(6);
     }
     public void ConsumeBreakfastSandwich()
     {
-        PlayerMovement.IncreaseHealth(1);
-        PlayerMovement.IncreaseShield(2);
+        PlayerMovement.IncreaseHealth(4);
+        PlayerMovement.IncreaseShield(8);
     }
     public void ConsumeSpicyFriedRice()
     {
         PlayerMovement.ChangeMoveSpeed(2);
-        WaterBeam.ChangeDamage(1);
-        //Shooting.ChangeBulletCooldown(2);
-        PlayerMovement.IncreaseShield(2);
+        WaterBeam.ChangeDamage(4);
+        Shooting.ChangeBulletCooldown(8);
+        PlayerMovement.IncreaseShield(4);
     }
     public void ConsumeDonut()
     {
-        PlayerMovement.IncreaseHealth(1);
-        WaterBeam.ChangeDamage(1);
+        PlayerMovement.IncreaseHealth(6);
+        WaterBeam.ChangeDamage(2);
     }
     public void ConsumeChickenSoup()
     {
-        WaterBeam.ChangeRange(2);
-        Shooting.ChangeBulletCooldown(2);
+        WaterBeam.ChangeRange(6);
+        Shooting.ChangeBulletCooldown(6);
     }
     public void ConsumeCaserolle()
     {
-        PlayerMovement.IncreaseHealth(2);
-        PlayerMovement.IncreaseShield(2);
-        WaterBeam.ChangeDamage(2);
+        PlayerMovement.IncreaseHealth(6);
+        PlayerMovement.IncreaseShield(4);
+        WaterBeam.ChangeDamage(6);
     }
     public void ConsumeFishPorridge()
     {
-        Shooting.ChangeBulletCooldown(2);
+        Shooting.ChangeBulletCooldown(6);
         PlayerMovement.ChangeMoveSpeed(2);
-        WaterBeam.ChangeDamage(1);
+        WaterBeam.ChangeDamage(6);
     }
     public void ConsumeRicePudding()
     {
-        PlayerMovement.IncreaseHealth(1);
-        WaterBeam.ChangeRange(2);
+        PlayerMovement.IncreaseHealth(5);
+        WaterBeam.ChangeRange(4);
     }
     public void ConsumeSearedSteak()
     {
-        PlayerMovement.ChangeMoveSpeed(-1);
-        PlayerMovement.IncreaseHealth(1);
-        WaterBeam.ChangeDamage(2);
+        PlayerMovement.ChangeMoveSpeed(-2);
+        PlayerMovement.IncreaseHealth(5);
+        WaterBeam.ChangeDamage(5);
     }
 }

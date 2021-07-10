@@ -89,5 +89,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5071346009189113193, guid: f831ec3b819a06643b675989576e6e1d,
         type: 3}
+    - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
+        type: 3}
+      propertyPath: dish.status
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90c20805db212e945b82992deccdd145, type: 3}

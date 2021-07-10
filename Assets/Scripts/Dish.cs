@@ -23,15 +23,26 @@ public class Dish : IItem
         SEARED_STEAK
     }
 
+    public enum STATUS
+    {
+        powerful,
+        dextrous,
+        durable,
+        agile
+
+    }
+
     public ID     id;
     public Sprite icon;
     public Sprite frame;
+    public STATUS status;
 
     public Dish(Dish other)
     {
         id    = other.id;
         icon  = other.icon;
         frame = other.frame;
+        status = other.status;
     }
 
     public string GetName()

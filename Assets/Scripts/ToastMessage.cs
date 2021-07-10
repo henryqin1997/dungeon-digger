@@ -7,7 +7,7 @@ public class ToastMessage : MonoBehaviour
 {
     public void DisplayDishConsumed(Dish dish)
     {
-        DisplayText("Dish \"" + dish.id.ToString() + "\" was consumed.");
+        DisplayText("You feel more " + dish.status.ToString());
     }
 
     public void DisplayText(string text)
