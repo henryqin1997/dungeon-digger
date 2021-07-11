@@ -6,9 +6,10 @@ public class Shooting : MonoBehaviour
 {
     public Transform waterGun;
     public GameObject beamPrefab;
-
-    public static int beamForce = 5;
-    public static float coolDown = 0.2f;
+    public int damageBonus = 0;
+    public int rangeBonus = 0;
+    public float coolDown = 0.2f;
+    public int beamForce = 5;
     bool canShoot = true;
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,12 @@ public class Shooting : MonoBehaviour
         }
     }
 
+    public void OnConsumableConsumed(IConsumable consumable)
+    {
+        damageBonus += consumable.GetAttackDamageChange();
+        rangeBonus  += consumable.GetAttackRangeChange();
+    }
+
     void CooledDown()
     {
         canShoot = true;
@@ -37,9 +44,12 @@ public class Shooting : MonoBehaviour
         GameObject beam = Instantiate(beamPrefab, waterGun.position, waterGun.rotation);
         Rigidbody2D rb = beam.GetComponent<Rigidbody2D>();
         rb.AddForce(waterGun.right * beamForce, ForceMode2D.Impulse);
+        WaterBeam wb = beam.GetComponent<WaterBeam>();
+        wb.ChangeDamage(damageBonus);
+        wb.ChangeRange( rangeBonus);
     }
 
-    public static void ChangeBulletCooldown(int speedChange)
+    private void ChangeBulletCooldown(int speedChange)
     {
         coolDown -= speedChange * 0.02f;
     }

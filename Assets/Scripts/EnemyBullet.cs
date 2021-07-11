@@ -14,10 +14,17 @@ public class EnemyBullet : MonoBehaviour
     void Start()
     {
         // why in start? want the bullet to travel in the straight line 
-        direction = PlayerMovement.instance.transform.position - transform.position;
+        GameObject player = FindPlayer();
+        Debug.Assert(player != null);
+        direction = player.transform.position - transform.position;
         direction.Normalize();
 
         Destroy (gameObject, destructTime);
+    }
+
+    private static GameObject FindPlayer()
+    {
+        return GameObject.FindWithTag("Player");
     }
 
 
@@ -29,7 +36,9 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Player") {
-            PlayerMovement.DecreaseHealth(damage);
+            PlayerMovement playerMovement = other.gameObject.GetComponent<PlayerMovement>();
+            Debug.Assert(playerMovement != null);
+            playerMovement.DecreaseHealth(damage);
         }
         Destroy(gameObject);
         

@@ -16,7 +16,7 @@ public class IngredientsUpdatedEvent : UnityEvent<Dictionary<Ingredient, int>>
 }
 
 [System.Serializable]
-public class DishConsumedEvent : UnityEvent<Dish>
+public class ConsumableConsumedEvent : UnityEvent<IConsumable>
 {
 }
 
@@ -25,12 +25,14 @@ public class Inventory : MonoBehaviour
     public Dictionary<Ingredient, int>  ingredientCounts        = new Dictionary<Ingredient, int>();
     public Dictionary<Dish, int>        dishCounts              = new Dictionary<Dish, int>();
     public IngredientsUpdatedEvent      ingredientsUpdatedEvent = new IngredientsUpdatedEvent();
-    public DishConsumedEvent            dishConsumedEvent       = new DishConsumedEvent();
+    public ConsumableConsumedEvent      consumableConsumedEvent = new ConsumableConsumedEvent();
 
     private Dictionary<string, int> ingredientsGathered                    = new Dictionary<string, int>();
     private const string            REPORT_INGREDIENTS_GATHERED_EVENT_NAME = "gameOver-ingredients-gathered";
     private Dictionary<string, int> ingredientsUsed                        = new Dictionary<string, int>();
     private const string            REPORT_INGREDIENTS_USED_EVENT_NAME     = "gameOver-ingredients-used";
+    private Dictionary<string, int> ingredientsConsumed                    = new Dictionary<string, int>();
+    private const string            REPORT_INGREDIENTS_CONSUMED_EVENT_NAME = "gameOver-ingredients-consumed";
     private Dictionary<string, int> dishesMade                             = new Dictionary<string, int>();
     private const string            REPORT_DISHES_MADE_EVENT_NAME          = "gameOver-dishes-made";
     private Dictionary<string, int> dishesConsumed                         = new Dictionary<string, int>();
@@ -45,6 +47,7 @@ public class Inventory : MonoBehaviour
     {
         ReportCounts(REPORT_INGREDIENTS_GATHERED_EVENT_NAME, ingredientsGathered);
         ReportCounts(REPORT_INGREDIENTS_USED_EVENT_NAME,     ingredientsUsed);
+        ReportCounts(REPORT_DISHES_CONSUMED_EVENT_NAME,      ingredientsConsumed);
         ReportCounts(REPORT_DISHES_MADE_EVENT_NAME,          dishesMade);
         ReportCounts(REPORT_DISHES_CONSUMED_EVENT_NAME,      dishesConsumed);
     }
@@ -65,7 +68,8 @@ public class Inventory : MonoBehaviour
 
         foreach (KeyValuePair<Ingredient, int> entry in ingredientCounts)
         {
-            FillSlot(slot++, entry.Key, entry.Value, false);
+            InventorySlot inventorySlot = FillSlot(slot++, entry.Key, entry.Value, true);
+            inventorySlot.SetSelectCallback(delegate { ConsumeIngredient(entry.Key); });
         }
 
         foreach (KeyValuePair<Dish, int> entry in dishCounts)
@@ -107,22 +111,29 @@ public class Inventory : MonoBehaviour
         ingredientsUpdatedEvent.Invoke(ingredientCounts);
     }
 
+    private void ConsumeIngredient(Ingredient ingredient)
+    {
+        RemoveItem(ingredient, ingredientCounts);
+        AddItem(ingredient.id.ToString(), ingredientsConsumed);
+        ConsumeConsumable(ingredient);
+    }
+
     private void ConsumeDish(Dish dish)
     {
-        RemoveDish(dish);
+        RemoveItem(dish, dishCounts);
         AddItem(dish.id.ToString(), dishesConsumed);
+        ConsumeConsumable(dish);
+    }
+
+    private void ConsumeConsumable(IConsumable consumable)
+    {
         UpdateSlots();
-        dishConsumedEvent.Invoke(dish);
+        consumableConsumedEvent.Invoke(consumable);
     }
 
     public void AddDish(Dish dish)
     {
         AddItem(new Dish(dish), dishCounts);
-    }
-
-    public void RemoveDish(Dish dish)
-    {
-        RemoveItem(dish, dishCounts);
     }
 
     private static void AddItem<T>(T item, Dictionary<T, int> counts)

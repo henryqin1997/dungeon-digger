@@ -11,13 +11,9 @@ public class Room : MonoBehaviour
 
     public List<GameObject> enemies = new List<GameObject>();
 
-    public string currentroom;
-
     private bool roomActive;
 
-    public static Room instance;
-
-    public UnityEvent<string> roomEnteredEvent = new UnityEvent<string>();
+    public UnityEvent<GameObject> roomEnteredEvent = new UnityEvent<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -26,12 +22,6 @@ public class Room : MonoBehaviour
         {
             enemy.SetActive(false);
         }
-
-    }
-
-    private void Awake() 
-    {
-        instance = this;
     }
 
     // Update is called once per frame
@@ -64,9 +54,7 @@ public class Room : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            currentroom = gameObject.name;
-            CameraController.instance.ChangeTarget(transform);
-            roomEnteredEvent.Invoke(gameObject.name);
+            roomEnteredEvent.Invoke(gameObject);
 
             if (closeWhenEntered)
             {

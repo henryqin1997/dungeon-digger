@@ -15,7 +15,7 @@ public class Fridge : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.name == "Character")
+        if (collider.gameObject.tag == "Player")
         {
             fridgeOpened.Invoke(this);
         }

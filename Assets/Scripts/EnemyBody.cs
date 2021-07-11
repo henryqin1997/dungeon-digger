@@ -26,18 +26,19 @@ public class EnemyBody : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
-        if (GameObject.FindWithTag("Player") == null)
+        GameObject player = FindPlayer();
+        if (player == null)
         {
             return;
         }
-        
 
-        bool isPlayerInRange = Vector3.Distance(transform.position, PlayerMovement.instance.transform.position) < rangeToChasePlayer;
+        Vector3 playerPosition = player.transform.position;
+        bool isPlayerInRange = Vector3.Distance(transform.position, playerPosition) < rangeToChasePlayer;
         shouldAttack = isPlayerInRange;
         // control if the enemy should chase the player
         if (isPlayerInRange)
         {
-            moveDirection = PlayerMovement.instance.transform.position - transform.position;
+            moveDirection = playerPosition - transform.position;
 
         }
         else
@@ -49,7 +50,7 @@ public class EnemyBody : MonoBehaviour
 
         // change transform depending on player location
         Vector3 playerLocation = theCam.WorldToScreenPoint(
-            GameObject.FindWithTag("Player").transform.position
+            playerPosition
           );
 
         Vector3 enemyLocation = theCam.WorldToScreenPoint(
@@ -73,6 +74,11 @@ public class EnemyBody : MonoBehaviour
         // {
         //     anim.SetBool("isMoving", false);
         // }
+    }
+
+    private GameObject FindPlayer()
+    {
+        return GameObject.FindWithTag("Player");
     }
 
 

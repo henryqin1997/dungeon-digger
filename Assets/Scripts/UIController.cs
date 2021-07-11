@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,20 +15,61 @@ public class UIController : MonoBehaviour
     private float xMax = 0.035f;
 
     public List<Image> shields = new List<Image>();
-    public static UIController instance;
-    // Start is called before the first frame update
 
-    private void Awake() {
-        instance = this;
-    }
-    void Start()
+    public void OnPlayerHealthUpdated(int newHealth)
     {
+        UpdateHealth(healthSlider, newHealth);
+        UpdateHealthText();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnPlayerMaxHeathUpdated(int newMaxHealth)
     {
-        
+        UpdateMaxHealth(healthSlider, newMaxHealth);
+        UpdateHealthText();
+    }
+
+    public void OnPlayerShieldUpdated(int newShield)
+    {
+        Action updateShields = IncreaseShield;
+        if (newShield < shields.Count)
+        {
+            updateShields = DecreaseShield;
+        }
+
+        while (shields.Count != newShield) {
+            updateShields();
+        }
+    }
+
+    public void OnBossHealthUpdated(int newHealth)
+    {
+        UpdateHealth(bossHealthSlider, newHealth);
+    }
+
+    public void OnBossMaxHealthUpdated(int newMaxHealth)
+    {
+        UpdateMaxHealth(bossHealthSlider, newMaxHealth);
+    }
+
+    private static void UpdateHealth(Slider healthSlider, int newHealth)
+    {
+        Debug.Assert(newHealth >= 0);
+        Debug.Assert(newHealth <= healthSlider.maxValue);
+
+        healthSlider.value = newHealth;
+    }
+
+    private static void UpdateMaxHealth(Slider healthSlider, int newMaxHealth)
+    {
+        Debug.Assert(newMaxHealth >= 1);
+
+        healthSlider.maxValue = newMaxHealth;
+        healthSlider.value    = Math.Min(healthSlider.value, healthSlider.maxValue);
+    }
+
+    private void UpdateHealthText()
+    {
+        healthText.text = healthSlider.value.ToString() + " / " + healthSlider.maxValue.ToString();
     }
 
     public void IncreaseShield() {

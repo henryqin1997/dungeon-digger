@@ -5,14 +5,13 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     // Start is called before the first frame update
-	public static CameraController instance;
-
 	public float moveSpeed = 30;
 
 	public Transform target;
 
-    private void Awake(){
-        instance = this;
+    public void OnRoomEnter(GameObject room)
+    {
+        ChangeTarget(room.transform);
     }
 
     void Start()

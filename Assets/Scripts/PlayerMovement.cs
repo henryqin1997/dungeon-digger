@@ -1,42 +1,50 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using System;
 #if ENABLE_CLOUD_SERVICES_ANALYTICS
 using UnityEngine.Analytics;
 #endif
 
+[System.Serializable]
+public class PlayerStatUpdatedEvent : UnityEvent<int>
+{}
+
 public class PlayerMovement : MonoBehaviour
 {
-    public static PlayerMovement instance;
-
     public Rigidbody2D rb;
     public Camera cam;
     public GameOverBehaviour gameover;
 
-    public static int moveSpeed = 10;
-    public static int health = 10;
-    public static int maxHealth = 10;
-    public static int shield = 0;
+    public PlayerStatUpdatedEvent moveSpeedUpdatedEvent;
+    public PlayerStatUpdatedEvent healthUpdatedEvent;
+    public PlayerStatUpdatedEvent maxHealthUpdatedEvent;
+    public PlayerStatUpdatedEvent shieldUpdatedEvent;
 
-    public static int maxShield = 10;
+    public int moveSpeed = 10;
+    public int health    = 10;
+    public int maxHealth = 10;
+    public int shield    = 0;
+    public int maxShield = 10;
 
     Vector2 movement;
     Vector2 mousePos;
     // Start is called before the first frame update
     void Start()
     {
+        moveSpeed = 10;
+        health    = 10;
+        maxHealth = 10;
+        shield    = 0;
+        maxShield = 10;
 
-        UIController.instance.healthSlider.maxValue = maxHealth;
-        UIController.instance.healthSlider.value = health;
-        UIController.instance.healthText.text = health.ToString() + " / " + maxHealth.ToString();
-
+        moveSpeedUpdatedEvent.Invoke(moveSpeed);
+        maxHealthUpdatedEvent.Invoke(maxHealth);
+        healthUpdatedEvent.Invoke(   health);
+        shieldUpdatedEvent.Invoke(   shield);
     }
 
-    private void Awake()
-    {
-        instance = this;
-    }
 
     // Update is called once per frame
     void Update()
@@ -65,6 +73,14 @@ public class PlayerMovement : MonoBehaviour
         rb.rotation = rotAngle;
     }
 
+    public void OnConsumableConsumed(IConsumable consumable)
+    {
+        ChangeMoveSpeed(  consumable.GetMoveSpeedChange());
+        IncreaseMaxHealth(consumable.GetMaxHealthChange());
+        IncreaseHealth(   consumable.GetHealthChange());
+        IncreaseShield(   consumable.GetShieldChange());
+    }
+
     public void OnBossDefeated()
     {
 #if ENABLE_CLOUD_SERVICES_ANALYTICS
@@ -91,33 +107,17 @@ public class PlayerMovement : MonoBehaviour
 #endif
     }
 
-    public static void ChangeMoveSpeed(int speedChange)
+    public void ChangeMoveSpeed(int speedChange)
     {
         moveSpeed += speedChange;
         if (moveSpeed < 10)
         {
             moveSpeed = 10;
         }
+        moveSpeedUpdatedEvent.Invoke(moveSpeed);
     }
 
-    public static void takeDamage(int damage)
-    {
-        int remainingDamage = damage;
-        if (shield > 0)
-        {
-            int damageOnShield = Math.Min(shield, damage);
-            DecreaseShield(damageOnShield);
-            remainingDamage -= damageOnShield;
-        }
-
-        if (remainingDamage > 0)
-        {
-            health -= remainingDamage;
-            health = Math.Max(0, health);
-        }
-    }
-
-    public static void DecreaseHealth(int healthDecrease)
+    public void DecreaseHealth(int healthDecrease)
     {
         int remainingDamage = healthDecrease;
         if (shield > 0)
@@ -131,35 +131,34 @@ public class PlayerMovement : MonoBehaviour
         {
             health -= remainingDamage;
             health = Math.Max(0, health);
-            UIController.instance.healthSlider.value = health;
-            UIController.instance.healthText.text = health.ToString() + " / " + maxHealth.ToString();
-
+            healthUpdatedEvent.Invoke(health);
         }
     }
 
-    public static void IncreaseHealth(int healthIncrease)
+    public void IncreaseHealth(int healthIncrease)
     {
-        health += healthIncrease;
-        maxHealth = Math.Max(health, maxHealth);
-        UIController.instance.healthSlider.maxValue = maxHealth;
-        UIController.instance.healthSlider.value = health;
-        UIController.instance.healthText.text = health.ToString() + " / " + maxHealth.ToString();
+        health = Math.Max(0, Math.Min(health + healthIncrease, maxHealth));
+        healthUpdatedEvent.Invoke(health);
     }
 
-    public static void IncreaseShield(int shieldIncrease)
+    public void IncreaseMaxHealth(int healthIncrease)
     {
-        shield += shieldIncrease;
-        for(int i = 0; i < shieldIncrease; i++) {
-            UIController.instance.IncreaseShield();
-        }
-        
+        maxHealth += healthIncrease;
+        maxHealthUpdatedEvent.Invoke(maxHealth);
+
+        health    += healthIncrease;
+        healthUpdatedEvent.Invoke(health);
     }
 
-    public static void DecreaseShield(int shieldDecrease)
+    public void IncreaseShield(int shieldIncrease)
+    {
+        shield = Math.Max(0, Math.Min(shield + shieldIncrease, maxShield));
+        shieldUpdatedEvent.Invoke(shield);
+    }
+
+    public void DecreaseShield(int shieldDecrease)
     {
         shield -= shieldDecrease;
-        for(int i = 0; i < shieldDecrease; i++) {
-            UIController.instance.DecreaseShield();
-        }
+        shieldUpdatedEvent.Invoke(shield);
     }
 }

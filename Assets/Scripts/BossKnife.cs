@@ -11,11 +11,14 @@ public class BossKnife : MonoBehaviour
 
     public int damage = 3;
     public static float destructTime = 1.75f;
+    public GameObject boss;
 
     void Start()
     {
         // why in start? want the bullet to travel in the straight line 
         direction = transform.right;
+        boss = GameObject.FindWithTag("Boss");
+        Debug.Assert(boss != null);
         Destroy (gameObject, destructTime);
     }
 
@@ -23,19 +26,31 @@ public class BossKnife : MonoBehaviour
     void Update()
     {
         transform.position += direction * speed * Time.deltaTime;
-        if(!BossController.instance.gameObject.activeInHierarchy) {
+        if(!IsBossActive()) {
             Destroy(gameObject);
         }
+    }
+
+    private bool IsBossActive()
+    {
+        return boss.activeSelf;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
 
         if(collision.gameObject.tag == "Player") {
-            PlayerMovement.DecreaseHealth(damage);
+            GetPlayerMovement(collision).DecreaseHealth(damage);
             Destroy(gameObject);
         }
-            
+    }
+
+    private static PlayerMovement GetPlayerMovement(Collision2D playerCollision)
+    {
+        GameObject player = playerCollision.gameObject;
+        PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
+        Debug.Assert(playerMovement != null);
+        return playerMovement;
     }
 
     private void OnBecameInvisible() {
