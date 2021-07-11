@@ -17,14 +17,14 @@ public class EnemyBody : MonoBehaviour
 
     public Animator anim;
 
-    public AudioSource audioSource;
+    public AudioSource audioSource; // TODO: what will this be used for?
 
     
     // Start is called before the first frame update
     public virtual void Start()
     {
         theCam = Camera.main;
-        audioSource = GetComponent<AudioSource>();   
+        audioSource = GetComponent<AudioSource>(); // TODO: add AudioSource component to enemy prefabs
     }
 
     // Update is called once per frame

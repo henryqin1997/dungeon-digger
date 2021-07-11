@@ -10,11 +10,9 @@ public class Shooting : MonoBehaviour
     public int rangeBonus = 0;
     public float coolDown = 0.2f;
     public int beamForce = 5;
-    public AudioSource audioSource; // TODO: add component
-
-    public static int beamForce = 5;
-    public static float coolDown = 0.2f;
     bool canShoot = true;
+    public AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
