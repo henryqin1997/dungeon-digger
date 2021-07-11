@@ -15,9 +15,30 @@ public class Room : MonoBehaviour
 
     public UnityEvent<GameObject> roomEnteredEvent = new UnityEvent<GameObject>();
 
+    public string roomtype = "normal";
+
+    private int enemy_count;
+
+    private GameObject[] enemylist;
+
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        if (roomtype.Equals("normal")){
+            enemy_count = (int) Random.Range(2,6);
+            enemylist = Resources.LoadAll<GameObject>("Prefabs/Enemy");
+
+            for (int i=0; i<enemy_count; i++){
+                Debug.Log("Creating enemy number: " + i);
+                int index = Random.Range(0,enemylist.Length);
+                GameObject enemy = Instantiate(enemylist[index]);
+                enemy.SetActive(false);
+                enemy.transform.position = new Vector3(transform.position.x + Random.Range(-10f,10f),transform.position.y + Random.Range(-4f,4f),12.07283f);
+                enemies.Add(enemy);
+            }
+        }
+
+
         foreach (GameObject enemy in enemies)
         {
             enemy.SetActive(false);

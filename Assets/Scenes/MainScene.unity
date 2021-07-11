@@ -4002,6 +4002,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7985408047179220436, guid: ea1bd30f938084c7bb7b257a8de4d3e5,
         type: 3}
+      propertyPath: roomtype
+      value: initial
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985408047179220436, guid: ea1bd30f938084c7bb7b257a8de4d3e5,
+        type: 3}
       propertyPath: roomEnteredEvent.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -10013,6 +10018,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Room (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668250744505148348, guid: b496ff2ee4ace42a2935865556b2d991,
+        type: 3}
+      propertyPath: roomtype
+      value: boss
       objectReference: {fileID: 0}
     - target: {fileID: 3668250744505148348, guid: b496ff2ee4ace42a2935865556b2d991,
         type: 3}
