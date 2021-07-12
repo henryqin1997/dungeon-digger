@@ -30,13 +30,15 @@ public class BossController : MonoBehaviour
     public BossSequence[] sequences;
     public int currentSequence;
 
-    public Transform playerTransform; // 
+    public Transform playerTransform;
 
     public void Start()
     {
         playerTransform = FindPlayerTransform();
         bossMaxHealthUpdatedEvent.Invoke(maxHealth);
         bossHealthUpdatedEvent.Invoke(   currentHealth);
+        actions = sequences[currentSequence].actions;
+        actionCounter = actions[currentAction].actionLength;
     }
 
     void OnEnable()
@@ -111,8 +113,9 @@ public class BossController : MonoBehaviour
             gameObject.SetActive(false);
             //Instantiate(deathEffect, transform.position, transform.rotation);
             //levelExit.SetActive(true);
-	    bossDefeatedEvent.Invoke();
+	        bossDefeatedEvent.Invoke();
             gameOver.GameOver();
+
         } else {
             if(currentHealth <= sequences[currentSequence].endSequenceHealth && currentSequence < sequences.Length - 1) {
                 currentSequence ++;
