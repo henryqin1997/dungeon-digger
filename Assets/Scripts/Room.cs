@@ -17,16 +17,12 @@ public class Room : MonoBehaviour
 
     public string roomtype = "normal";
 
-    private int enemy_count;
-
-    private GameObject[] enemylist;
-
     // Start is called before the first frame update
     void Start()
     {   
         if (roomtype.Equals("normal")){
-            enemy_count = (int) Random.Range(2,6);
-            enemylist = Resources.LoadAll<GameObject>("Prefabs/Enemy");
+            int enemy_count = (int) Random.Range(2,6);
+            GameObject[] enemylist = Resources.LoadAll<GameObject>("Prefabs/Enemy");
 
             for (int i=0; i<enemy_count; i++){
                 Debug.Log("Creating enemy number: " + i);
