@@ -44,7 +44,7 @@ public class Room : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enemies.Count > 0 && roomActive && openWhenEnemiesCleared)
+        if (enemies.Count > 0 && roomActive)
         {
             for (int i = 0; i < enemies.Count; i++)
             {
@@ -54,7 +54,7 @@ public class Room : MonoBehaviour
                     i--;
                 }
             }
-            if (enemies.Count == 0)
+            if (openWhenEnemiesCleared && (enemies.Count == 0))
             {
                 foreach (GameObject door in doors)
                 {
