@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyBody : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class EnemyBody : MonoBehaviour
     public int shield = 0;
     public Transform attackArm;
     protected Camera theCam;
+    private UnityAction onDestroyCallback = new UnityAction(delegate {});
 
     public Animator anim;
 
@@ -25,6 +27,16 @@ public class EnemyBody : MonoBehaviour
     {
         theCam = Camera.main;
         audioSource = GetComponent<AudioSource>(); // TODO: add AudioSource component to enemy prefabs
+    }
+
+    public void SetOnDestroyCallback(UnityAction callback)
+    {
+        onDestroyCallback = callback;
+    }
+
+    void OnDestroy()
+    {
+        onDestroyCallback();
     }
 
     // Update is called once per frame

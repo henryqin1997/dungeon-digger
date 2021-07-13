@@ -31,6 +31,9 @@ public class Room : MonoBehaviour
                 enemy.SetActive(false);
                 enemy.transform.position = new Vector3(transform.position.x + Random.Range(-10f,10f),transform.position.y + Random.Range(-4f,4f),12.07283f);
                 enemies.Add(enemy);
+                enemy.GetComponent<EnemyBody>().SetOnDestroyCallback(
+                    delegate { enemies.Remove(enemy); }
+                );
             }
         }
 
@@ -44,27 +47,14 @@ public class Room : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enemies.Count > 0 && roomActive)
+        if (roomActive && closeWhenEntered && (enemies.Count == 0))
         {
-            for (int i = 0; i < enemies.Count; i++)
+            foreach (GameObject door in doors)
             {
-                if (enemies[i] == null)
-                {
-                    enemies.RemoveAt(i);
-                    i--;
-                }
+                door.SetActive(false);
             }
-            if (openWhenEnemiesCleared && (enemies.Count == 0))
-            {
-                foreach (GameObject door in doors)
-                {
-                    door.SetActive(false);
-
-                    closeWhenEntered = false;
-                }
-            }
+            closeWhenEntered = false;
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)
