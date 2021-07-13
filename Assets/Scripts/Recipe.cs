@@ -1,28 +1,35 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Recipe : MonoBehaviour
 {
-    private const int MAX_INGREDIENTS = 3;
+    public const int MAX_INGREDIENTS = 3;
     public IngredientBehaviour[] ingredients;
     public DishBehaviour         dish;
-    private Dictionary<Ingredient, int> requiredIngredients  = new Dictionary<Ingredient, int>();
-    private Dictionary<Ingredient, int> availableIngredients = new Dictionary<Ingredient, int>();
+    private Dictionary<Ingredient, int>         requiredIngredients  = new Dictionary<Ingredient, int>();
+    private Dictionary<Ingredient, int>         availableIngredients = new Dictionary<Ingredient, int>();
+    private Dictionary<Ingredient, List<Image>> ingredientImages     = new Dictionary<Ingredient, List<Image>>();
+    private Image                               dishImage;
 
     public void UpdateAvailableIngredients(Dictionary<Ingredient, int> availableIngredientCounts)
     {
-        Debug.Log(DisplayIngredientCounts(availableIngredientCounts));
+        // Debug.Log(DisplayIngredientCounts(availableIngredientCounts));
         availableIngredients = availableIngredientCounts;
-        UpdateSelectable();
+        UpdateGUI();
     }
 
-    public void UpdateSelectable()
+    public void UpdateGUI()
     {
-        //Debug.Log(dish.dish.id.ToString() + " - require(" + DisplayIngredientCounts(requiredIngredients) + ") | have(" + DisplayIngredientCounts(availableIngredients) + ")");
-        MakeSelectable(CanCreate(availableIngredients));
+        // Debug.Log(dish.dish.id.ToString() + " - require(" + DisplayIngredientCounts(requiredIngredients) + ") | have(" + DisplayIngredientCounts(availableIngredients) + ")");
+        int countAvailableRequiredIngredients = HighlightAvailableRequiredIngredients();
+        bool canCreate = (countAvailableRequiredIngredients == ingredients.Length);
+        HighlightDish(canCreate);
+        MakeSelectable(canCreate);
     }
 
+#if false
     private static string DisplayIngredientCounts(Dictionary<Ingredient, int> ingredientCounts)
     {
         string output = "{";
@@ -32,18 +39,65 @@ public class Recipe : MonoBehaviour
         }
         return output.TrimEnd(',', ' ') + "}";
     }
+#endif
 
-    private bool CanCreate(in Dictionary<Ingredient, int> availableIngredientCounts)
+    private int HighlightAvailableRequiredIngredients()
     {
+        int countAvailableRequiredIngredients = 0;
         foreach (KeyValuePair<Ingredient, int> entry in requiredIngredients) {
             Ingredient ingredient = entry.Key;
             int countRequired     = entry.Value;
-            availableIngredientCounts.TryGetValue(ingredient, out var countAvailable);
-            if (countRequired > countAvailable) {
-                return false;
-            }
+            availableIngredients.TryGetValue(ingredient, out var countAvailable);
+
+            int countOverlap = Math.Min(countAvailable, countRequired);
+            countAvailableRequiredIngredients += countOverlap;
+
+            HighlightIngredient(ingredient, countOverlap);
         }
-        return true;
+        return countAvailableRequiredIngredients;
+    }
+
+    private void HighlightIngredient(Ingredient ingredient, int countAvailableRequired)
+    {
+        List<Image> images = ingredientImages[ingredient];
+        int slot = 0;
+        for (; slot < countAvailableRequired; ++slot)
+        {
+            FocusImage(images[slot]);
+        }
+        for (; slot < images.Count; ++slot)
+        {
+            FadeImage(images[slot]);
+        }
+    }
+
+    private void HighlightDish(bool canCreate)
+    {
+        if (canCreate)
+        {
+            FocusImage(GetDishImage());
+        }
+        else
+        {
+            FadeImage(GetDishImage());
+        }
+    }
+
+    private static void FadeImage(Image image)
+    {
+        const float FADED_ALPHA = 0.25f;
+        SetImageAlpha(image, FADED_ALPHA);
+    }
+
+    private static void FocusImage(Image image)
+    {
+        const float FOCUSED_ALPHA = 1.0f;
+        SetImageAlpha(image, FOCUSED_ALPHA);
+    }
+
+    private static void SetImageAlpha(Image image, float alpha)
+    {
+        image.color = new Color(image.color.r, image.color.g, image.color.b, alpha);
     }
 
     public void MakeSelectable(bool selectable)
@@ -54,43 +108,86 @@ public class Recipe : MonoBehaviour
 
     void Awake()
     {
-        foreach (IngredientBehaviour ingredientBehaviour in ingredients)
-        {
-            Ingredient ingredient = ingredientBehaviour.ingredient;
-            requiredIngredients.TryGetValue(ingredient, out var currentCount);
-            requiredIngredients[ingredient] = currentCount + 1;
-        }
-    }
+        Debug.Assert(ingredients.Length <= MAX_INGREDIENTS);
 
-    // Start is called before the first frame update
-    void Start()
-    {
         int slot = 0;
 
-        // show assigned ingredients
         for (; slot < ingredients.Length; ++slot) {
-            Ingredient ingredient = ingredients[slot].ingredient;
-            var ingredientSlot = GetIngredientSlot(slot);
-            var ingredientIcon = ingredientSlot.transform.GetChild(0).gameObject;
-            ingredientIcon.GetComponent<Image>().sprite = ingredient.icon;
+            RegisterIngredient(slot);
         }
 
         // hide unused ingredient slots
         for (; slot < MAX_INGREDIENTS; ++slot) {
-            Destroy(GetIngredientSlot(slot));
-            if (slot != 0) {
-                Destroy(GetPlusIcon(slot-1));
-            }
+            HideUnusedIngredientSlot(slot);
         }
 
-        GetDescendant("DishSlot/DishIcon").GetComponent<Image>().sprite = dish.dish.icon;
+        GetDishImage().sprite = dish.dish.icon;
 
-        UpdateSelectable();
+        UpdateGUI();
+    }
+
+    private Image GetDishImage()
+    {
+        if (dishImage == null)
+        {
+            dishImage = FindDishImage();
+        }
+        return dishImage;
+    }
+
+    private Image FindDishImage()
+    {
+        Image image = GetDescendant("DishSlot/DishIcon").GetComponent<Image>();
+        Debug.Assert(image != null);
+        return image;
+    }
+
+    private void RegisterIngredient(int slot)
+    {
+        Ingredient ingredient = ingredients[slot].ingredient;
+        var ingredientImage = GetIngredientImage(slot);
+        ingredientImage.sprite = ingredient.icon;
+
+        UpdateRequiredIngredientCount(ingredient);
+        AddIngredientImage(ingredient, ingredientImage);
+    }
+
+    private void HideUnusedIngredientSlot(int slot)
+    {
+        Destroy(GetIngredientSlot(slot));
+        if (slot != 0) {
+            Destroy(GetPlusIcon(slot-1));
+        }
+    }
+
+    private void UpdateRequiredIngredientCount(in Ingredient ingredient)
+    {
+        requiredIngredients.TryGetValue(ingredient, out var currentCount);
+        requiredIngredients[ingredient] = currentCount + 1;
+    }
+
+    private void AddIngredientImage(in Ingredient ingredient, Image ingredientImage)
+    {
+        List<Image> images = null;
+        if (!ingredientImages.TryGetValue(ingredient, out images))
+        {
+            images = ingredientImages[ingredient] = new List<Image>();
+        }
+        images.Add(ingredientImage);
     }
 
     private void SetButtonInteractive(bool interactable)
     {
         gameObject.GetComponent<Button>().interactable = interactable;
+    }
+
+    private Image GetIngredientImage(int slot)
+    {
+        var ingredientSlot  = GetIngredientSlot(slot);
+        var ingredientIcon  = ingredientSlot.transform.GetChild(0).gameObject;
+        var ingredientImage = ingredientIcon.GetComponent<Image>();
+        Debug.Assert(ingredientImage != null);
+        return ingredientImage;
     }
 
     private GameObject GetIngredientSlot(int slot)
