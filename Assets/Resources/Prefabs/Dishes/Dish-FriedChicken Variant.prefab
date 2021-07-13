@@ -97,7 +97,7 @@ PrefabInstance:
     - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
         type: 3}
       propertyPath: dish.displayName
-      value: '"Fried Chicken"'
+      value: Fried Chicken
       objectReference: {fileID: 0}
     - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
         type: 3}
@@ -107,7 +107,7 @@ PrefabInstance:
     - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
         type: 3}
       propertyPath: dish.effectSensation
-      value: '"You feel better."'
+      value: You feel better.
       objectReference: {fileID: 0}
     - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
         type: 3}
@@ -122,7 +122,7 @@ PrefabInstance:
     - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
         type: 3}
       propertyPath: dish.effectDescription
-      value: '"boosts health"'
+      value: boosts health
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90c20805db212e945b82992deccdd145, type: 3}

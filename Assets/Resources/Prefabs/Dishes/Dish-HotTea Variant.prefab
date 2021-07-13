@@ -97,12 +97,12 @@ PrefabInstance:
     - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
         type: 3}
       propertyPath: dish.displayName
-      value: '"Hot Tea"'
+      value: Hot Tea
       objectReference: {fileID: 0}
     - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
         type: 3}
       propertyPath: dish.effectSensation
-      value: '"You feel a bit more aggressive."'
+      value: You feel a bit more aggressive.
       objectReference: {fileID: 0}
     - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
         type: 3}
@@ -117,7 +117,7 @@ PrefabInstance:
     - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
         type: 3}
       propertyPath: dish.effectDescription
-      value: '"boosts move speed, reduces attack cooldown"'
+      value: boosts move speed, reduces attack cooldown
       objectReference: {fileID: 0}
     - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
         type: 3}
