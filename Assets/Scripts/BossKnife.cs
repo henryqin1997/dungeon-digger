@@ -10,13 +10,24 @@ public class BossKnife : MonoBehaviour
     private Vector3 direction;
 
     public int damage = 3;
-    public static float destructTime = 1.75f;
-    public GameObject boss;
+    public bool shouldFollowPlayer;
+    public static float destructTime = 1f;
+    private GameObject boss;
 
     void Start()
     {
         // why in start? want the bullet to travel in the straight line 
-        direction = transform.right;
+        if(shouldFollowPlayer) {
+            GameObject player = GameObject.FindWithTag("Player");
+            if (player == null)
+        {
+            return;
+        }
+            direction = player.transform.position - transform.position;
+
+        } else {
+            direction = transform.right;
+        }
         boss = GameObject.FindWithTag("Boss");
         Debug.Assert(boss != null);
         Destroy (gameObject, destructTime);
@@ -33,6 +44,9 @@ public class BossKnife : MonoBehaviour
 
     private bool IsBossActive()
     {
+        if(boss == null) {
+            return false;
+        }
         return boss.activeSelf;
     }
 

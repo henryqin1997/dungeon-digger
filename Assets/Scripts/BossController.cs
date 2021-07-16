@@ -11,7 +11,7 @@ public class BossHealthUpdatedEvent : UnityEvent<int>
 public class BossController : MonoBehaviour
 {
     public BossAction[] actions;
-    private int currentAction;
+    protected int currentAction;
     private float actionCounter;
     private float shotCounter;
     private Vector2 moveDirection;
@@ -31,6 +31,7 @@ public class BossController : MonoBehaviour
     public int currentSequence;
 
     public Transform playerTransform;
+    protected Animator anim;
 
     public void Start()
     {
@@ -39,6 +40,7 @@ public class BossController : MonoBehaviour
         bossHealthUpdatedEvent.Invoke(   currentHealth);
         actions = sequences[currentSequence].actions;
         actionCounter = actions[currentAction].actionLength;
+        anim = GetComponent<Animator>();
     }
 
     void OnEnable()
@@ -63,7 +65,7 @@ public class BossController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
        if(actionCounter > 0) {
            actionCounter -= Time.deltaTime;
@@ -75,7 +77,7 @@ public class BossController : MonoBehaviour
                    moveDirection.Normalize();
                }
 
-               if(actions[currentAction].moveToPoint && Vector3.Distance(transform.position, actions[currentAction].pointToMoveTo.position) > .5f) {
+               if(actions[currentAction].moveToPoint && Vector3.Distance(transform.position, actions[currentAction].pointToMoveTo.position) > 3f) {
                    moveDirection = actions[currentAction].pointToMoveTo.position - transform.position;
                    moveDirection.Normalize();
                }

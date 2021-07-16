@@ -21,13 +21,11 @@ public class LongRangeEnemy : EnemyBody
         if(GameObject.FindWithTag("Player") == null) {
             return;
         }
-        Vector3 playerLocation = theCam.WorldToScreenPoint(
-            GameObject.FindWithTag("Player").transform.position
-          );
+        Vector3 playerLocation = GameObject.FindWithTag("Player").transform.position;
+        
 
-        Vector3 enemyLocation = theCam.WorldToScreenPoint(
-          transform.localPosition
-        );
+        Vector3 enemyLocation = transform.position;
+        
 
         if (playerLocation.x > enemyLocation.x)
         {

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6502612665452964928}
   - component: {fileID: 6502612665452964930}
   - component: {fileID: 6502612665452964929}
-  - component: {fileID: 6502612665452964931}
+  - component: {fileID: 5156356247519473628}
   m_Layer: 7
   m_Name: chef_arm
   m_TagString: Untagged
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 472204485
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0f72bdd30e2364cc0a6172e0f9295812, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -110,7 +110,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1.66}
   m_EdgeRadius: 0
---- !u!114 &6502612665452964931
+--- !u!114 &5156356247519473628
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -227,6 +227,7 @@ MonoBehaviour:
   shield: 0
   attackArm: {fileID: 6502612665452964928}
   anim: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!95 &7102541602142784225
 Animator:
   serializedVersion: 3
@@ -315,7 +316,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 472204485
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 3f47f849c0458b340b67c9365617ba58, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
