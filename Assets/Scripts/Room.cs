@@ -25,7 +25,7 @@ public class Room : MonoBehaviour
             GameObject[] enemylist = Resources.LoadAll<GameObject>("Prefabs/Enemy");
 
             for (int i=0; i<enemy_count; i++){
-                Debug.Log("Creating enemy number: " + i);
+                //Debug.Log("Creating enemy number: " + i);
                 int index = Random.Range(0,enemylist.Length);
                 GameObject enemy = Instantiate(enemylist[index]);
                 enemy.SetActive(false);

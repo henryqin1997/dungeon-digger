@@ -29,6 +29,12 @@ public class Recipe : MonoBehaviour
         MakeSelectable(canCreate);
     }
 
+    public void MakeSelectable(bool selectable)
+    {
+        GetDescendant("Glow").SetActive(selectable);
+        SetButtonInteractive(selectable);
+    }
+    
 #if false
     private static string DisplayIngredientCounts(Dictionary<Ingredient, int> ingredientCounts)
     {
@@ -100,12 +106,6 @@ public class Recipe : MonoBehaviour
         image.color = new Color(image.color.r, image.color.g, image.color.b, alpha);
     }
 
-    public void MakeSelectable(bool selectable)
-    {
-        GetDescendant("Glow").SetActive(selectable);
-        SetButtonInteractive(selectable);
-    }
-
     void Awake()
     {
         Debug.Assert(ingredients.Length <= MAX_INGREDIENTS);
@@ -174,6 +174,11 @@ public class Recipe : MonoBehaviour
             images = ingredientImages[ingredient] = new List<Image>();
         }
         images.Add(ingredientImage);
+    }
+
+    private void SetGlow(bool haveGlow)
+    {
+        GetDescendant("Glow").SetActive(haveGlow);
     }
 
     private void SetButtonInteractive(bool interactable)
