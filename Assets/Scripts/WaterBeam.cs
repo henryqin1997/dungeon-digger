@@ -36,6 +36,10 @@ public class WaterBeam : MonoBehaviour
             {
                 collision.gameObject.GetComponent<BossController>().TakeDamage(damageToGive);
             }
+            else if (collision.gameObject.tag == "Boss2")
+            {
+                collision.gameObject.GetComponent<Boss2Controller>().TakeDamage(damageToGive);
+            }
             Destroy(gameObject);
         }
     }

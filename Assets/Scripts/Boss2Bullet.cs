@@ -7,38 +7,51 @@ public class Boss2Bullet : MonoBehaviour
     public float speed;
     private Vector3 direction;
 
+    public int damage = 3;
+    public static float destructTime = 1.75f;
+    public GameObject boss;
+
     // Start is called before the first frame update
     void Start()
     {
-        // direction = PlayerController.instance.transform.position - transform.position;
-        // direction.Normalize();
         direction = transform.right;
+        boss = GameObject.FindWithTag("Boss2");
+        Debug.Assert(boss != null);
+        Destroy (gameObject, destructTime);
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.position += direction * speed * Time.deltaTime;
-
-        // if (!Boss2Controller.instance.gameObject.activeHierarchy)
-        // {
-        // 	Destroy(gameObject);
-        // }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.tag == "Player")
-        {
-            //PlayerHealthController.instance.DamagePlayer();
+        if(!IsBossActive()) {
+            Destroy(gameObject);
         }
-
-        Destroy(gameObject);
-        //AudioManager.instance.PlaySFX(4);
     }
 
-    private void OnBecameInvisible()
+    private bool IsBossActive()
     {
+        return boss.activeSelf;
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if(collision.gameObject.tag == "Player") {
+            GetPlayerMovement(collision).DecreaseHealth(damage);
+            Destroy(gameObject);
+        }
+    }
+    
+    private static PlayerMovement GetPlayerMovement(Collision2D playerCollision)
+    {
+        GameObject player = playerCollision.gameObject;
+        PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
+        Debug.Assert(playerMovement != null);
+        return playerMovement;
+    }
+
+    private void OnBecameInvisible() {
         Destroy(gameObject);
     }
 }

@@ -4,18 +4,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+
+
 public class Boss2Controller : MonoBehaviour
 {	
-	public static Boss2Controller instance;
+	  public static Boss2Controller instance;
 
-	public Boss2Action[] actions;
-	private int currentAction;
-	private float actionCounter;
+	  public BossAction[] actions;
+	  private int currentAction;
+	  private float actionCounter;
     private float shotCounter;
     private Vector2 moveDirection;
     public Rigidbody2D theRB;
 
     public Transform playerTransform;
+
+    public GameObject deathEffect;
+    public GameObject levelExit;
+    public UnityEvent bossDefeatedEvent;
+
+    public int currentHealth = 50;
+    public int maxHealth = 50;
+
+    public BossSequence[] sequences;
+    public int currentSequence;
+
+    public BossHealthUpdatedEvent bossHealthUpdatedEvent;
+    public BossHealthUpdatedEvent bossMaxHealthUpdatedEvent;
+    public UnityEvent bossActivatedEvent;
+
+    public GameOverBehaviour gameOver;
 
     private void Awake() 
     {
@@ -25,8 +43,11 @@ public class Boss2Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         actionCounter = actions[currentAction].actionLength;
-         playerTransform = FindPlayerTransform();
+        playerTransform = FindPlayerTransform();
+        bossMaxHealthUpdatedEvent.Invoke(maxHealth);
+        bossHealthUpdatedEvent.Invoke(   currentHealth);
+        actions = sequences[currentSequence].actions;
+        actionCounter = actions[currentAction].actionLength;
 
     }
 
@@ -90,6 +111,28 @@ public class Boss2Controller : MonoBehaviour
        }
         
     }
+
+    public void TakeDamage(int damageAmount) {
+        currentHealth = Math.Max(currentHealth - damageAmount, 0);
+        bossHealthUpdatedEvent.Invoke(currentHealth);
+        if(currentHealth <= 0) {
+            gameObject.SetActive(false);
+            //Instantiate(deathEffect, transform.position, transform.rotation);
+            //levelExit.SetActive(true);
+          bossDefeatedEvent.Invoke();
+            gameOver.GameOver();
+          }
+    }
+
+    
+}
+
+[System.Serializable]
+public class Boss2Sequence {
+    [Header("Sequence")]
+    public BossAction[] actions;
+    public int endSequenceHealth;
+
 }
 
 [System.Serializable]
