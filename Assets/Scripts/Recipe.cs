@@ -136,18 +136,9 @@ public class Recipe : MonoBehaviour
         }
 
         GetDishImage().sprite = dish.dish.icon;
-        tooltip = FindTooltip();
+        tooltip = Tooltip.FindTooltip();
 
         UpdateGUI();
-    }
-
-    private static Tooltip FindTooltip()
-    {
-        GameObject tooltipGameObject = GameObject.Find("Tooltip");
-        Debug.Assert(tooltipGameObject != null);
-        Tooltip tooltip = tooltipGameObject.GetComponent<Tooltip>();
-        Debug.Assert(tooltip != null);
-        return tooltip;
     }
 
     private Image GetDishImage()

@@ -25,6 +25,16 @@ public class Tooltip : MonoBehaviour {
         transform.localPosition = localPoint;
     }
 
+
+    public static Tooltip FindTooltip()
+    {
+        GameObject tooltipGameObject = GameObject.Find("Tooltip");
+        Debug.Assert(tooltipGameObject != null);
+        Tooltip tooltip = tooltipGameObject.GetComponent<Tooltip>();
+        Debug.Assert(tooltip != null);
+        return tooltip;
+    }
+
     public void ShowTooltip(string tooltipString)
     {
         SetChildrenActive(true);
