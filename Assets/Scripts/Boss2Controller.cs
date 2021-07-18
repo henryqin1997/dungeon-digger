@@ -46,7 +46,6 @@ public class Boss2Controller : MonoBehaviour
         playerTransform = FindPlayerTransform();
         bossMaxHealthUpdatedEvent.Invoke(maxHealth);
         bossHealthUpdatedEvent.Invoke(   currentHealth);
-        actions = sequences[currentSequence].actions;
         actionCounter = actions[currentAction].actionLength;
 
     }
@@ -85,9 +84,6 @@ public class Boss2Controller : MonoBehaviour
                    moveDirection.Normalize();
                }
            }
-
-
-
 
            theRB.velocity = moveDirection * actions[currentAction].moveSpeed;
 

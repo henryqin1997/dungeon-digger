@@ -522,8 +522,12 @@ MonoBehaviour:
         m_CallState: 2
   currentHealth: 50
   maxHealth: 50
-  sequences: []
-  currentSequence: 0
+  sequences:
+  - actions: []
+    endSequenceHealth: 0
+  - actions: []
+    endSequenceHealth: 0
+  currentSequence: 2
   bossHealthUpdatedEvent:
     m_PersistentCalls:
       m_Calls:
@@ -719,7 +723,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5975839408872030104}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -27.962568, y: 30.965277, z: -6.64831}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
