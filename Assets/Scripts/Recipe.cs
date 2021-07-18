@@ -12,6 +12,7 @@ public class Recipe : MonoBehaviour
     private Dictionary<Ingredient, int>         availableIngredients = new Dictionary<Ingredient, int>();
     private Dictionary<Ingredient, List<Image>> ingredientImages     = new Dictionary<Ingredient, List<Image>>();
     private Image                               dishImage;
+    private Tooltip                             tooltip;
 
     public void UpdateAvailableIngredients(Dictionary<Ingredient, int> availableIngredientCounts)
     {
@@ -34,7 +35,20 @@ public class Recipe : MonoBehaviour
         GetDescendant("Glow").SetActive(selectable);
         SetButtonInteractive(selectable);
     }
-    
+
+    public void OnPointerEnter()
+    {
+        Dish d = dish.dish;
+        Debug.Assert(tooltip != null);
+        tooltip.ShowTooltip(d.GetDisplayName() + ": " + d.GetEffectDescription());
+    }
+
+    public void OnPointerExit()
+    {
+        Debug.Assert(tooltip != null);
+        tooltip.HideTooltip();
+    }
+
 #if false
     private static string DisplayIngredientCounts(Dictionary<Ingredient, int> ingredientCounts)
     {
@@ -122,8 +136,18 @@ public class Recipe : MonoBehaviour
         }
 
         GetDishImage().sprite = dish.dish.icon;
+        tooltip = FindTooltip();
 
         UpdateGUI();
+    }
+
+    private static Tooltip FindTooltip()
+    {
+        GameObject tooltipGameObject = GameObject.Find("Tooltip");
+        Debug.Assert(tooltipGameObject != null);
+        Tooltip tooltip = tooltipGameObject.GetComponent<Tooltip>();
+        Debug.Assert(tooltip != null);
+        return tooltip;
     }
 
     private Image GetDishImage()
