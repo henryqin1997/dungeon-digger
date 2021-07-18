@@ -37,7 +37,7 @@ public class ToastMessage : MonoBehaviour
         float counter = 0;
         while (counter < duration)
         {
-            counter += Time.deltaTime;
+            counter += Time.unscaledDeltaTime;
             yield return null;
         }
 
@@ -68,7 +68,7 @@ public class ToastMessage : MonoBehaviour
 
         while (counter < duration)
         {
-            counter += Time.deltaTime;
+            counter += Time.unscaledDeltaTime;
             float alpha = Mathf.Lerp(a, b, counter / duration);
 
             targetText.color = new Color(currentColor.r, currentColor.g, currentColor.b, alpha);
