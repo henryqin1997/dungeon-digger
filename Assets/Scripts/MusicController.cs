@@ -25,9 +25,14 @@ public class MusicController : MonoBehaviour
         audioSource.Play();
     }
 
-    public void PlaySound(AudioClip sound, float volumeScale = 1f)
+    public void PlaySound(AudioClip sound, float volumeScale)
     {
         audioSource.PlayOneShot(sound, volumeScale);
+    }
+
+    public void PlaySound(AudioClip sound)
+    {
+        PlaySound(sound, 1.0f);
     }
 
     public void OnMusicControl()
