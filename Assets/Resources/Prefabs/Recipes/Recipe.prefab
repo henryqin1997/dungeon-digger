@@ -368,7 +368,34 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4081254409208559596}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5663029982000924596, guid: 44e9d2bf14d25574681e6c44d99c61bf,
+          type: 3}
+        m_TargetAssemblyTypeName: MusicController, Assembly-CSharp
+        m_MethodName: PlayMusic
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: ee53bcd77b559184ca214eec5974d137,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6870861046397494103, guid: c99ab027287653648a55934b1ad5b294,
+          type: 3}
+        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+        m_MethodName: MakeRecipe
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1382250339655274660}
+          m_ObjectArgumentAssemblyTypeName: Recipe, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7837505623193286194
 MonoBehaviour:
   m_ObjectHideFlags: 0
