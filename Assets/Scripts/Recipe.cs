@@ -12,6 +12,7 @@ public class Recipe : MonoBehaviour
     private Dictionary<Ingredient, int>         availableIngredients = new Dictionary<Ingredient, int>();
     private Dictionary<Ingredient, List<Image>> ingredientImages     = new Dictionary<Ingredient, List<Image>>();
     private Image                               dishImage;
+    private Tooltip                             tooltip;
 
     public void UpdateAvailableIngredients(Dictionary<Ingredient, int> availableIngredientCounts)
     {
@@ -27,6 +28,25 @@ public class Recipe : MonoBehaviour
         bool canCreate = (countAvailableRequiredIngredients == ingredients.Length);
         HighlightDish(canCreate);
         MakeSelectable(canCreate);
+    }
+
+    public void MakeSelectable(bool selectable)
+    {
+        GetDescendant("Glow").SetActive(selectable);
+        SetButtonInteractive(selectable);
+    }
+
+    public void OnPointerEnter()
+    {
+        Dish d = dish.dish;
+        Debug.Assert(tooltip != null);
+        tooltip.ShowTooltip(d.GetDisplayName() + ": " + d.GetEffectDescription());
+    }
+
+    public void OnPointerExit()
+    {
+        Debug.Assert(tooltip != null);
+        tooltip.HideTooltip();
     }
 
 #if false
@@ -100,12 +120,6 @@ public class Recipe : MonoBehaviour
         image.color = new Color(image.color.r, image.color.g, image.color.b, alpha);
     }
 
-    public void MakeSelectable(bool selectable)
-    {
-        GetDescendant("Glow").SetActive(selectable);
-        SetButtonInteractive(selectable);
-    }
-
     void Awake()
     {
         Debug.Assert(ingredients.Length <= MAX_INGREDIENTS);
@@ -122,6 +136,7 @@ public class Recipe : MonoBehaviour
         }
 
         GetDishImage().sprite = dish.dish.icon;
+        tooltip = Tooltip.FindTooltip();
 
         UpdateGUI();
     }
@@ -174,6 +189,11 @@ public class Recipe : MonoBehaviour
             images = ingredientImages[ingredient] = new List<Image>();
         }
         images.Add(ingredientImage);
+    }
+
+    private void SetGlow(bool haveGlow)
+    {
+        GetDescendant("Glow").SetActive(haveGlow);
     }
 
     private void SetButtonInteractive(bool interactable)

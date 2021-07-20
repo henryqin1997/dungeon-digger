@@ -48,3 +48,15 @@ MonoBehaviour:
     icon: {fileID: 0}
     frame: {fileID: -6034139491110726074, guid: b06c6478b6ba00346a4a6a2211fc0775,
       type: 3}
+    displayName: 
+    effectDescription: 
+    effectSensation: 
+    moveSpeedChange: 0
+    attackDamageChange: 0
+    attackCooldownChange: 0
+    attackRangeChange: 0
+    healthChange: 0
+    maxHealthChange: 0
+    shieldChange: 0
+    status: 0
+    consumeAudioClip: {fileID: 8300000, guid: df7ffb15ba2b0664484977010da66910, type: 3}

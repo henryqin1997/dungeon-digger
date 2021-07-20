@@ -6,13 +6,32 @@ using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
-    void Start()
+    private Tooltip tooltip;
+    private string  hoverText;
+
+    private void Awake()
     {
+        tooltip = Tooltip.FindTooltip();
     }
 
-    // Update is called once per frame
+    private void OnDisable()
+    {
+        HideHoverText();
+    }
+
+    public void OnPointerEnter()
+    {
+        ShowHoverText();
+    }
+
+    public void OnPointerExit()
+    {
+        HideHoverText();
+    }
+
     public void SetItems(IItem item, int count)
     {
+        hoverText = item.GetDisplayName();
         SetFrame(item.GetFrame());
         SetIcon( item.GetIcon());
         SetCount(count);
@@ -28,6 +47,19 @@ public class InventorySlot : MonoBehaviour
         UnityEvent onClick = GetButton().onClick;
         onClick.RemoveAllListeners();
         onClick.AddListener(call);
+    }
+
+    private void ShowHoverText()
+    {
+        Debug.Assert(tooltip != null);
+        Debug.Assert(hoverText != null);
+        tooltip.ShowTooltip(hoverText);
+    }
+
+    private void HideHoverText()
+    {
+        Debug.Assert(tooltip != null);
+        tooltip.HideTooltip();
     }
 
     private Button GetButton()

@@ -46,6 +46,7 @@ public class Dish : IItem, IConsumable
     public int maxHealthChange;
     public int shieldChange;
     public STATUS status;
+    public AudioClip consumeAudioClip;
 
     public Dish(Dish other)
     {
@@ -63,6 +64,7 @@ public class Dish : IItem, IConsumable
         maxHealthChange = other.maxHealthChange;
         shieldChange = other.shieldChange;
         status = other.status;
+        consumeAudioClip = other.consumeAudioClip;
     }
 
     public string GetDisplayName()
@@ -125,6 +127,11 @@ public class Dish : IItem, IConsumable
         return shieldChange;
     }
 
+    public AudioClip GetConsumeAudioClip()
+    {
+        return consumeAudioClip;
+    }
+
     public override int GetHashCode()
     {
         return (int)id;
@@ -151,6 +158,7 @@ public class Dish : IItem, IConsumable
             && (dish.healthChange == this.healthChange)
             && (dish.maxHealthChange == this.maxHealthChange)
             && (dish.shieldChange == this.shieldChange)
-            && (dish.status == this.status);
+            && (dish.status == this.status)
+            && (dish.consumeAudioClip == this.consumeAudioClip);
     }
 }
