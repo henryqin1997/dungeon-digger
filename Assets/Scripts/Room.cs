@@ -49,6 +49,7 @@ public class Room : MonoBehaviour
                 enemy.SetActive(false);
                 enemy.transform.position = new Vector3(transform.position.x + Random.Range(-10f,10f),transform.position.y + Random.Range(-4f,4f),12.07283f);
                 enemies.Add(enemy);
+                enemy.transform.parent = this.transform;
                 enemy.GetComponent<EnemyBody>().SetOnDestroyCallback(
                     delegate { enemies.Remove(enemy); }
                 );
