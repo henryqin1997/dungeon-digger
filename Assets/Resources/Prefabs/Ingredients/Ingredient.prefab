@@ -46,5 +46,7 @@ MonoBehaviour:
   ingredient:
     id: 0
     category: 0
-    sprite: {fileID: 0}
+    icon: {fileID: 0}
     frame: {fileID: 5821742781547584542, guid: b06c6478b6ba00346a4a6a2211fc0775, type: 3}
+    displayName: 
+    consumeAudioClip: {fileID: 8300000, guid: df7ffb15ba2b0664484977010da66910, type: 3}

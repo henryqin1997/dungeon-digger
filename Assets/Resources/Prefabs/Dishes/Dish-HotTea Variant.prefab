@@ -111,6 +111,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
         type: 3}
+      propertyPath: dish.consumeAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6460519734a6bf64bbbce8bc593da4ef, type: 3}
+    - target: {fileID: 6539820027086356205, guid: 90c20805db212e945b82992deccdd145,
+        type: 3}
       propertyPath: dish.efffectSensation
       value: '"You feel a bit more aggressive."'
       objectReference: {fileID: 0}

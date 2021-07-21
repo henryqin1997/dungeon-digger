@@ -10,7 +10,7 @@ public class MinimapController : MonoBehaviour
 			Vector3 newPosition = player.position;
 			newPosition.z = transform.position.z;
 			transform.position = newPosition;
-//			Debug.Log("transform camera location is :" + transform.position.z);
+			//Debug.Log("transform camera location is :" + transform.position.z);
 		}
 	
 	}
