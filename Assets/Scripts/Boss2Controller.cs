@@ -53,14 +53,10 @@ public class Boss2Controller : MonoBehaviour
       private static Transform FindPlayerTransform()
     {
          GameObject character = FindPlayer();
-         if(character == null) {
-             return null;
-         }
+         Debug.Assert(character != null);
 
          PlayerMovement playerMovement = character.GetComponent<PlayerMovement>();
-         if(playerMovement == null) {
-             return null;
-         }
+         Debug.Assert(playerMovement != null);
 
          return playerMovement.transform;
     }
@@ -78,7 +74,7 @@ public class Boss2Controller : MonoBehaviour
            // handle movement
            moveDirection = Vector2.zero;
            if(actions[currentAction].shouldMove) {
-               if(actions[currentAction].shouldChasePlayer && playerTransform != null) {
+               if(actions[currentAction].shouldChasePlayer) {
                    moveDirection = playerTransform.position - transform.position;
                    moveDirection.Normalize();
                }
