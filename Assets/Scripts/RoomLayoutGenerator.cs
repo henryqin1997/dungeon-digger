@@ -26,13 +26,21 @@ static class RoomLayoutGenerator
 {
     // Randomly generate a list of square rooms that are completely connected
     // by doors, where each room is reachable from every other room.  All rooms
-    // but two are marked with type "normal": the "initial" room, and the
-    // "boss" room.  The specified 'minDistanceToBoss' corresponds to the
-    // minimum number of doors that must be opened in order to travel from the
-    // "initial" room to the "boss" room.
-    public static List<RoomConfig> GenerateRoomLayout(int minDistanceToBoss)
+    // but two are marked with type "normal" or "treasure": the "initial" room,
+    // and the "boss" room.  The specified 'minDistanceToBoss' corresponds to
+    // the minimum number of doors that must be opened in order to travel from
+    // the "initial" room to the "boss" room.  Optionally specify
+    // 'numTreasureRooms' and/or 'numChallengeRooms', which will be used to
+    // mark the type of as many inner rooms as "treasure" and "challenge"
+    // respectively.
+    public static List<RoomConfig> GenerateRoomLayout(int minDistanceToBoss,
+                                                      int numTreasureRooms = 1,
+                                                      int numChallengeRooms = 1)
     {
         Debug.Assert(minDistanceToBoss > 0);
+        Debug.Assert(numTreasureRooms >= 0);
+        Debug.Assert(numChallengeRooms >= 0);
+        Debug.Assert((numTreasureRooms + numTreasureRooms) < minDistanceToBoss);
 
         Random rg = new Random();
         SortedDictionary<int, List<RoomConfig>> frontier = new SortedDictionary<int, List<RoomConfig>>();
@@ -86,6 +94,30 @@ static class RoomLayoutGenerator
             }
 
         }
+
+        Shuffle(result, rg);
+
+        foreach (var roomConfig in result)
+        {
+            if (roomConfig.type == "normal")
+            {
+                if (numChallengeRooms > 0)
+                {
+                    roomConfig.type = "challenge";
+                    --numChallengeRooms;
+                }
+                else if (numTreasureRooms > 0)
+                {
+                    roomConfig.type = "treasure";
+                    --numTreasureRooms;
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+
         return result;
     }
 

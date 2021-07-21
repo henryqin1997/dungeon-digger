@@ -49,16 +49,31 @@ public class level_generator : MonoBehaviour
     		rooms.Add(temproom);
     		temproom.transform.position = new Vector3(28.8f*rc.position.x, 16f*rc.position.y, 12.07283f);
 			temproom.GetComponent<Room>().roomtype = rc.type;
+			int enemy_count = 0;
     		if (rc.type == "initial")
     		{
     			temproom.GetComponent<Room>().closeWhenEntered = false;
     			temproom.GetComponent<Room>().openWhenEnemiesCleared = true;
-    			
+
+    			int gift_count = Random.Range(1,3);
+    			GameObject fridge = Resources.Load<GameObject>("Prefabs/Fridge");
+	            for (int i=0; i<gift_count; i++)
+	            {
+	                GameObject fridge_ = Instantiate(fridge);
+	                fridge_.transform.position = new Vector3(transform.position.x + Random.Range(-2f,2f), transform.position.y + Random.Range(-1f,1f),12.07283f);
+	                fridge_.transform.parent = this.transform;
+	                fridge_.SetActive(true);
+	            }
+
     			if (level == 1){
     				GameObject initial = Resources.Load("Prefabs/Room/Intro Display") as GameObject;
     				initial = Instantiate(initial) as GameObject;
     				initial.transform.position = new Vector3(-0.4f,1.96f,0f);
     				initial.transform.parent = temproom.transform;
+    			}
+    			else //load fridge as bonus for defeat boss
+    			{
+
     			}
     		}
     		else if (rc.type == "boss")
@@ -71,13 +86,22 @@ public class level_generator : MonoBehaviour
     			boss.transform.parent = temproom.transform;
     			temproom.GetComponent<Room>().enemies.Add(boss);
     		}
+    		else if (rc.type == "treasure")
+    		{}
+    		else if (rc.type == "challenge")
+    		{
+    			temproom.GetComponent<Room>().closeWhenEntered = true;
+    			temproom.GetComponent<Room>().openWhenEnemiesCleared = true;
+    			enemy_count = 7 + level;
+    		}
     		else
     		{
+    			enemy_count = 5 + level;
     			temproom.GetComponent<Room>().closeWhenEntered = true;
     			temproom.GetComponent<Room>().openWhenEnemiesCleared = true;
     		}
     		Room tmp = temproom.GetComponent<Room>();
-    		tmp.setup();
+    		tmp.setup(enemy_count);
     	}
 
     }
