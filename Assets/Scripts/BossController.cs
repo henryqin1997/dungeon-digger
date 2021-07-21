@@ -27,6 +27,7 @@ public class BossController : MonoBehaviour
     protected Animator anim;
 
     public GameObject HPCanvas;
+    public float rotateSpeed;
 
     public void Start()
     {
@@ -100,8 +101,9 @@ public class BossController : MonoBehaviour
                 shotCounter = actions[currentAction].timeBetweenShots;
 
                 foreach(Transform t in actions[currentAction].shotPoints) {
-                	// t.Rotate(45.0f, 0.0f, 90.0f, Space.Self);
-                    Instantiate(actions[currentAction].itemToShoot, t.position, Quaternion.Euler(new Vector3(0, 0, -90 * Time.time)));
+                    Vector3 axis =  new Vector3(0,0,1);
+                    t.RotateAround(this.transform.position, axis, rotateSpeed*Time.time);
+                    Instantiate(actions[currentAction].itemToShoot, t.position, t.rotation);
                 }
                }
            }
