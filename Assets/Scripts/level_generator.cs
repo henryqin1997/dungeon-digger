@@ -7,6 +7,7 @@ public class level_generator : MonoBehaviour
     // Start is called before the first frame update
     public GameObject player;
     public GameObject MainCamera;
+    private List<GameObject> rooms = new List<GameObject>();
 
     void Start()
     {
@@ -45,6 +46,7 @@ public class level_generator : MonoBehaviour
     		}
     		GameObject temproom = Resources.Load("Prefabs/Room/DoorRooms/Room_"+room_postfix) as GameObject;
     		temproom = Instantiate(temproom);
+    		rooms.Add(temproom);
     		temproom.transform.position = new Vector3(28.8f*rc.position.x, 16f*rc.position.y, 12.07283f);
 			temproom.GetComponent<Room>().roomtype = rc.type;
     		if (rc.type == "initial")
@@ -78,5 +80,14 @@ public class level_generator : MonoBehaviour
     		tmp.setup();
     	}
 
+    }
+
+    public void destroy_level()
+    {
+    	foreach (GameObject room in rooms)
+	    {
+	       Destroy(room);  
+	    }
+	    rooms = new List<GameObject>();
     }
 }

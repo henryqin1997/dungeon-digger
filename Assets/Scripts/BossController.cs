@@ -113,7 +113,7 @@ public class BossController : MonoBehaviour
             gameObject.SetActive(false);
             //Instantiate(deathEffect, transform.position, transform.rotation);
             //levelExit.SetActive(true);
-	        bossDefeatedEvent.Invoke();
+	          bossDefeatedEvent.Invoke();
             gameOver.GameOver();
 
         } else {
