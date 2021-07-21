@@ -41,6 +41,9 @@ public class BossController : MonoBehaviour
       HPCanvas = GameObject.Find("HPCanvas");
       GameObject healthbar = HPCanvas.transform.Find("Boss_Health_Slider").gameObject;
       healthbar.SetActive(true);
+      GameObject musiccontroller = GameObject.Find("MusicController");
+      AudioClip explode = Resources.Load("Sounds/boss_fight") as AudioClip;
+      musiccontroller.GetComponent<MusicController>().PlayMusic(explode);
     }
 
     void OnEnable()
