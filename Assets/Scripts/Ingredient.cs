@@ -32,11 +32,12 @@ public class Ingredient : IItem, IConsumable
         DRINKS
     }
 
-    public ID       id;
-    public Category category;
-    public Sprite   icon;
-    public Sprite   frame;
-    public string   displayName;
+    public ID        id;
+    public Category  category;
+    public Sprite    icon;
+    public Sprite    frame;
+    public string    displayName;
+    public AudioClip consumeAudioClip;
 
     public Ingredient(Ingredient other)
     {
@@ -45,11 +46,12 @@ public class Ingredient : IItem, IConsumable
 
     public void Assign(in Ingredient other)
     {
-        id          = other.id;
-        category    = other.category;
-        icon        = other.icon;
-        frame       = other.frame;
-        displayName = other.displayName;
+        id               = other.id;
+        category         = other.category;
+        icon             = other.icon;
+        frame            = other.frame;
+        displayName      = other.displayName;
+        consumeAudioClip = other.consumeAudioClip;
     }
 
     public override int GetHashCode()
@@ -69,7 +71,8 @@ public class Ingredient : IItem, IConsumable
             && (ingredient.category          == this.category)
             && (ingredient.icon              == this.icon)
             && (ingredient.frame             == this.frame)
-            && (ingredient.displayName       == this.displayName);
+            && (ingredient.displayName       == this.displayName)
+            && (ingredient.consumeAudioClip  == this.consumeAudioClip);
     }
 
     public string GetDisplayName()
@@ -130,5 +133,10 @@ public class Ingredient : IItem, IConsumable
     public int GetShieldChange()
     {
         return 0;
+    }
+
+    public AudioClip GetConsumeAudioClip()
+    {
+        return consumeAudioClip;
     }
 }

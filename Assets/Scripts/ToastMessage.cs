@@ -10,6 +10,12 @@ public class ToastMessage : MonoBehaviour
         DisplayText(consumable.GetDisplayName() + " consumed. " + consumable.GetEffectSensation());
     }
 
+    public void DisplayRecipeCreated(Recipe recipe)
+    {
+        Dish dish = recipe.dish.dish;
+        DisplayText(dish.GetDisplayName() + " created.");
+    }
+
     public void DisplayText(string text)
     {
         ShowToast(text, 2);
@@ -37,7 +43,7 @@ public class ToastMessage : MonoBehaviour
         float counter = 0;
         while (counter < duration)
         {
-            counter += Time.deltaTime;
+            counter += Time.unscaledDeltaTime;
             yield return null;
         }
 
@@ -68,7 +74,7 @@ public class ToastMessage : MonoBehaviour
 
         while (counter < duration)
         {
-            counter += Time.deltaTime;
+            counter += Time.unscaledDeltaTime;
             float alpha = Mathf.Lerp(a, b, counter / duration);
 
             targetText.color = new Color(currentColor.r, currentColor.g, currentColor.b, alpha);
