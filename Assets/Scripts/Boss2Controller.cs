@@ -4,51 +4,53 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[System.Serializable]
-public class BossHealthUpdatedEvent : UnityEvent<int>
-{}
 
-public class BossController : MonoBehaviour
-{
-    public BossAction[] actions;
-    protected int currentAction;
-    private float actionCounter;
+
+public class Boss2Controller : MonoBehaviour
+{	
+	  public static Boss2Controller instance;
+
+	  public BossAction[] actions;
+	  private int currentAction;
+	  private float actionCounter;
     private float shotCounter;
     private Vector2 moveDirection;
     public Rigidbody2D theRB;
 
-    public int currentHealth = 50;
-    public int maxHealth = 50;
+    public Transform playerTransform;
+
     public GameObject deathEffect;
     public GameObject levelExit;
-    public GameOverBehaviour gameOver;
     public UnityEvent bossDefeatedEvent;
-    public BossHealthUpdatedEvent bossHealthUpdatedEvent;
-    public BossHealthUpdatedEvent bossMaxHealthUpdatedEvent;
-    public UnityEvent bossActivatedEvent;
+
+    public int currentHealth = 50;
+    public int maxHealth = 50;
 
     public BossSequence[] sequences;
     public int currentSequence;
 
-    public Transform playerTransform;
-    protected Animator anim;
+    public BossHealthUpdatedEvent bossHealthUpdatedEvent;
+    public BossHealthUpdatedEvent bossMaxHealthUpdatedEvent;
+    public UnityEvent bossActivatedEvent;
 
-    public void Start()
+    public GameOverBehaviour gameOver;
+
+    private void Awake() 
+    {
+    	instance = this;
+    }
+
+    // Start is called before the first frame update
+    void Start()
     {
         playerTransform = FindPlayerTransform();
         bossMaxHealthUpdatedEvent.Invoke(maxHealth);
         bossHealthUpdatedEvent.Invoke(   currentHealth);
-        actions = sequences[currentSequence].actions;
         actionCounter = actions[currentAction].actionLength;
-        anim = GetComponent<Animator>();
+
     }
 
-    void OnEnable()
-    {
-        bossActivatedEvent.Invoke();
-    }
-
-    private static Transform FindPlayerTransform()
+      private static Transform FindPlayerTransform()
     {
          GameObject character = FindPlayer();
          Debug.Assert(character != null);
@@ -65,26 +67,23 @@ public class BossController : MonoBehaviour
     }
 
     // Update is called once per frame
-    public virtual void Update()
+    void Update()
     {
-       if(actionCounter > 0) {
+    	if(actionCounter > 0) {
            actionCounter -= Time.deltaTime;
            // handle movement
            moveDirection = Vector2.zero;
            if(actions[currentAction].shouldMove) {
-               if(actions[currentAction].shouldChasePlayer && FindPlayer() != null) {
+               if(actions[currentAction].shouldChasePlayer) {
                    moveDirection = playerTransform.position - transform.position;
                    moveDirection.Normalize();
                }
 
-               if(actions[currentAction].moveToPoint && Vector3.Distance(transform.position, actions[currentAction].pointToMoveTo.position) > 3f) {
+               if(actions[currentAction].moveToPoint && Vector3.Distance(transform.position, actions[currentAction].pointToMoveTo.position) > .5f) {
                    moveDirection = actions[currentAction].pointToMoveTo.position - transform.position;
                    moveDirection.Normalize();
                }
            }
-
-
-
 
            theRB.velocity = moveDirection * actions[currentAction].moveSpeed;
 
@@ -106,6 +105,7 @@ public class BossController : MonoBehaviour
            }
            actionCounter = actions[currentAction].actionLength;
        }
+        
     }
 
     public void TakeDamage(int damageAmount) {
@@ -115,22 +115,24 @@ public class BossController : MonoBehaviour
             gameObject.SetActive(false);
             //Instantiate(deathEffect, transform.position, transform.rotation);
             //levelExit.SetActive(true);
-	        bossDefeatedEvent.Invoke();
+          bossDefeatedEvent.Invoke();
             gameOver.GameOver();
-
-        } else {
-            if(currentHealth <= sequences[currentSequence].endSequenceHealth && currentSequence < sequences.Length - 1) {
-                currentSequence ++;
-                actions = sequences[currentSequence].actions;
-                currentAction = 0;
-                actionCounter = actions[currentAction].actionLength;
-            }
-        }
+          }
     }
+
+    
 }
 
 [System.Serializable]
-public class BossAction
+public class Boss2Sequence {
+    [Header("Sequence")]
+    public BossAction[] actions;
+    public int endSequenceHealth;
+
+}
+
+[System.Serializable]
+public class Boss2Action
 {
     [Header("Action")]
     public float actionLength;
@@ -144,13 +146,5 @@ public class BossAction
     public GameObject itemToShoot;
     public float timeBetweenShots;
     public Transform[] shotPoints;
-
-}
-
-[System.Serializable]
-public class BossSequence {
-    [Header("Sequence")]
-    public BossAction[] actions;
-    public int endSequenceHealth;
 
 }
