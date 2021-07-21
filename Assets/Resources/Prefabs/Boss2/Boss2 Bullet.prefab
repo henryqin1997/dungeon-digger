@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   damage: 3
-  boss: {fileID: 5975839408872030104, guid: 8da24840daebc49d3a9cb94808495563, type: 3}
+  boss: {fileID: 0}
 --- !u!61 &3273489789792515788
 BoxCollider2D:
   m_ObjectHideFlags: 0
