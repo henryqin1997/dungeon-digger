@@ -98,8 +98,10 @@ public class BossController : MonoBehaviour
                shotCounter -= Time.deltaTime;
                if(shotCounter <= 0) {
                 shotCounter = actions[currentAction].timeBetweenShots;
+
                 foreach(Transform t in actions[currentAction].shotPoints) {
-                    Instantiate(actions[currentAction].itemToShoot, t.position, t.rotation);
+                	// t.Rotate(45.0f, 0.0f, 90.0f, Space.Self);
+                    Instantiate(actions[currentAction].itemToShoot, t.position, Quaternion.Euler(new Vector3(0, 0, -90 * Time.time)));
                 }
                }
            }
