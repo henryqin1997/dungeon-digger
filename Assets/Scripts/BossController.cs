@@ -2,11 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 [System.Serializable]
-public class BossHealthUpdatedEvent : UnityEvent<int>
-{}
 
 public class BossController : MonoBehaviour
 {
@@ -22,10 +19,6 @@ public class BossController : MonoBehaviour
     public GameObject deathEffect;
     public GameObject levelExit;
     public GameOverBehaviour gameOver;
-    public UnityEvent bossDefeatedEvent;
-    public BossHealthUpdatedEvent bossHealthUpdatedEvent;
-    public BossHealthUpdatedEvent bossMaxHealthUpdatedEvent;
-    public UnityEvent bossActivatedEvent;
 
     public BossSequence[] sequences;
     public int currentSequence;
@@ -33,19 +26,31 @@ public class BossController : MonoBehaviour
     public Transform playerTransform;
     protected Animator anim;
 
+    public GameObject HPCanvas;
+
     public void Start()
     {
         playerTransform = FindPlayerTransform();
-        bossMaxHealthUpdatedEvent.Invoke(maxHealth);
-        bossHealthUpdatedEvent.Invoke(   currentHealth);
+        HPCanvas.GetComponent<UIController>().OnBossMaxHealthUpdated(maxHealth);
+        HPCanvas.GetComponent<UIController>().OnBossHealthUpdated(currentHealth);
         actions = sequences[currentSequence].actions;
         actionCounter = actions[currentAction].actionLength;
         anim = GetComponent<Animator>();
     }
 
+    void bossActivate()
+    {
+      HPCanvas = GameObject.Find("HPCanvas");
+      GameObject healthbar = HPCanvas.transform.Find("Boss_Health_Slider").gameObject;
+      healthbar.SetActive(true);
+      GameObject musiccontroller = GameObject.Find("MusicController");
+      AudioClip explode = Resources.Load("Sounds/boss_fight") as AudioClip;
+      musiccontroller.GetComponent<MusicController>().PlayMusic(explode);
+    }
+
     void OnEnable()
     {
-        bossActivatedEvent.Invoke();
+        bossActivate();
     }
 
     private static Transform FindPlayerTransform()
@@ -108,14 +113,25 @@ public class BossController : MonoBehaviour
        }
     }
 
+    void explodesound()
+    {
+      GameObject musiccontroller = GameObject.Find("MusicController");
+      AudioClip explode = Resources.Load("Sounds/explosion") as AudioClip;
+      musiccontroller.GetComponent<MusicController>().PlayMusic(explode);
+    }
+
     public void TakeDamage(int damageAmount) {
         currentHealth = Math.Max(currentHealth - damageAmount, 0);
-        bossHealthUpdatedEvent.Invoke(currentHealth);
+        HPCanvas.GetComponent<UIController>().OnBossHealthUpdated(currentHealth);
         if(currentHealth <= 0) {
             gameObject.SetActive(false);
             //Instantiate(deathEffect, transform.position, transform.rotation);
             //levelExit.SetActive(true);
-	        bossDefeatedEvent.Invoke();
+            GameObject healthbar = HPCanvas.transform.Find("Boss_Health_Slider").gameObject;
+            healthbar.SetActive(false);
+  	        GameObject character = FindPlayer();
+            character.GetComponent<PlayerMovement>().OnBossDefeated();
+            explodesound();
             gameOver.GameOver();
 
         } else {
