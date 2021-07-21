@@ -15,7 +15,7 @@ public class Boss2Bullet : MonoBehaviour
     void Start()
     {
         direction = transform.right;
-        boss = GameObject.FindWithTag("Boss2");
+        boss = GameObject.FindWithTag("Boss");
         Debug.Assert(boss != null);
         Destroy (gameObject, destructTime);
     }
