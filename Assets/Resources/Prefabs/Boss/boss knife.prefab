@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 472204485
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2f76f9c1e62f645a4a277311864a66dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -98,6 +98,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   damage: 4
+  shouldFollowPlayer: 1
+  boss: {fileID: 0}
 --- !u!61 &3620450300563910857
 BoxCollider2D:
   m_ObjectHideFlags: 0

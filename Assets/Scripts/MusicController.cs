@@ -25,9 +25,14 @@ public class MusicController : MonoBehaviour
         audioSource.Play();
     }
 
+    public void PlaySound(AudioClip sound, float volumeScale)
+    {
+        audioSource.PlayOneShot(sound, volumeScale);
+    }
+
     public void PlaySound(AudioClip sound)
     {
-        audioSource.PlayOneShot(sound);
+        PlaySound(sound, 1.0f);
     }
 
     public void OnMusicControl()
@@ -40,5 +45,11 @@ public class MusicController : MonoBehaviour
         	audioSource.Pause();
     	}
     }
+
+    public void OnConsumableConsumed(IConsumable consumable)
+    {
+        PlaySound(consumable.GetConsumeAudioClip(), 2f);
+    }
+
 
 }

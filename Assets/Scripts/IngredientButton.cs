@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
-
+using UnityEngine.EventSystems;
 
 public class IngredientButton : MonoBehaviour
 {
     public IngredientAvailableEvent ingredientAvailableEvent;
+    public IngredientAvailableEvent ingredientFocusedEvent;
+    public UnityEvent               ingredientDismissedEvent;
     private Ingredient ingredient = null;
 
     public void AssignIngredient(Ingredient assignedIngredient)
@@ -20,5 +22,16 @@ public class IngredientButton : MonoBehaviour
     {
         Debug.Assert(ingredient != null);
         ingredientAvailableEvent.Invoke(new Ingredient(ingredient));
+    }
+
+    public void OnPointerEnter()
+    {
+        Debug.Assert(ingredient != null);
+        ingredientFocusedEvent.Invoke(new Ingredient(ingredient));
+    }
+
+    public void OnPointerExit()
+    {
+        ingredientDismissedEvent.Invoke();
     }
 }
