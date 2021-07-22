@@ -27,7 +27,6 @@ public class BossController : MonoBehaviour
     protected Animator anim;
 
     public GameObject HPCanvas;
-    public float rotateSpeed;
 
     public void Start()
     {
@@ -37,6 +36,7 @@ public class BossController : MonoBehaviour
         actions = sequences[currentSequence].actions;
         actionCounter = actions[currentAction].actionLength;
         anim = GetComponent<Animator>();
+        gameOver = Resources.FindObjectsOfTypeAll<GameOverBehaviour>()[0];
     }
 
     void bossActivate()
@@ -99,10 +99,7 @@ public class BossController : MonoBehaviour
                shotCounter -= Time.deltaTime;
                if(shotCounter <= 0) {
                 shotCounter = actions[currentAction].timeBetweenShots;
-
                 foreach(Transform t in actions[currentAction].shotPoints) {
-                    Vector3 axis =  new Vector3(0,0,1);
-                    t.RotateAround(this.transform.position, axis, rotateSpeed*Time.time);
                     Instantiate(actions[currentAction].itemToShoot, t.position, t.rotation);
                 }
                }
@@ -128,15 +125,26 @@ public class BossController : MonoBehaviour
         currentHealth = Math.Max(currentHealth - damageAmount, 0);
         HPCanvas.GetComponent<UIController>().OnBossHealthUpdated(currentHealth);
         if(currentHealth <= 0) {
-            gameObject.SetActive(false);
+            
             //Instantiate(deathEffect, transform.position, transform.rotation);
             //levelExit.SetActive(true);
-            GameObject healthbar = HPCanvas.transform.Find("Boss_Health_Slider").gameObject;
+            GameObject healthbar = GameObject.Find("Boss_Health_Slider");
             healthbar.SetActive(false);
+            this.gameObject.SetActive(false);
   	        GameObject character = FindPlayer();
             character.GetComponent<PlayerMovement>().OnBossDefeated();
             explodesound();
-            gameOver.GameOver();
+            GameObject levelgenerator = GameObject.Find("level_generator");
+            level_generator lg = levelgenerator.GetComponent<level_generator>();
+            if (lg.level>3)
+            {
+              gameOver.GameOver();
+            }
+            else
+            {
+              lg.destroy_level();
+              lg.generate_level();
+            }
 
         } else {
             if(currentHealth <= sequences[currentSequence].endSequenceHealth && currentSequence < sequences.Length - 1) {
