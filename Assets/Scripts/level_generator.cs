@@ -29,7 +29,7 @@ public class level_generator : MonoBehaviour
     	player.transform.position = new Vector3(0, 0, player.transform.position.z);
     	MainCamera.transform.position = new Vector3(0, 0, -10);
 
-    	List<RoomConfig> layout = RoomLayoutGenerator.GenerateRoomLayout(1);
+    	List<RoomConfig> layout = RoomLayoutGenerator.GenerateRoomLayout(8);
 
     	foreach (RoomConfig rc in layout)
     	{
