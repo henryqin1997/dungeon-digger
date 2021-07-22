@@ -55,16 +55,6 @@ public class level_generator : MonoBehaviour
     			temproom.GetComponent<Room>().closeWhenEntered = false;
     			temproom.GetComponent<Room>().openWhenEnemiesCleared = true;
 
-    			int gift_count = Random.Range(1,3);
-    			GameObject fridge = Resources.Load<GameObject>("Prefabs/Fridge");
-	            for (int i=0; i<gift_count; i++)
-	            {
-	                GameObject fridge_ = Instantiate(fridge);
-	                fridge_.transform.position = new Vector3(transform.position.x + Random.Range(-2f,2f), transform.position.y + Random.Range(-1f,1f),12.07283f);
-	                fridge_.transform.parent = this.transform;
-	                fridge_.SetActive(true);
-	            }
-
     			if (level == 1){
     				GameObject initial = Resources.Load("Prefabs/Room/Intro Display") as GameObject;
     				initial = Instantiate(initial) as GameObject;
