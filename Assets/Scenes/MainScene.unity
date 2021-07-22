@@ -1952,6 +1952,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5663029982000924594, guid: 44e9d2bf14d25574681e6c44d99c61bf,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.188
+      objectReference: {fileID: 0}
     - target: {fileID: 5663029982000924595, guid: 44e9d2bf14d25574681e6c44d99c61bf,
         type: 3}
       propertyPath: m_Name
@@ -2456,7 +2461,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bb6b611b0c6ce48458d0fe193be3c7cf, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.172
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2839,7 +2844,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.8264475
+  orthographic size: 7.726331
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
