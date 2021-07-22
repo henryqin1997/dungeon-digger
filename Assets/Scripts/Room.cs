@@ -71,7 +71,15 @@ public class Room : MonoBehaviour
 
         if (roomtype.Equals("treasure"))
         {
-
+            int gift_count = Random.Range(1,3);
+            GameObject fridge = Resources.Load<GameObject>("Prefabs/Fridge");
+            for (int i=0; i<gift_count; i++)
+            {
+                GameObject fridge_ = Instantiate(fridge);
+                fridge_.transform.position = new Vector3(transform.position.x + Random.Range(-2f,2f), transform.position.y + Random.Range(-1f,1f),12.07283f);
+                fridge_.transform.parent = this.transform;
+                fridge_.SetActive(true);
+            }
         }
 
         foreach (GameObject enemy in enemies)
