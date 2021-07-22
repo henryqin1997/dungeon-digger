@@ -2082,6 +2082,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!4 &301961319 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2359160339233135755, guid: b496ff2ee4ace42a2935865556b2d991,
+    type: 3}
+  m_PrefabInstance: {fileID: 309021743}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &306977181
 GameObject:
   m_ObjectHideFlags: 0
@@ -15882,7 +15888,7 @@ GameObject:
   - component: {fileID: 2061973752}
   - component: {fileID: 2061973751}
   m_Layer: 5
-  m_Name: UI Canvas
+  m_Name: HPCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16022,27 +16028,27 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 301961319}
     m_Modifications:
     - target: {fileID: 177811646104359388, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 177811646104359388, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.962568
+      value: 1.2674313
       objectReference: {fileID: 0}
     - target: {fileID: 177811646104359388, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 30.965277
+      value: -1.274725
       objectReference: {fileID: 0}
     - target: {fileID: 177811646104359388, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.64831
+      value: 5.424522
       objectReference: {fileID: 0}
     - target: {fileID: 177811646104359388, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
