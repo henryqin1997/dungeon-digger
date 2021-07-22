@@ -145,7 +145,7 @@ public class BossController : MonoBehaviour
             GameObject musiccontroller = GameObject.Find("MusicController");
             AudioClip explode = Resources.Load("Sounds/music_bg") as AudioClip;
             musiccontroller.GetComponent<MusicController>().PlayMusic(explode);
-            if (lg.level>2)
+            if (lg.level>3)
             {
               gameOver.GameOver();
             }
