@@ -5,6 +5,10 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
+[System.Serializable]
+public class BossHealthUpdatedEvent : UnityEvent<int>
+{
+}
 
 public class Boss2Controller : MonoBehaviour
 {	
