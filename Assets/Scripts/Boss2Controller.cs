@@ -27,8 +27,8 @@ public class Boss2Controller : MonoBehaviour
     public GameObject levelExit;
     public UnityEvent bossDefeatedEvent;
 
-    public int currentHealth = 50;
-    public int maxHealth = 50;
+    public int currentHealth = 120;
+    public int maxHealth = 120;
 
     public BossSequence[] sequences;
     public int currentSequence;
