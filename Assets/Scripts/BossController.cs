@@ -14,8 +14,8 @@ public class BossController : MonoBehaviour
     private Vector2 moveDirection;
     public Rigidbody2D theRB;
 
-    public int currentHealth = 50;
-    public int maxHealth = 50;
+    public int currentHealth = 80;
+    public int maxHealth = 80;
     public GameObject deathEffect;
     public GameObject levelExit;
     public GameOverBehaviour gameOver;

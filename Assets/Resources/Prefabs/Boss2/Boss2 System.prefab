@@ -113,8 +113,8 @@ MonoBehaviour:
     - {fileID: 1497546798656448270}
     - {fileID: 1497546799956639607}
   theRB: {fileID: 1497546798584584951}
-  currentHealth: 50
-  maxHealth: 50
+  currentHealth: 150
+  maxHealth: 150
   deathEffect: {fileID: 0}
   levelExit: {fileID: 0}
   gameOver: {fileID: 0}
