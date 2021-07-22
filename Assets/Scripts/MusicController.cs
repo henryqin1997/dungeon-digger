@@ -37,7 +37,8 @@ public class MusicController : MonoBehaviour
 
     public void OnMusicControl()
 	{
-    	if (audioSource.isPlaying == false) {
+    	if (audioSource.isPlaying == false)
+        {
        	 	audioSource.Play();
     	}
     	else
