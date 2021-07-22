@@ -31,7 +31,7 @@ public class Boss2Bullet : MonoBehaviour
 
     private bool IsBossActive()
     {
-        return boss.activeSelf;
+        return (boss != null) && boss.activeSelf;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
