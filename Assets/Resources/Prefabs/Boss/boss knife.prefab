@@ -98,8 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   damage: 4
-  shouldFollowPlayer: 1
-  boss: {fileID: 0}
+  shouldFollowPlayer: 0
 --- !u!61 &3620450300563910857
 BoxCollider2D:
   m_ObjectHideFlags: 0
