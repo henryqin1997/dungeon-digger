@@ -4,13 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 using UnityEngine.Analytics;
+using UnityEngine.UI;
 
 public class GameOverBehaviour : MonoBehaviour
 {
     public UnityEvent gameOverEvent;
     public const int GO_TO_MAIN_MENU_TIMEOUT_SECONDS = 3;
 
-    public void GameOver()
+    public void GameOver(bool beatGame = false)
     {
         Analytics.CustomEvent("gameOver", new Dictionary<string, object>
           {
@@ -19,6 +20,9 @@ public class GameOverBehaviour : MonoBehaviour
           });
 
         gameObject.SetActive(true);
+
+        Text text = transform.Find("Text").GetComponent<Text>();
+        text.text = beatGame ? "CONGRATULATIONS" : "GAME OVER";
 
         gameOverEvent.Invoke();
 

@@ -29,7 +29,7 @@ public class level_generator : MonoBehaviour
     	player.transform.position = new Vector3(0, 0, player.transform.position.z);
     	MainCamera.transform.position = new Vector3(0, 0, -10);
 
-    	List<RoomConfig> layout = RoomLayoutGenerator.GenerateRoomLayout(1);
+    	List<RoomConfig> layout = RoomLayoutGenerator.GenerateRoomLayout(8);
 
     	foreach (RoomConfig rc in layout)
     	{
@@ -81,7 +81,8 @@ public class level_generator : MonoBehaviour
     			temproom.GetComponent<Room>().closeWhenEntered = true;
     			temproom.GetComponent<Room>().openWhenEnemiesCleared = true;
     			GameObject boss;
-    			if (level ==2){
+
+    			if (level == 1) {
     				boss = Resources.Load("Prefabs/Boss/Boss System") as GameObject;
     			}
     			else if (level == 1){

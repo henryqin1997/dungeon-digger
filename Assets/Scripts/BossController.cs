@@ -99,7 +99,7 @@ public class BossController : MonoBehaviour
            theRB.velocity = moveDirection * actions[currentAction].moveSpeed;
 
            // handle shooting
-           if(actions[currentAction].shouldShoot) {
+           if(actions[currentAction].shouldShoot == true) {
                shotCounter -= Time.deltaTime;
                if(shotCounter <= 0) {
                 shotCounter = actions[currentAction].timeBetweenShots;
@@ -147,7 +147,7 @@ public class BossController : MonoBehaviour
             musiccontroller.GetComponent<MusicController>().PlayMusic(explode);
             if (lg.level>3)
             {
-              gameOver.GameOver();
+              gameOver.GameOver(true);
             }
             else
             {
