@@ -70,7 +70,7 @@ public class level_generator : MonoBehaviour
 		            for (int i=0; i<gift_count; i++)
 		            {
 		                GameObject fridge_ = Instantiate(fridge);
-		                fridge_.transform.position = new Vector3(transform.position.x + Random.Range(-2f,2f), transform.position.y + Random.Range(-1f,1f),12.07283f);
+		                fridge_.transform.position = new Vector3(Random.Range(-2f,2f), Random.Range(-1f,1f),12.07283f);
 		                fridge_.transform.parent = this.transform;
 		                fridge_.SetActive(true);
 		            }
