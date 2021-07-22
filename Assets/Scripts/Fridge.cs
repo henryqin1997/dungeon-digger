@@ -1,17 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
-
-[System.Serializable]
-public class FridgeOpenedEvent : UnityEvent<Fridge>
-{
-}
 
 public class Fridge : MonoBehaviour
 {
-    public IngredientBehaviour[] contents     = new IngredientBehaviour[3];
-    public FridgeOpenedEvent     fridgeOpened = new FridgeOpenedEvent();
+    public IngredientBehaviour[] contents = new IngredientBehaviour[3];
+    private FridgeInventory      fridgeInventory;
+    private FocusManager         focusManager;
 
     private void Awake()
     {
@@ -31,13 +26,39 @@ public class Fridge : MonoBehaviour
             }
             ingredientBehaviours[i] = ingredientBehaviours[--remIngredients];
         }
+
+        fridgeInventory = FindFridgeInventory();
+        focusManager    = FindFocusManager();
     }
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "Player")
         {
-            fridgeOpened.Invoke(this);
+            FridgeOpened();
         }
+    }
+    private void FridgeOpened()
+    {
+        fridgeInventory.ShowContents(this);
+        focusManager.AcquireFocus("FridgeInventory");
+    }
+
+    private static FridgeInventory FindFridgeInventory()
+    {
+        bool includeInactive = true;
+        var matches = FindObjectsOfType<FridgeInventory>(includeInactive);
+        Debug.Assert(matches != null);
+        Debug.Assert(matches.Length == 1);
+        return matches[0];
+    }
+
+    private static FocusManager FindFocusManager()
+    {
+        bool includeInactive = true;
+        var matches = FindObjectsOfType<FocusManager>(includeInactive);
+        Debug.Assert(matches != null);
+        Debug.Assert(matches.Length == 1);
+        return matches[0];
     }
 }
