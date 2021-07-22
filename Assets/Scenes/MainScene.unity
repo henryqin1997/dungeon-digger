@@ -16013,173 +16013,137 @@ MonoBehaviour:
   boss: {fileID: 0}
 --- !u!1 &2115598281 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1359099642767738547, guid: 8da24840daebc49d3a9cb94808495563,
+  m_CorrespondingSourceObject: {fileID: 177811646104359391, guid: 8da24840daebc49d3a9cb94808495563,
     type: 3}
-  m_PrefabInstance: {fileID: 1359099643942760826}
+  m_PrefabInstance: {fileID: 177811648149661206}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1359099643942760826
+--- !u!1001 &177811648149661206
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1359099642767738544, guid: 8da24840daebc49d3a9cb94808495563,
+    - target: {fileID: 177811646104359388, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: m_RootOrder
       value: 23
       objectReference: {fileID: 0}
-    - target: {fileID: 1359099642767738544, guid: 8da24840daebc49d3a9cb94808495563,
+    - target: {fileID: 177811646104359388, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -27.962568
       objectReference: {fileID: 0}
-    - target: {fileID: 1359099642767738544, guid: 8da24840daebc49d3a9cb94808495563,
+    - target: {fileID: 177811646104359388, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 30.965277
       objectReference: {fileID: 0}
-    - target: {fileID: 1359099642767738544, guid: 8da24840daebc49d3a9cb94808495563,
+    - target: {fileID: 177811646104359388, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -6.64831
       objectReference: {fileID: 0}
-    - target: {fileID: 1359099642767738544, guid: 8da24840daebc49d3a9cb94808495563,
+    - target: {fileID: 177811646104359388, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1359099642767738544, guid: 8da24840daebc49d3a9cb94808495563,
+    - target: {fileID: 177811646104359388, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 1359099642767738544, guid: 8da24840daebc49d3a9cb94808495563,
+    - target: {fileID: 177811646104359388, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 1359099642767738544, guid: 8da24840daebc49d3a9cb94808495563,
+    - target: {fileID: 177811646104359388, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 1359099642767738544, guid: 8da24840daebc49d3a9cb94808495563,
+    - target: {fileID: 177811646104359388, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1359099642767738544, guid: 8da24840daebc49d3a9cb94808495563,
+    - target: {fileID: 177811646104359388, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1359099642767738544, guid: 8da24840daebc49d3a9cb94808495563,
+    - target: {fileID: 177811646104359388, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1359099642767738547, guid: 8da24840daebc49d3a9cb94808495563,
+    - target: {fileID: 177811646104359391, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: m_Name
       value: Boss2 System
       objectReference: {fileID: 0}
-    - target: {fileID: 1359099643043122131, guid: 8da24840daebc49d3a9cb94808495563,
-        type: 3}
-      propertyPath: m_TagString
-      value: Boss
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359099643151719368, guid: 8da24840daebc49d3a9cb94808495563,
+    - target: {fileID: 177811646777478308, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: gameOver
       value: 
       objectReference: {fileID: 617639359}
-    - target: {fileID: 1359099643151719368, guid: 8da24840daebc49d3a9cb94808495563,
-        type: 3}
-      propertyPath: actions.Array.data[0].itemToShoot
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359099643151719368, guid: 8da24840daebc49d3a9cb94808495563,
+    - target: {fileID: 177811646777478308, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: actions.Array.data[1].itemToShoot
       value: 
       objectReference: {fileID: 171907082}
-    - target: {fileID: 1359099643151719368, guid: 8da24840daebc49d3a9cb94808495563,
-        type: 3}
-      propertyPath: sequences.Array.data[0].endSequenceHealth
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359099643151719368, guid: 8da24840daebc49d3a9cb94808495563,
+    - target: {fileID: 177811646777478308, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: sequences.Array.data[0].actions.Array.data[1].itemToShoot
       value: 
       objectReference: {fileID: 171907082}
-    - target: {fileID: 1359099643151719368, guid: 8da24840daebc49d3a9cb94808495563,
-        type: 3}
-      propertyPath: sequences.Array.data[0].actions.Array.data[1].shouldShoot
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359099643151719368, guid: 8da24840daebc49d3a9cb94808495563,
+    - target: {fileID: 177811646777478308, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: sequences.Array.data[1].actions.Array.data[0].itemToShoot
       value: 
       objectReference: {fileID: 171907082}
-    - target: {fileID: 1359099643151719368, guid: 8da24840daebc49d3a9cb94808495563,
+    - target: {fileID: 177811646777478308, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: sequences.Array.data[1].actions.Array.data[1].itemToShoot
       value: 
       objectReference: {fileID: 171907082}
-    - target: {fileID: 1359099643151719368, guid: 8da24840daebc49d3a9cb94808495563,
-        type: 3}
-      propertyPath: sequences.Array.data[1].actions.Array.data[2].itemToShoot
-      value: 
-      objectReference: {fileID: 620966568408338079, guid: a0f8f36fda07a4c259ba0a7c5e5fd35c,
-        type: 3}
-    - target: {fileID: 1359099643151719368, guid: 8da24840daebc49d3a9cb94808495563,
+    - target: {fileID: 177811646777478308, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: sequences.Array.data[1].actions.Array.data[3].itemToShoot
       value: 
       objectReference: {fileID: 171907082}
-    - target: {fileID: 1359099643151719368, guid: 8da24840daebc49d3a9cb94808495563,
-        type: 3}
-      propertyPath: sequences.Array.data[0].actions.Array.data[1].actionLength
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359099643151719368, guid: 8da24840daebc49d3a9cb94808495563,
+    - target: {fileID: 177811646777478308, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: bossDefeatedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 383421309}
-    - target: {fileID: 1359099643151719368, guid: 8da24840daebc49d3a9cb94808495563,
+    - target: {fileID: 177811646777478308, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: bossDefeatedEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 268441639}
-    - target: {fileID: 1359099643151719368, guid: 8da24840daebc49d3a9cb94808495563,
+    - target: {fileID: 177811646777478308, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: bossActivatedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1956679847}
-    - target: {fileID: 1359099643151719368, guid: 8da24840daebc49d3a9cb94808495563,
+    - target: {fileID: 177811646777478308, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: bossActivatedEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 268441639}
-    - target: {fileID: 1359099643151719368, guid: 8da24840daebc49d3a9cb94808495563,
+    - target: {fileID: 177811646777478308, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: bossHealthUpdatedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2061973751}
-    - target: {fileID: 1359099643151719368, guid: 8da24840daebc49d3a9cb94808495563,
+    - target: {fileID: 177811646777478308, guid: 8da24840daebc49d3a9cb94808495563,
         type: 3}
       propertyPath: bossMaxHealthUpdatedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2061973751}
-    - target: {fileID: 1359099643151719383, guid: 8da24840daebc49d3a9cb94808495563,
-        type: 3}
-      propertyPath: m_TagString
-      value: Boss
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8da24840daebc49d3a9cb94808495563, type: 3}
 --- !u!1001 &2551220236403594783
