@@ -30,6 +30,7 @@ public class BossController : MonoBehaviour
 
     public void Start()
     {
+        bossActivate();
         playerTransform = FindPlayerTransform();
         HPCanvas.GetComponent<UIController>().OnBossMaxHealthUpdated(maxHealth);
         HPCanvas.GetComponent<UIController>().OnBossHealthUpdated(currentHealth);
@@ -51,7 +52,7 @@ public class BossController : MonoBehaviour
 
     void OnEnable()
     {
-        bossActivate();
+        
     }
 
     private static Transform FindPlayerTransform()
@@ -136,7 +137,10 @@ public class BossController : MonoBehaviour
             explodesound();
             GameObject levelgenerator = GameObject.Find("level_generator");
             level_generator lg = levelgenerator.GetComponent<level_generator>();
-            if (lg.level>3)
+            GameObject musiccontroller = GameObject.Find("MusicController");
+            AudioClip explode = Resources.Load("Sounds/music_bg") as AudioClip;
+            musiccontroller.GetComponent<MusicController>().PlayMusic(explode);
+            if (lg.level>2)
             {
               gameOver.GameOver();
             }
