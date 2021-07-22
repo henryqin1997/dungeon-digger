@@ -205,6 +205,8 @@ MonoBehaviour:
   currentSequence: 0
   playerTransform: {fileID: 0}
   HPCanvas: {fileID: 0}
+  rotateSpeed: 0
+  bossName: Eyeball
 --- !u!1 &1497546798615576702
 GameObject:
   m_ObjectHideFlags: 0

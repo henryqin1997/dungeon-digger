@@ -483,6 +483,7 @@ MonoBehaviour:
   playerTransform: {fileID: 0}
   HPCanvas: {fileID: 0}
   rotateSpeed: 45
+  bossName: Luciano
 --- !u!1 &6784122076640998377
 GameObject:
   m_ObjectHideFlags: 0

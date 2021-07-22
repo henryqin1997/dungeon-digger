@@ -28,6 +28,7 @@ public class BossController : MonoBehaviour
 
     public GameObject HPCanvas;
     public float rotateSpeed = 0.0f;
+    public string bossName;
 
     public void Start()
     {
@@ -35,6 +36,7 @@ public class BossController : MonoBehaviour
         playerTransform = FindPlayerTransform();
         HPCanvas.GetComponent<UIController>().OnBossMaxHealthUpdated(maxHealth);
         HPCanvas.GetComponent<UIController>().OnBossHealthUpdated(currentHealth);
+        HPCanvas.GetComponent<UIController>().SetBossHealthBarName(bossName);
         actions = sequences[currentSequence].actions;
         actionCounter = actions[currentAction].actionLength;
         anim = GetComponent<Animator>();

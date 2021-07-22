@@ -8,6 +8,7 @@ public class UIController : MonoBehaviour
 {
     public Slider healthSlider;
     public Slider bossHealthSlider;
+    public Text bossHealthText;
     public Text healthText;
     public Sprite shieldSprite;
 
@@ -15,6 +16,11 @@ public class UIController : MonoBehaviour
     private float xMax = 0.035f;
 
     public List<Image> shields = new List<Image>();
+
+    private void Awake()
+    {
+        bossHealthText = bossHealthSlider.transform.Find("Text").GetComponent<Text>();
+    }
 
     public void OnPlayerHealthUpdated(int newHealth)
     {
@@ -49,6 +55,11 @@ public class UIController : MonoBehaviour
     public void OnBossMaxHealthUpdated(int newMaxHealth)
     {
         UpdateMaxHealth(bossHealthSlider, newMaxHealth);
+    }
+
+    public void SetBossHealthBarName(string bossName)
+    {
+        bossHealthText.text = bossName;
     }
 
     private static void UpdateHealth(Slider healthSlider, int newHealth)
