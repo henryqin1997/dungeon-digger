@@ -93,7 +93,8 @@ MonoBehaviour:
     moveSpeed: 3.5
     pointToMoveTo: {fileID: 0}
     shouldShoot: 0
-    itemToShoot: {fileID: 0}
+    itemToShoot: {fileID: 620966568408338079, guid: a0f8f36fda07a4c259ba0a7c5e5fd35c,
+      type: 3}
     timeBetweenShots: 0
     shotPoints: []
   - actionLength: 2
@@ -103,7 +104,8 @@ MonoBehaviour:
     moveSpeed: 3.5
     pointToMoveTo: {fileID: 0}
     shouldShoot: 1
-    itemToShoot: {fileID: 0}
+    itemToShoot: {fileID: 620966568408338079, guid: a0f8f36fda07a4c259ba0a7c5e5fd35c,
+      type: 3}
     timeBetweenShots: 0.5
     shotPoints:
     - {fileID: 1497546799156776773}
