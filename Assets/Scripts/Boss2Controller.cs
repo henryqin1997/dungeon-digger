@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-
+public class BossHealthUpdatedEvent : UnityEvent<int>
+{}
 
 public class Boss2Controller : MonoBehaviour
 {	
