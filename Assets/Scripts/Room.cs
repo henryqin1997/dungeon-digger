@@ -41,11 +41,23 @@ public class Room : MonoBehaviour
             for (int i=0; i<gift_count; i++)
             {
                 GameObject fridge_ = Instantiate(fridge);
-                fridge_.transform.position = new Vector3(transform.position.x + Random.Range(-2f,2f), transform.position.y + Random.Range(-1f,1f),12.07283f);
+                fridge_.transform.position = new Vector3(transform.position.x - gift_count + 1 + 2f*i, transform.position.y ,12.07283f);
                 fridge_.transform.parent = this.transform;
                 fridge_.SetActive(true);
             }
             roomtype = "challenge rewarded";
+        }
+        if (roomtype.Equals("normal") && enemies.Count == 0) //load random prefab
+        {
+            int chance = Random.Range(1,5);
+            if (chance>=4){
+                GameObject fridge = Resources.Load<GameObject>("Prefabs/Fridge");
+                GameObject fridge_ = Instantiate(fridge);
+                fridge_.transform.position = new Vector3(transform.position.x, transform.position.y, 12.07283f);
+                fridge_.transform.parent = this.transform;
+                fridge_.SetActive(true);
+            }
+            roomtype = "normal rewarded";
         }
     }
 
@@ -76,7 +88,7 @@ public class Room : MonoBehaviour
             for (int i=0; i<gift_count; i++)
             {
                 GameObject fridge_ = Instantiate(fridge);
-                fridge_.transform.position = new Vector3(transform.position.x + Random.Range(-2f,2f), transform.position.y + Random.Range(-1f,1f),12.07283f);
+                fridge_.transform.position = new Vector3(transform.position.x - gift_count + 1 + 2f*i, transform.position.y,12.07283f);
                 fridge_.transform.parent = this.transform;
                 fridge_.SetActive(true);
             }

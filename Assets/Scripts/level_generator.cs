@@ -70,7 +70,7 @@ public class level_generator : MonoBehaviour
 		            for (int i=0; i<gift_count; i++)
 		            {
 		                GameObject fridge_ = Instantiate(fridge);
-		                fridge_.transform.position = new Vector3(transform.position.x + Random.Range(-2f,2f), transform.position.y + Random.Range(-1f,1f),12.07283f);
+		                fridge_.transform.position = new Vector3(- gift_count + 1 + 2f*i, 0, 12.07283f);
 		                fridge_.transform.parent = this.transform;
 		                fridge_.SetActive(true);
 		            }
@@ -81,11 +81,10 @@ public class level_generator : MonoBehaviour
     			temproom.GetComponent<Room>().closeWhenEntered = true;
     			temproom.GetComponent<Room>().openWhenEnemiesCleared = true;
     			GameObject boss;
-    			if (level == 1) {
-    				//boss = Resources.Load("Prefabs/Boss/Boss System") as GameObject;
-    				boss = Resources.Load("Prefabs/Boss/Boss Nezha System") as GameObject;
+    			if (level ==2){
+    				boss = Resources.Load("Prefabs/Boss/Boss System") as GameObject;
     			}
-    			else if (level == 2){
+    			else if (level == 1){
     				boss = Resources.Load("Prefabs/Boss2/Boss2 System") as GameObject;
     			}
     			else{
