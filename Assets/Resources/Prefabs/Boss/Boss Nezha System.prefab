@@ -103,18 +103,6 @@ MonoBehaviour:
   deathEffect: {fileID: 0}
   levelExit: {fileID: 0}
   gameOver: {fileID: 0}
-  bossDefeatedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  bossHealthUpdatedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  bossMaxHealthUpdatedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  bossActivatedEvent:
-    m_PersistentCalls:
-      m_Calls: []
   sequences:
   - actions:
     - actionLength: 2
@@ -147,6 +135,8 @@ MonoBehaviour:
     endSequenceHealth: 0
   currentSequence: 0
   playerTransform: {fileID: 0}
+  HPCanvas: {fileID: 0}
+  rotateSpeed: 0
   isAttacking: 0
 --- !u!95 &285742121218648589
 Animator:
@@ -473,7 +463,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &285742122004306296
 Transform:
   m_ObjectHideFlags: 0
