@@ -96,7 +96,7 @@ public class BossController : MonoBehaviour
            theRB.velocity = moveDirection * actions[currentAction].moveSpeed;
 
            // handle shooting
-           if(actions[currentAction].shouldShoot) {
+           if(actions[currentAction].shouldShoot == true) {
                shotCounter -= Time.deltaTime;
                if(shotCounter <= 0) {
                 shotCounter = actions[currentAction].timeBetweenShots;
