@@ -125,11 +125,12 @@ public class BossController : MonoBehaviour
         currentHealth = Math.Max(currentHealth - damageAmount, 0);
         HPCanvas.GetComponent<UIController>().OnBossHealthUpdated(currentHealth);
         if(currentHealth <= 0) {
-            gameObject.SetActive(false);
+            
             //Instantiate(deathEffect, transform.position, transform.rotation);
             //levelExit.SetActive(true);
-            GameObject healthbar = HPCanvas.transform.Find("Boss_Health_Slider").gameObject;
+            GameObject healthbar = GameObject.Find("Boss_Health_Slider");
             healthbar.SetActive(false);
+            this.gameObject.SetActive(false);
   	        GameObject character = FindPlayer();
             character.GetComponent<PlayerMovement>().OnBossDefeated();
             explodesound();
