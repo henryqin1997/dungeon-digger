@@ -136,7 +136,7 @@ MonoBehaviour:
   currentSequence: 0
   playerTransform: {fileID: 0}
   HPCanvas: {fileID: 0}
-  rotateSpeed: 0
+  rotateSpeed: 45
   isAttacking: 0
 --- !u!95 &285742121218648589
 Animator:

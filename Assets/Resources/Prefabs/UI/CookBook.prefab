@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 294d172d9a834934d8147345bc9573b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  focusId: 
+  focusId: CookBook
 --- !u!1001 &209394069399731472
 PrefabInstance:
   m_ObjectHideFlags: 0
