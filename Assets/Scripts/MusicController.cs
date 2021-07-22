@@ -11,6 +11,7 @@ public class MusicController : MonoBehaviour
     void Start()
     {
         audioSource = this.GetComponent<AudioSource>();
+        Debug.Assert(audioSource != null);
     }
 
     // Update is called once per frame
