@@ -5893,6 +5893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 383421308}
   MainCamera: {fileID: 519420028}
+  level: 0
 --- !u!4 &1396890044
 Transform:
   m_ObjectHideFlags: 0
@@ -6692,7 +6693,7 @@ GameObject:
   - component: {fileID: 2061973752}
   - component: {fileID: 2061973751}
   m_Layer: 5
-  m_Name: UI Canvas
+  m_Name: HPCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

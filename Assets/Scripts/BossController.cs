@@ -2,16 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 [System.Serializable]
-public class BossHealthUpdatedEvent : UnityEvent<int>
-{}
 
 public class BossController : MonoBehaviour
 {
     public BossAction[] actions;
-    private int currentAction;
+    protected int currentAction;
     private float actionCounter;
     private float shotCounter;
     private Vector2 moveDirection;
@@ -22,28 +19,39 @@ public class BossController : MonoBehaviour
     public GameObject deathEffect;
     public GameObject levelExit;
     public GameOverBehaviour gameOver;
-    public UnityEvent bossDefeatedEvent;
-    public BossHealthUpdatedEvent bossHealthUpdatedEvent;
-    public BossHealthUpdatedEvent bossMaxHealthUpdatedEvent;
-    public UnityEvent bossActivatedEvent;
 
     public BossSequence[] sequences;
     public int currentSequence;
 
     public Transform playerTransform;
+    protected Animator anim;
+
+    public GameObject HPCanvas;
 
     public void Start()
     {
         playerTransform = FindPlayerTransform();
-        bossMaxHealthUpdatedEvent.Invoke(maxHealth);
-        bossHealthUpdatedEvent.Invoke(   currentHealth);
+        HPCanvas.GetComponent<UIController>().OnBossMaxHealthUpdated(maxHealth);
+        HPCanvas.GetComponent<UIController>().OnBossHealthUpdated(currentHealth);
         actions = sequences[currentSequence].actions;
         actionCounter = actions[currentAction].actionLength;
+        anim = GetComponent<Animator>();
+        gameOver = Resources.FindObjectsOfTypeAll<GameOverBehaviour>()[0];
+    }
+
+    void bossActivate()
+    {
+      HPCanvas = GameObject.Find("HPCanvas");
+      GameObject healthbar = HPCanvas.transform.Find("Boss_Health_Slider").gameObject;
+      healthbar.SetActive(true);
+      GameObject musiccontroller = GameObject.Find("MusicController");
+      AudioClip explode = Resources.Load("Sounds/boss_fight") as AudioClip;
+      musiccontroller.GetComponent<MusicController>().PlayMusic(explode);
     }
 
     void OnEnable()
     {
-        bossActivatedEvent.Invoke();
+        bossActivate();
     }
 
     private static Transform FindPlayerTransform()
@@ -63,7 +71,7 @@ public class BossController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
        if(actionCounter > 0) {
            actionCounter -= Time.deltaTime;
@@ -75,7 +83,7 @@ public class BossController : MonoBehaviour
                    moveDirection.Normalize();
                }
 
-               if(actions[currentAction].moveToPoint && Vector3.Distance(transform.position, actions[currentAction].pointToMoveTo.position) > .5f) {
+               if(actions[currentAction].moveToPoint && Vector3.Distance(transform.position, actions[currentAction].pointToMoveTo.position) > 3f) {
                    moveDirection = actions[currentAction].pointToMoveTo.position - transform.position;
                    moveDirection.Normalize();
                }
@@ -106,15 +114,36 @@ public class BossController : MonoBehaviour
        }
     }
 
+    void explodesound()
+    {
+      GameObject musiccontroller = GameObject.Find("MusicController");
+      AudioClip explode = Resources.Load("Sounds/explosion") as AudioClip;
+      musiccontroller.GetComponent<MusicController>().PlayMusic(explode);
+    }
+
     public void TakeDamage(int damageAmount) {
         currentHealth = Math.Max(currentHealth - damageAmount, 0);
-        bossHealthUpdatedEvent.Invoke(currentHealth);
+        HPCanvas.GetComponent<UIController>().OnBossHealthUpdated(currentHealth);
         if(currentHealth <= 0) {
             gameObject.SetActive(false);
             //Instantiate(deathEffect, transform.position, transform.rotation);
             //levelExit.SetActive(true);
-	          bossDefeatedEvent.Invoke();
-            gameOver.GameOver();
+            GameObject healthbar = HPCanvas.transform.Find("Boss_Health_Slider").gameObject;
+            healthbar.SetActive(false);
+  	        GameObject character = FindPlayer();
+            character.GetComponent<PlayerMovement>().OnBossDefeated();
+            explodesound();
+            GameObject levelgenerator = GameObject.Find("level_generator");
+            level_generator lg = levelgenerator.GetComponent<level_generator>();
+            if (lg.level>3)
+            {
+              gameOver.GameOver();
+            }
+            else
+            {
+              lg.destroy_level();
+              lg.generate_level();
+            }
 
         } else {
             if(currentHealth <= sequences[currentSequence].endSequenceHealth && currentSequence < sequences.Length - 1) {

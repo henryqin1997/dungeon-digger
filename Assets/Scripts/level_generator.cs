@@ -8,10 +8,12 @@ public class level_generator : MonoBehaviour
     public GameObject player;
     public GameObject MainCamera;
     private List<GameObject> rooms = new List<GameObject>();
+    public int level;
 
     void Start()
     {
-        generate_level(1);
+    	level = 1;
+        generate_level();
     }
 
     // Update is called once per frame
@@ -20,7 +22,7 @@ public class level_generator : MonoBehaviour
         
     }
 
-    public void generate_level(int level)
+    public void generate_level()
     {
     	//Legal input level: 1, 2, 3
 
@@ -78,7 +80,16 @@ public class level_generator : MonoBehaviour
     		{
     			temproom.GetComponent<Room>().closeWhenEntered = true;
     			temproom.GetComponent<Room>().openWhenEnemiesCleared = true;
-    			GameObject boss = Resources.Load("Prefabs/boss_prefab/Boss System") as GameObject;
+    			GameObject boss;
+    			if (level ==1){
+    				boss = Resources.Load("Prefabs/boss_prefab/Boss System") as GameObject;
+    			}
+    			else if (level == 2){
+    				boss = Resources.Load("Prefabs/Boss2/Boss2 System") as GameObject;
+    			}
+    			else{
+    				boss = Resources.Load("Prefabs/Boss2/Boss2 System") as GameObject;
+    			}
     			boss = Instantiate(boss);
     			boss.transform.position = new Vector3(28.8f*rc.position.x, 16f*rc.position.y, 12.07283f);
     			boss.transform.parent = temproom.transform;
@@ -101,7 +112,7 @@ public class level_generator : MonoBehaviour
     		Room tmp = temproom.GetComponent<Room>();
     		tmp.setup(enemy_count);
     	}
-
+    	level += 1;
     }
 
     public void destroy_level()
