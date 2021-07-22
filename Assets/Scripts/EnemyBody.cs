@@ -65,14 +65,9 @@ public class EnemyBody : MonoBehaviour
         theRB.velocity = moveDirection * moveSpeed;
 
         // change transform depending on player location
-        Vector3 playerLocation = theCam.WorldToScreenPoint(
-            playerPosition
-          );
 
-        Vector3 enemyLocation = theCam.WorldToScreenPoint(
-          transform.localPosition
-        );
-        if (playerLocation.x > enemyLocation.x)
+        Vector3 enemyPosition = transform.position;
+        if (playerPosition.x > enemyPosition.x)
         {
             transform.localScale = new Vector3(-1f, 1f, 1f);
 

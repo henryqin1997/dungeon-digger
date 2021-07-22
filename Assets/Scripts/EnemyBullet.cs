@@ -8,7 +8,7 @@ public class EnemyBullet : MonoBehaviour
 
     public float speed;
     private Vector3 direction;
-    public static float destructTime = 1.0f;
+    public static float destructTime = 2.5f;
 
     public int damage = 5;
     void Start()

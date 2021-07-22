@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChefArm : MonoBehaviour
+public class AttackObject : MonoBehaviour
 {
     public int damage  = 1;
 

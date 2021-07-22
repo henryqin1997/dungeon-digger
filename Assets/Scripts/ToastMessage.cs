@@ -10,6 +10,12 @@ public class ToastMessage : MonoBehaviour
         DisplayText(consumable.GetDisplayName() + " consumed. " + consumable.GetEffectSensation());
     }
 
+    public void DisplayRecipeCreated(Recipe recipe)
+    {
+        Dish dish = recipe.dish.dish;
+        DisplayText(dish.GetDisplayName() + " created.");
+    }
+
     public void DisplayText(string text)
     {
         ShowToast(text, 2);
