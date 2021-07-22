@@ -147,7 +147,7 @@ public class BossController : MonoBehaviour
             musiccontroller.GetComponent<MusicController>().PlayMusic(explode);
             if (lg.level>2)
             {
-              gameOver.GameOver();
+              gameOver.GameOver(true);
             }
             else
             {

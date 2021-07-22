@@ -82,8 +82,7 @@ public class level_generator : MonoBehaviour
     			temproom.GetComponent<Room>().openWhenEnemiesCleared = true;
     			GameObject boss;
     			if (level == 1) {
-    				//boss = Resources.Load("Prefabs/Boss/Boss System") as GameObject;
-    				boss = Resources.Load("Prefabs/Boss/Boss Nezha System") as GameObject;
+    				boss = Resources.Load("Prefabs/Boss/Boss System") as GameObject;
     			}
     			else if (level == 2){
     				boss = Resources.Load("Prefabs/Boss2/Boss2 System") as GameObject;
