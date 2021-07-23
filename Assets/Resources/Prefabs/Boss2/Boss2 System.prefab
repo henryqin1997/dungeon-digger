@@ -113,8 +113,8 @@ MonoBehaviour:
     - {fileID: 1497546798656448270}
     - {fileID: 1497546799956639607}
   theRB: {fileID: 1497546798584584951}
-  currentHealth: 50
-  maxHealth: 50
+  currentHealth: 300
+  maxHealth: 300
   deathEffect: {fileID: 0}
   levelExit: {fileID: 0}
   gameOver: {fileID: 0}
@@ -137,7 +137,8 @@ MonoBehaviour:
       moveSpeed: 0
       pointToMoveTo: {fileID: 0}
       shouldShoot: 1
-      itemToShoot: {fileID: 0}
+      itemToShoot: {fileID: 620966568408338079, guid: a0f8f36fda07a4c259ba0a7c5e5fd35c,
+        type: 3}
       timeBetweenShots: 0.5
       shotPoints:
       - {fileID: 1497546799156776773}

@@ -113,6 +113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102b7727e0d80430585c3ad82355a513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.3
+  speed: 0.35
   damage: 3
   shouldFollowPlayer: 1

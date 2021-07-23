@@ -98,8 +98,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actions: []
   theRB: {fileID: 285742121218648590}
-  currentHealth: 50
-  maxHealth: 50
+  currentHealth: 500
+  maxHealth: 500
   deathEffect: {fileID: 0}
   levelExit: {fileID: 0}
   gameOver: {fileID: 0}
